@@ -1,13 +1,12 @@
 {
-  "name": "@packagaya/root",
-  "version": "0.0.0",
-  "license": "MIT",
-  "private": true,
-  "workspaces": [
-    "packages/apps/*",
-    "packages/libs/*"
-  ],
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+    "name": "@packagaya/root",
+    "version": "0.0.0",
+    "license": "MIT",
+    "private": true,
+    "workspaces": ["packages/apps/*", "packages/libs/*"],
+    "scripts": {},
+    "dependencies": {},
+    "devDependencies": {
+        "prettier": "^2.1.2"
+    }
 }
