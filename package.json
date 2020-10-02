@@ -3,7 +3,10 @@
     "version": "0.0.0",
     "license": "MIT",
     "private": true,
-    "workspaces": ["packages/apps/*", "packages/libs/*"],
+    "workspaces": [
+        "packages/apps/*",
+        "packages/libs/*"
+    ],
     "scripts": {
         "commit": "git-cz"
     },
@@ -11,11 +14,21 @@
     "devDependencies": {
         "commitizen": "^4.2.1",
         "cz-conventional-changelog": "^3.3.0",
+        "husky": ">=4",
+        "lint-staged": ">=10",
         "prettier": "^2.1.2"
     },
     "config": {
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog/"
         }
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,md,json}": "prettier --write"
     }
 }
