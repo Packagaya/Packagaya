@@ -1,0 +1,28 @@
+{
+  "projectName": "Packagaya",
+  "projectOwner": "Packagaya",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "Readme.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "YannickFricke",
+      "name": "Yannick Fricke",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/591450?v=4",
+      "profile": "https://yannickfricke.dev/",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "maintenance",
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
