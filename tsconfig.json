@@ -5,6 +5,7 @@
         "strict": true,
         "baseUrl": "./",
         "paths": {
+            "@packagaya/cli/*": ["./packages/apps/cli/*"],
             "@packagaya/package/*": ["./packages/libs/package/*"]
         },
         "esModuleInterop": true,
@@ -12,6 +13,9 @@
         "forceConsistentCasingInFileNames": true
     },
     "references": [
+        {
+            "path": "./packages/apps/cli/tsconfig.json"
+        },
         {
             "path": "./packages/libs/package/tsconfig.json"
         }
