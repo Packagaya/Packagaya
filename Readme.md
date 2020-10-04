@@ -17,6 +17,8 @@ It supports different features for each language.
 
 ## Documentation
 
+The documentation can be found at: [Packagaya/Docs](https://github.com/Packagaya/Docs).
+
 ## License
 
 Packagaya is licensed under the MIT license.
