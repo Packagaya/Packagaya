@@ -21,7 +21,7 @@ The documentation can be found at: [Packagaya/Docs](https://github.com/Packagaya
 
 ## License
 
-Packagaya is licensed under the MIT license.
+Packagaya is licensed under the MIT license. You can find the license text in the [LICENSE](./LICENSE) file.
 
 ## Authors
 
