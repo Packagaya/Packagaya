@@ -4,10 +4,16 @@
         "module": "commonjs",
         "strict": true,
         "baseUrl": "./",
-        "paths": {},
+        "paths": {
+            "@packagaya/package/*": ["./packages/libs/package/*"]
+        },
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true
     },
-    "references": []
+    "references": [
+        {
+            "path": "./packages/libs/package/tsconfig.json"
+        }
+    ]
 }
