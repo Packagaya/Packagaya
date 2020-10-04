@@ -1,19 +1,25 @@
 # Packagaya <!-- omit in toc -->
 
 -   [About Packagaya](#about-packagaya)
+-   [Features](#features)
 -   [Documentation](#documentation)
 -   [License](#license)
 -   [Authors](#authors)
 
 ## About Packagaya
 
-Packagaya is a package manager for various programming and script languages.
+Packagaya is a package manager for various programming languages.
 
-It supports different features for each language.
+## Features
 
-| Language   | Features |
-| :--------- | :------- |
-| TypeScript | None     |
+1. Create new packages based on templates
+2. Provide specific features for programming languages.
+
+Specific features:
+
+-   TypeScript
+    -   Syncronize NPM (dev-)dependencies
+    -   Synchronize TypeScript imports
 
 ## Documentation
 
