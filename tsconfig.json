@@ -18,6 +18,12 @@
         },
         {
             "path": "./packages/libs/package/tsconfig.json"
+        },
+        {
+            "path": "./packages/libs/ioc/tsconfig.json"
+        },
+        {
+            "path": "./packages/libs/config/tsconfig.json"
         }
     ]
 }
