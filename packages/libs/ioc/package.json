@@ -3,6 +3,8 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {},
-    "dependencies": {},
+    "dependencies": {
+        "inversify": "^5.0.1"
+    },
     "devDependencies": {}
 }
