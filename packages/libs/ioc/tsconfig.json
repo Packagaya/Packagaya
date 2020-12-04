@@ -1,5 +1,8 @@
 {
     "compilerOptions": {
+        "sourceMap": true,
+        "declaration": true,
+        "declarationMap": true,
         "target": "es5",
         "module": "commonjs",
         "outDir": "./dist",
