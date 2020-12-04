@@ -1,13 +1,13 @@
 {
     "extends": "../../../tsconfig.json",
     "compilerOptions": {
-        "declaration": true,
-        "declarationMap": true,
         "sourceMap": true,
         "outDir": "./dist",
         "rootDir": "./src",
         "baseUrl": "./",
-        "paths": {},
+        "paths": {
+            "@packagaya/ioc/*": ["../../libs/ioc/*"]
+        },
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
     }
