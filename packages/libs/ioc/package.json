@@ -2,7 +2,10 @@
     "name": "@packagaya/ioc",
     "version": "0.0.0",
     "license": "MIT",
-    "scripts": {},
+    "scripts": {
+        "build": "tsc",
+        "build:watch": "tsc --watch"
+    },
     "dependencies": {
         "inversify": "^5.0.1",
         "tslog": "^3.0.1"
