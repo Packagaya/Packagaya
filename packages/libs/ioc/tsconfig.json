@@ -6,7 +6,7 @@
         "target": "es5",
         "module": "commonjs",
         "outDir": "./dist",
-        "rootDir": "./src",
+        "rootDirs": ["./src/", "../config/"],
         "strict": true,
         "baseUrl": "./",
         "paths": {
@@ -16,6 +16,7 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true
     }
 }
