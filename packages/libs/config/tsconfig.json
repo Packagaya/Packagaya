@@ -7,9 +7,7 @@
         "outDir": "./dist",
         "rootDir": "./src",
         "baseUrl": "./",
-        "paths": {
-            "@packagaya/io/*": ["../io/*"]
-        },
+        "paths": {},
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
     }
