@@ -31,5 +31,6 @@
                 "type": "string"
             }
         }
-    }
+    },
+    "required": ["apps", "libs", "adapters", "features"]
 }
