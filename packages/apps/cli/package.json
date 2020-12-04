@@ -12,7 +12,11 @@
         "test": "jest",
         "test:watch": "jest --watch"
     },
-    "dependencies": {},
+    "dependencies": {
+        "inversify": "^5.0.1",
+        "reflect-metadata": "^0.1.13",
+        "tslog": "^3.0.1"
+    },
     "devDependencies": {
         "@types/node": "^14.11.2",
         "jest": "^26.4.2",
