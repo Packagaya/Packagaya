@@ -6,7 +6,8 @@
         "rootDir": "./src",
         "baseUrl": "./",
         "paths": {
-            "@packagaya/ioc/*": ["../../libs/ioc/*"]
+            "@packagaya/ioc/*": ["../../libs/ioc/*"],
+            "@packagaya/config/*": ["../../libs/config/*"]
         },
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
