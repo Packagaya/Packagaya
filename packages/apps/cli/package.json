@@ -8,7 +8,6 @@
         "build": "tsc --build",
         "prebuild:watch": "npm run clean",
         "build:watch": "tsc --build --watch",
-        "start": "ts-node-dev --respawn --no-notify --clear ./src/main.ts",
         "test": "jest",
         "test:watch": "jest --watch"
     },

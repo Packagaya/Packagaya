@@ -8,7 +8,8 @@
         "packages/libs/*"
     ],
     "scripts": {
-        "commit": "git-cz"
+        "commit": "git-cz",
+        "cli:dev": "ts-node-dev --dir ./packages/apps/cli --respawn --no-notify --clear ./packages/apps/cli/src/main.ts"
     },
     "dependencies": {},
     "devDependencies": {
