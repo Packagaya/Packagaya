@@ -11,7 +11,9 @@
         "test": "jest",
         "test:watch": "jest --watch"
     },
-    "dependencies": {},
+    "dependencies": {
+        "tslog": "^3.0.1"
+    },
     "devDependencies": {
         "@types/node": "^14.11.2",
         "inversify": "^5.0.1",
