@@ -7,6 +7,7 @@
         "build:watch": "tsc --watch"
     },
     "dependencies": {
+        "ajv": "^6.12.6",
         "inversify": "^5.0.1",
         "tslog": "^3.0.1"
     },
