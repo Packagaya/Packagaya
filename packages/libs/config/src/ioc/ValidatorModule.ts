@@ -1,6 +1,6 @@
 import { ContainerModule } from 'inversify';
 import Ajv from 'ajv';
-import ConfigSchema from '../../../config/ConfigSchema.json';
+import ConfigSchema from '../ConfigSchema.json';
 
 export class ValidatorModule extends ContainerModule {
     constructor() {

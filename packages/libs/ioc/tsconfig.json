@@ -6,7 +6,7 @@
         "target": "es5",
         "module": "commonjs",
         "outDir": "./dist",
-        "rootDirs": ["./src/", "../config/"],
+        "rootDir": "./src",
         "strict": true,
         "baseUrl": "./",
         "paths": {
