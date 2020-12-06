@@ -5,6 +5,7 @@ import { join } from 'path';
 import { IConfig } from './IConfig';
 import Ajv from 'ajv';
 import { readFileSync } from 'fs';
+import { Services } from '@packagaya/ioc/dist/Services';
 
 @injectable()
 export class ConfigManager {
@@ -19,11 +20,14 @@ export class ConfigManager {
     /**
      * Creates an instance of ConfigManager.
      * @param {Logger} logger The logger which should be used
+     * @param {Ajv} ajv The Ajv instance which should be used for validating the configuration file
+     * @param {string} configSchemaName The name of the configuration in the bound Ajv instance
      * @memberof ConfigManager
      */
     constructor(
         @inject(Logger) private logger: Logger,
         @inject(Ajv) private ajv: Ajv.Ajv,
+        @inject(Services.Schema.Config) private configSchemaName: string,
     ) {}
 
     /**
@@ -77,6 +81,8 @@ export class ConfigManager {
             );
         }
 
+        this.logger.debug('Validated configuration file');
+
         return config;
     }
 
@@ -103,7 +109,7 @@ export class ConfigManager {
      * @memberof ConfigManager
      */
     private isConfigValid(input: any) {
-        this.ajv.validate('config', input);
+        this.ajv.validate(this.configSchemaName, input);
 
         if (this.ajv.errors === null) {
             return;
