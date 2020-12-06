@@ -1,0 +1,20 @@
+name: Project is buildable
+
+on: [push]
+
+jobs:
+  build:
+    name: Building project
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [15.x]
+    steps:
+    - run: apt-get update && apt-get install -y make
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: make install
+    - run: make build
