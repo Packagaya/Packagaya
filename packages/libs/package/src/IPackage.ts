@@ -1,6 +1,11 @@
 import { PackageType } from './PackageType';
 
 /**
+ * Dependencies should not link to other dependencies
+ */
+export type IDependency = Omit<IPackage, 'dependencies' | 'devDependencies'>;
+
+/**
  * Defines the basic structure of a managable package
  *
  * @export
@@ -48,7 +53,7 @@ export interface IPackage {
      * @type {IPackage[]}
      * @memberof IPackage
      */
-    dependencies: IPackage[];
+    dependencies: IDependency[];
 
     /**
      * The development dependencies of the package.
@@ -56,5 +61,5 @@ export interface IPackage {
      * @type {IPackage[]}
      * @memberof IPackage
      */
-    devDependencies: IPackage[];
+    devDependencies: IDependency[];
 }
