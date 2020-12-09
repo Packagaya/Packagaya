@@ -3,7 +3,7 @@
 install:
 	yarn install
 
-build:
+build: install
 	yarn workspace @packagaya/config run build
 	yarn workspace @packagaya/ioc run build
 	yarn workspace @packagaya/package run build
@@ -12,5 +12,5 @@ build:
 run:
 	yarn run cli:dev
 
-test:
+test: build
 	yarn workspace @packagaya/config run test
