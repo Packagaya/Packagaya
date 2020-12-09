@@ -4,6 +4,7 @@ install:
 	yarn install
 
 build: install
+	yarn workspace @packagaya/definitions run build
 	yarn workspace @packagaya/config run build
 	yarn workspace @packagaya/ioc run build
 	yarn workspace @packagaya/package run build
