@@ -5,7 +5,7 @@ import { join } from 'path';
 import { IConfig } from './IConfig';
 import Ajv from 'ajv';
 import { readFileSync } from 'fs';
-import { Services } from '@packagaya/ioc/dist/Services';
+import { Services } from '@packagaya/definitions/dist/Services';
 
 @injectable()
 export class ConfigManager {

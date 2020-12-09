@@ -1,7 +1,7 @@
 import { ContainerModule } from 'inversify';
 import Ajv from 'ajv';
 import ConfigSchema from '../ConfigSchema.json';
-import { Services } from '@packagaya/ioc/dist/Services';
+import { Services } from '@packagaya/definitions/dist/Services';
 
 export class ValidatorModule extends ContainerModule {
     constructor() {
