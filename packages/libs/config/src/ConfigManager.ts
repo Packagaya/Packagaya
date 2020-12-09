@@ -1,11 +1,9 @@
 import { inject, injectable } from 'inversify';
 import { Logger } from 'tslog';
-import { existsSync } from 'fs';
-import { join } from 'path';
 import { IConfig } from './IConfig';
 import Ajv from 'ajv';
-import { readFileSync } from 'fs';
 import { Services } from '@packagaya/definitions/dist/Services';
+import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
 
 @injectable()
 export class ConfigManager {
@@ -23,12 +21,15 @@ export class ConfigManager {
      * @param {Logger} logger The logger which should be used
      * @param {Ajv} ajv The Ajv instance which should be used for validating the configuration file
      * @param {string} configSchemaName The name of the configuration in the bound Ajv instance
+     * @param {LocalFileSystem} localFileSystem The local filesystem which should be used
+     *                                          to resolve paths or checking if a file exists
      * @memberof ConfigManager
      */
     constructor(
         @inject(Logger) private logger: Logger,
         @inject(Ajv) private ajv: Ajv.Ajv,
         @inject(Services.Schema.Config) private configSchemaName: string,
+        @inject(LocalFileSystem) private localFileSystem: LocalFileSystem,
     ) {}
 
     /**
@@ -42,7 +43,7 @@ export class ConfigManager {
 
         this.logger.debug(`Current working directory: ${workingDirectory}`);
 
-        const configurationFilePath = join(
+        const configurationFilePath = this.localFileSystem.resolve(
             workingDirectory,
             this.configurationFileName,
         );
@@ -51,7 +52,7 @@ export class ConfigManager {
             `Resolved configuration file path: ${configurationFilePath}`,
         );
 
-        if (!this.checkIfConfigurationFileExists(configurationFilePath)) {
+        if (!this.localFileSystem.checkIfFileExists(configurationFilePath)) {
             throw new Error(
                 `Configuration file at path ${configurationFilePath}`,
             );
@@ -61,8 +62,8 @@ export class ConfigManager {
 
         try {
             this.logger.debug('Trying to read the configuration file');
-            const fileContents = readFileSync(configurationFilePath).toString(
-                'utf-8',
+            const fileContents = this.localFileSystem.readFile(
+                configurationFilePath,
             );
 
             this.logger.debug('Parsing file contents');
@@ -78,27 +79,13 @@ export class ConfigManager {
             this.isConfigValid(config);
         } catch (error) {
             throw new Error(
-                `The config does not match the json schema: ${error.message}`,
+                `The read config does not match against the defined schema: ${error.message}`,
             );
         }
 
         this.logger.debug('Validated configuration file');
 
         return config;
-    }
-
-    /**
-     * Checks if the given path is a file
-     *
-     * @private
-     * @param {string} configurationFilePath The path to the file
-     * @returns {boolean} Returns true when a file exists at this path
-     * @memberof ConfigManager
-     */
-    private checkIfConfigurationFileExists(
-        configurationFilePath: string,
-    ): boolean {
-        return existsSync(configurationFilePath);
     }
 
     /**
@@ -109,13 +96,61 @@ export class ConfigManager {
      * @returns Returns true when the given input matches the JSON schema of the configuration file
      * @memberof ConfigManager
      */
-    private isConfigValid(input: any) {
+    private isConfigValid(input: IConfig) {
         this.ajv.validate(this.configSchemaName, input);
 
-        if (this.ajv.errors === null) {
-            return;
+        if (this.ajv.errors !== null) {
+            throw new Error(this.ajv.errorsText());
         }
 
-        throw new Error(this.ajv.errorsText());
+        const invalidAppPaths = this.filterInvalidPaths(input.apps);
+
+        if (invalidAppPaths.length > 0) {
+            throw new Error(
+                `The configuration file contains invalid app paths: ${invalidAppPaths.join(
+                    ', ',
+                )}`,
+            );
+        }
+
+        const invalidLibPaths = this.filterInvalidPaths(input.libs);
+
+        if (invalidLibPaths.length > 0) {
+            throw new Error(
+                `The configuration file contains invalid lib paths: ${invalidLibPaths.join(
+                    ', ',
+                )}`,
+            );
+        }
+
+        const invalidAdapterPaths = input.adapters.filter(
+            (packageName) =>
+                !this.localFileSystem.checkIfDirectoryExists(
+                    this.localFileSystem.resolve(
+                        process.cwd(),
+                        'node_modules',
+                        packageName,
+                    ),
+                ),
+        );
+
+        if (invalidAdapterPaths.length > 0) {
+            throw new Error(
+                `The configuration file contains invalid adapter entries: ${invalidAdapterPaths.join(
+                    ', ',
+                )}`,
+            );
+        }
+
+        // TODO: Check if feature flags exists
+    }
+
+    private filterInvalidPaths(paths: string[]): string[] {
+        return paths.filter(
+            (path) =>
+                !this.localFileSystem.checkIfDirectoryExists(
+                    this.localFileSystem.resolve(process.cwd(), path),
+                ),
+        );
     }
 }
