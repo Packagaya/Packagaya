@@ -15,7 +15,8 @@ export class ConfigManager {
      * @private
      * @memberof ConfigManager
      */
-    private readonly configurationFileName = 'packagaya.json';
+    private readonly configurationFileName =
+        process.env.PACKAGAYA_CONFIGURATION_FILE ?? 'packagaya.json';
 
     /**
      * Creates an instance of ConfigManager.
