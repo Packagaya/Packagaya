@@ -1,5 +1,5 @@
 import { injectable } from 'inversify';
-import { readFileSync, writeFileSync, existsSync, statSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, statSync, Stats } from 'fs';
 import { resolve } from 'path';
 
 /**
@@ -49,6 +49,18 @@ export class LocalFileSystem {
      * @public
      */
     public checkIfDirectoryExists(path: string): boolean {
-        return statSync(path).isDirectory();
+        let stats: Stats;
+
+        try {
+            stats = statSync(path);
+        } catch (error) {
+            if (error.code === 'ENOENT') {
+                return false;
+            }
+
+            throw error;
+        }
+
+        return stats.isDirectory();
     }
 }
