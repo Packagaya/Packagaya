@@ -1,6 +1,7 @@
-import { inject, injectable } from 'inversify';
+import { inject, injectable, multiInject } from 'inversify';
 import { Logger } from 'tslog';
 import { ConfigManager } from '@packagaya/config/dist/ConfigManager';
+import { IConfig } from '@packagaya/config/dist/IConfig';
 
 @injectable()
 export class Application {
@@ -10,11 +11,15 @@ export class Application {
     ) {}
 
     public run() {
+        let projectSpecification: IConfig;
+
         try {
-            const projectConfiguration = this.configManager.readConfiguration();
+            projectSpecification = this.configManager.readConfiguration();
         } catch (error) {
-            this.logger.error(error);
+            this.logger.error('Could not load the configuration file', error);
             process.exit(1);
         }
+
+        this.logger.info('Loaded the project configuration file');
     }
 }
