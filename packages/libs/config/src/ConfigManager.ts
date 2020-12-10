@@ -85,6 +85,10 @@ export class ConfigManager {
 
         this.logger.debug('Validated configuration file');
 
+        if (typeof config['$schema'] === 'string') {
+            delete config['$schema'];
+        }
+
         return config;
     }
 
