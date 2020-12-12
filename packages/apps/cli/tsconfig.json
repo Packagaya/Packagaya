@@ -7,6 +7,7 @@
         "baseUrl": "./",
         "paths": {
             "@packagaya/ioc/*": ["../../libs/ioc/*"],
+            "@packagaya/adapter/*": ["../../libs/adapter/*"],
             "@packagaya/config/*": ["../../libs/config/*"]
         },
         "experimentalDecorators": true,
