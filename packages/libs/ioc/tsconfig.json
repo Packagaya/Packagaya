@@ -10,7 +10,8 @@
         "strict": true,
         "baseUrl": "./",
         "paths": {
-            "@packagaya/config/*": ["../config/*"]
+            "@packagaya/config/*": ["../config/*"],
+            "@packagaya/adapter/*": ["../adapter/*"]
         },
         "esModuleInterop": true,
         "experimentalDecorators": true,
