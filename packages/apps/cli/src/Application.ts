@@ -1,13 +1,15 @@
-import { inject, injectable, multiInject } from 'inversify';
+import { inject, injectable } from 'inversify';
 import { Logger } from 'tslog';
 import { ConfigManager } from '@packagaya/config/dist/ConfigManager';
 import { IConfig } from '@packagaya/config/dist/IConfig';
+import { AdapterLoader } from '@packagaya/adapter/dist/AdapterLoader';
 
 @injectable()
 export class Application {
     constructor(
         @inject(Logger) private logger: Logger,
         @inject(ConfigManager) private configManager: ConfigManager,
+        @inject(AdapterLoader) private adapterLoader: AdapterLoader,
     ) {}
 
     public run() {
@@ -21,5 +23,8 @@ export class Application {
         }
 
         this.logger.info('Loaded the project configuration file');
+
+        this.logger.info('Loading adapters');
+        this.adapterLoader.load(projectSpecification.adapters);
     }
 }
