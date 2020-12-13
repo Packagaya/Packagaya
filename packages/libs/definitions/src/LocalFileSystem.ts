@@ -1,6 +1,6 @@
 import { injectable } from 'inversify';
 import { readFileSync, writeFileSync, existsSync, statSync, Stats } from 'fs';
-import { resolve } from 'path';
+import { resolve, basename, extname } from 'path';
 
 /**
  * The LocalFileSystem class offers the possibillity to perform
@@ -62,5 +62,22 @@ export class LocalFileSystem {
         }
 
         return stats.isDirectory();
+    }
+
+    /**
+     * Returns the base name of a file
+     * With the "withExtension" parameter you can control
+     * if the extension should be stribbed off
+     *
+     * @param {string} path The path which should be transformed
+     * @param {boolean} [withExtension=true] Defines if the extension
+     * @return {*}
+     * @memberof LocalFileSystem
+     */
+    public basename(path: string, withExtension: boolean = true) {
+        return basename(
+            path,
+            withExtension ? undefined : extname(basename(path)),
+        );
     }
 }
