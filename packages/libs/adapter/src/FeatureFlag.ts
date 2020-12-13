@@ -1,4 +1,4 @@
-import { injectable } from 'inversify';
+import { injectable, unmanaged } from 'inversify';
 
 /**
  * FeatureFlag.
@@ -18,9 +18,10 @@ export abstract class FeatureFlag {
      * @param {boolean} fixable
      */
     protected constructor(
-        public readonly name: string,
-        public readonly fixable: boolean,
-    ) {}
+        @unmanaged() public readonly name: string,
+        @unmanaged() public readonly fixable: boolean,
+    ) {
+    }
 
     /**
      * Returns all differences (for example between the configuration files)
