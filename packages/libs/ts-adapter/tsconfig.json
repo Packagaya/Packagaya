@@ -9,6 +9,7 @@
         "baseUrl": "./",
         "paths": {
             "@packagaya/adapter/*": ["../adapter/*"],
+            "@packagaya/command/*": ["../command/*"],
             "@packagaya/definitions/*": ["../definitions/*"]
         },
         "esModuleInterop": true,
