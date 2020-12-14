@@ -70,11 +70,12 @@ export class LocalFileSystem {
      * if the extension should be stribbed off
      *
      * @param {string} path The path which should be transformed
-     * @param {boolean} [withExtension=true] Defines if the extension
-     * @return {*}
+     * @param {boolean} [withExtension=true] When set to true (default) the extension will be
+     *                                       stripped off! Set it to false if you want the full filename
+     * @return {string} The base name of the given path with or without the extension
      * @memberof LocalFileSystem
      */
-    public basename(path: string, withExtension: boolean = true) {
+    public basename(path: string, withExtension: boolean = true): string {
         return basename(
             path,
             withExtension ? undefined : extname(basename(path)),
