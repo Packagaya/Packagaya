@@ -8,6 +8,7 @@
         "paths": {
             "@packagaya/ioc/*": ["../../libs/ioc/*"],
             "@packagaya/adapter/*": ["../../libs/adapter/*"],
+            "@packagaya/command/*": ["../../libs/command/*"],
             "@packagaya/config/*": ["../../libs/config/*"]
         },
         "experimentalDecorators": true,
