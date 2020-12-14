@@ -6,7 +6,9 @@ export class LoggerModule extends ContainerModule {
         super((bind) => {
             bind(Logger)
                 .toDynamicValue(() => {
-                    return new Logger();
+                    return new Logger({
+                        minLevel: (process.env.LOG_LEVEL as 'info') ?? 'silly',
+                    });
                 })
                 .inSingletonScope();
         });
