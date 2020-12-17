@@ -1,6 +1,7 @@
-import { CommandManager } from '../CommandManager';
-import { Command } from '../Command';
 import { IConfig } from '@packagaya/config/dist/IConfig';
+
+import { Command } from '../Command';
+import { CommandManager } from '../CommandManager';
 
 describe('CommandManager', () => {
     let commandManager: CommandManager;
@@ -10,18 +11,21 @@ describe('CommandManager', () => {
         name: 'set',
         aliases: ['s'],
         subCommands: [],
+        help: '',
         execute: jest.fn(),
     };
     const removeCommand = {
         name: 'remove',
         aliases: [],
         subCommands: [],
+        help: '',
         execute: jest.fn(),
     };
     const adminCommand: Command = {
         name: 'admin',
         aliases: ['ad'],
         subCommands: [setCommand, removeCommand],
+        help: '',
         execute: jest.fn(),
     };
 
