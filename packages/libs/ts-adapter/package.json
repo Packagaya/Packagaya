@@ -20,7 +20,9 @@
     },
     "config": {
         "packagaya": {
-            "containerBindings": []
+            "containerBindings": [
+                "./dist/ioc/TSAdapterModule.js"
+            ]
         }
     }
 }
