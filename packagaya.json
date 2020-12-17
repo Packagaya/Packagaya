@@ -1,0 +1,15 @@
+{
+    "$schema": "./packages/libs/config/src/ConfigSchema.json",
+    "apps": [
+        "./packages/apps"
+    ],
+    "libs": [
+        "./packages/libs"
+    ],
+    "adapters": [
+        "@packagaya/ts-adapter"
+    ],
+    "features": [
+        "sync-ts-paths"
+    ]
+}
