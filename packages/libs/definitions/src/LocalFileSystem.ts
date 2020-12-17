@@ -52,15 +52,20 @@ export class LocalFileSystem {
         let stats: Stats;
 
         try {
+            // Get the file system stats
             stats = statSync(path);
         } catch (error) {
+            // When the exception says that the directory does not exists
             if (error.code === 'ENOENT') {
+                // Return false because the directory does not exists
                 return false;
             }
 
+            // Rethrow the error when we dont know it
             throw error;
         }
 
+        // Return if the directory actually exists
         return stats.isDirectory();
     }
 
