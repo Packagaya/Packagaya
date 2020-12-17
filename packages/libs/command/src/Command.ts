@@ -1,5 +1,5 @@
-import { injectable, unmanaged } from 'inversify';
 import { IConfig } from '@packagaya/config/dist/IConfig';
+import { injectable, unmanaged } from 'inversify';
 
 /**
  * Defines a basic command
@@ -10,41 +10,24 @@ import { IConfig } from '@packagaya/config/dist/IConfig';
 @injectable()
 export abstract class Command {
     /**
-     * The name of the command
-     *
-     * @type {string}
-     * @memberof ICommand
+     * Creates an instance of Command.
+     * @param {string} name The name of the command
+     * @param {string[]} aliases The defined aliases for the command
+     * @param {Command[]} subCommands Optional sub commands of the command
+     * @param {string} help The help definition for the command
+     * @memberof Command
      */
-    public readonly name: string;
-
-    /**
-     * The aliases of the command
-     *
-     * @type {string[]}
-     * @memberof ICommand
-     */
-    public readonly aliases: string[];
-
-    /**
-     * The subcommands of the command
-     *
-     * @type {Command[]}
-     * @memberof ICommand
-     */
-    public readonly subCommands: Command[];
-
     protected constructor(
-        @unmanaged() name: string,
-        @unmanaged() aliases: string[],
-        @unmanaged() subCommands: Command[],
-    ) {
-        this.name = name;
-        this.aliases = aliases;
-        this.subCommands = subCommands;
-    }
+        @unmanaged() public readonly name: string,
+        @unmanaged() public readonly aliases: string[],
+        @unmanaged() public readonly subCommands: Command[],
+        @unmanaged() public readonly help: string,
+    ) {}
 
     /**
      * Executes the current command
+     *
+     * NOTE: Before the command is executed, the CommandManager checks if the command has any other subcommands
      *
      * @memberof ICommand
      */
