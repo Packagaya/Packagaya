@@ -5,10 +5,21 @@ import Ajv from 'ajv';
 import { Services } from '@packagaya/definitions/dist/Services';
 import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
 
+/**
+ * The configuration manager will be used to load the
+ * project configuration file and validating it.
+ *
+ * @export
+ * @class ConfigManager
+ */
 @injectable()
 export class ConfigManager {
     /**
      * Defines the filename of the configuration file
+     *
+     * The value will be read from the environment variables
+     * at first. If it's not defined the default value "packagaya.json"
+     * will be used.
      *
      * @private
      * @memberof ConfigManager
