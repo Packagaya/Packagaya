@@ -6,4 +6,7 @@ export class TestAdapter extends Adapter {
     constructor() {
         super(AdapterName);
     }
+
+    init(): void {
+    }
 }
