@@ -1,8 +1,9 @@
+import { Adapter } from '@packagaya/adapter/dist/Adapter';
+import { FeatureFlag } from '@packagaya/adapter/dist/FeatureFlag';
 import { inject, injectable, multiInject, named } from 'inversify';
 import { Logger } from 'tslog';
-import { Adapter } from '@packagaya/adapter/dist/Adapter';
+
 import { TSServices } from './ioc/TSServices';
-import { FeatureFlag } from '@packagaya/adapter/dist/FeatureFlag';
 
 /**
  * Defines the official typescript adapter
@@ -12,7 +13,7 @@ import { FeatureFlag } from '@packagaya/adapter/dist/FeatureFlag';
  * @extends {Adapter}
  */
 @injectable()
-export default class TSAdapter extends Adapter {
+export class TSAdapter extends Adapter {
     /**
      * Creates an instance of TSAdapter.
      * @param {Logger} logger The logger which should be used to log messages
@@ -37,3 +38,5 @@ export default class TSAdapter extends Adapter {
         this.logger.info('Initializing the TypeScript adapter');
     }
 }
+
+export default TSAdapter;
