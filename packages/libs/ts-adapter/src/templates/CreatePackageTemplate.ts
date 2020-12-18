@@ -8,12 +8,14 @@ import { paramCase } from 'change-case';
 import { mkdirSync } from 'fs';
 import { inject, injectable } from 'inversify';
 import isScoped from 'is-scoped';
+import spdxLicenses from 'spdx-license-ids';
 import { Logger } from 'tslog';
 
 interface Answers extends Record<string, unknown> {
     packageName: string;
     packageDirectory: string;
     packageType: PackageType;
+    license: string;
 }
 
 @injectable()
@@ -42,6 +44,23 @@ export class CreatePackageTemplate extends Template<Answers> {
                         value: PackageType.Library,
                     },
                 ],
+            },
+            {
+                type: 'autocomplete',
+                name: 'license',
+                message: 'Which license should the new package have?',
+                default: 'MIT',
+                source: (_: Answers, searchTerm: string | undefined) =>
+                    spdxLicenses.filter((license: string) => {
+                        if (
+                            searchTerm === undefined ||
+                            searchTerm.length === 0
+                        ) {
+                            return true;
+                        }
+
+                        return license.includes(searchTerm);
+                    }),
             },
             {
                 type: 'list',

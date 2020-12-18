@@ -1,5 +1,5 @@
 import { IConfig } from '@packagaya/config/dist/IConfig';
-import { prompt } from 'inquirer';
+import inquirer from 'inquirer';
 import { injectable, multiInject } from 'inversify';
 
 import { Template } from './Template';
@@ -29,8 +29,13 @@ export class TemplateManager {
             throw `Could not find template: ${name}`;
         }
 
+        inquirer.registerPrompt(
+            'autocomplete',
+            require('inquirer-autocomplete-prompt'),
+        );
+
         const questions = template.getQuestions(projectSpecification);
-        const answers = await prompt(questions);
+        const answers = await inquirer.prompt(questions);
 
         template.render(answers);
     }
