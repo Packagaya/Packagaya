@@ -5,7 +5,7 @@ import { Logger } from 'tslog';
 // global namespace because we only
 // want a single instance across the process
 const logger = new Logger({
-    minLevel: (process.env.LOG_LEVEL as 'info') ?? 'silly',
+    minLevel: (process.env.LOG_LEVEL as 'info') ?? 'info',
 });
 
 /**
