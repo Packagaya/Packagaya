@@ -1,8 +1,11 @@
+#!/bin/env node
 import 'reflect-metadata';
+
 import { getContainer } from '@packagaya/ioc/dist/container';
-import { ApplicationModule } from './ioc/ApplicationModule';
-import { Application } from './Application';
 import { Container } from 'inversify';
+
+import { Application } from './Application';
+import { ApplicationModule } from './ioc/ApplicationModule';
 
 (async () => {
     const container = getContainer();

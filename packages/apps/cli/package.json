@@ -2,6 +2,9 @@
     "name": "@packagaya/cli",
     "version": "0.0.0",
     "license": "MIT",
+    "bin": {
+        "packagaya": "./dist/main.js"
+    },
     "scripts": {
         "clean": "rimraf dist",
         "prebuild": "npm run clean",

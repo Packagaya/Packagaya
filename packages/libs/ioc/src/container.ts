@@ -1,10 +1,12 @@
-import { Container } from 'inversify';
-import { ConfigModule } from './modules/ConfigModule';
-import { LoggerModule } from './modules/LoggerModule';
 import { ValidatorModule } from '@packagaya/config/dist/ioc/ValidatorModule';
-import { LocalFileSystemModule } from './modules/LocalFileSystemModule';
+import { Container } from 'inversify';
+
 import { AdapterModule } from './modules/AdapterModule';
 import { CommandModule } from './modules/CommandModule';
+import { ConfigModule } from './modules/ConfigModule';
+import { LocalFileSystemModule } from './modules/LocalFileSystemModule';
+import { LoggerModule } from './modules/LoggerModule';
+import { TemplateModule } from './modules/TemplateModule';
 
 /**
  * Loads the container with all known container modules
@@ -34,6 +36,9 @@ export const getContainer = (): Container => {
 
         // Bind all system commands
         new CommandModule(),
+
+        // Bind all template engine related stuff
+        new TemplateModule(),
     );
 
     // Return the prepared container

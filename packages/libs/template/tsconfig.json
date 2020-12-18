@@ -2,17 +2,14 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
+        "declaration": true,
+        "declarationMap": true,
         "sourceMap": true,
         "outDir": "./dist",
         "rootDir": "./src",
         "strict": true,
         "baseUrl": "./",
-        "paths": {
-            "@packagaya/adapter/*": ["../adapter/*"],
-            "@packagaya/command/*": ["../command/*"],
-            "@packagaya/template/*": ["../template/*"],
-            "@packagaya/definitions/*": ["../definitions/*"]
-        },
+        "paths": {},
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
