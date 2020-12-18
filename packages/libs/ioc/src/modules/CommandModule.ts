@@ -1,7 +1,8 @@
-import { ContainerModule } from 'inversify';
-import { CommandManager } from '@packagaya/command/dist/CommandManager';
 import { Command } from '@packagaya/command/dist/Command';
+import { CommandManager } from '@packagaya/command/dist/CommandManager';
+import { GenerateCommand } from '@packagaya/command/dist/commands/GenerateCommand';
 import { SyncCommand } from '@packagaya/command/dist/commands/SyncCommand';
+import { ContainerModule } from 'inversify';
 
 /**
  * Defines an IoC container module for the command package
@@ -18,6 +19,7 @@ export class CommandModule extends ContainerModule {
 
             // Bind the "sync" command to the container
             bind(Command).to(SyncCommand);
+            bind(Command).to(GenerateCommand);
         });
     }
 }

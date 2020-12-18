@@ -10,6 +10,7 @@
         "paths": {
             "@packagaya/adapter/*": ["../adapter/*"],
             "@packagaya/command/*": ["../command/*"],
+            "@packagaya/template/*": ["../template/*"],
             "@packagaya/definitions/*": ["../definitions/*"]
         },
         "esModuleInterop": true,

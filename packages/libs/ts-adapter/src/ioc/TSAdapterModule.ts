@@ -1,6 +1,9 @@
+import { Template } from '@packagaya/template/dist/Template';
 import { ContainerModule } from 'inversify';
-import TSAdapter from '../TSAdapter';
+
 import { SyncTSPathsFlag } from '../featureFlags/SyncTSPathsFlag';
+import { CreatePackageTemplate } from '../templates/CreatePackageTemplate';
+import { TSAdapter } from '../TSAdapter';
 import { TSServices } from './TSServices';
 
 /**
@@ -22,6 +25,8 @@ export default class TSAdapterModule extends ContainerModule {
 
             // Bind the "sync-ts-paths" feature flag to the container
             bind(TSServices.FeatureFlag).to(SyncTSPathsFlag);
+
+            bind(Template).to(CreatePackageTemplate);
         });
     }
 }

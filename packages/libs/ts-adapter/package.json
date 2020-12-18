@@ -10,7 +10,9 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "change-case": "^4.1.2",
         "inversify": "^5.0.5",
+        "is-scoped": "^2.1.0",
         "tslog": "^3.0.1"
     },
     "devDependencies": {
