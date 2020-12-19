@@ -87,7 +87,7 @@ export class CreatePackageTemplate extends Template<Answers> {
         ];
     }
 
-    public render(context: Answers) {
+    public async render(context: Answers) {
         const rootPackageConfiguration = this.localFileSystem.resolve(
             process.cwd(),
             'package.json',
@@ -131,7 +131,7 @@ export class CreatePackageTemplate extends Template<Answers> {
             });
         }
 
-        this.fileGenerator.generateFileFromTemplate(
+        await this.fileGenerator.generateFileFromTemplate(
             this.localFileSystem.resolve(packagePath, 'package.json'),
             this.localFileSystem.resolve(
                 __dirname,
