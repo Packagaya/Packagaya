@@ -20,8 +20,14 @@ export class AdapterLoader {
     /**
      * Creates an instance of AdapterLoader.
      * @param {Logger} logger The logger which should be used to log messages
-     * @param {LocalFileSystem} localFileSystem The local filesystem which should be used
-     * @param {Container} container The container which is used for binding the additional container bindings
+     * @param {LocalFileSystem} localFileSystem The local filesystem which
+     *                                          should be used
+     * @param {Container} container The container which is used for binding the
+     *                                  additional container bindings
+     * @param {ContainerBindingsLoader} containerBindingsLoader The container bindings loader which loads the additional
+     *                                                          container bindings from the adapters
+     * @param {ModuleLoader} moduleLoader The module loader which should be used to load the additional
+     *                                    container binding files
      * @memberof AdapterLoader
      */
     constructor(
@@ -31,7 +37,8 @@ export class AdapterLoader {
         @inject(ContainerBindingsLoader)
         private containerBindingsLoader: ContainerBindingsLoader,
         @inject(ModuleLoader) private moduleLoader: ModuleLoader,
-    ) {}
+    ) {
+    }
 
     /**
      * Load the adapters
@@ -144,9 +151,9 @@ export class AdapterLoader {
                 // resolved based on the adapter directory path.
                 .map<IAdapterInformation>(
                     ({
-                        filePath,
-                        fileContents: { name, version, main, config },
-                    }) => {
+                         filePath,
+                         fileContents: { name, version, main, config },
+                     }) => {
                         const adapterDirectoryPath = dirname(filePath);
                         const mainEntrypoint = this.localFileSystem.resolve(
                             adapterDirectoryPath,
