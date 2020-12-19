@@ -21,3 +21,5 @@ jobs:
         run: yarn install
       - name: Make all dist files
         run: make build
+      - name: Release a new version
+        run: yarn run release --dry-run
