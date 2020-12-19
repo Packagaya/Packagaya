@@ -22,7 +22,7 @@ export class SyncTSPathsFlag extends FeatureFlag {
 
     /**
      * @inheritdoc
-     * @return {*}  {string[]}
+     * @return {string[]}
      * @memberof SyncTSPathsFlag
      */
     public getDifferences(): string[] {
@@ -33,7 +33,7 @@ export class SyncTSPathsFlag extends FeatureFlag {
 
     /**
      * @inheritdoc
-     * @return {*}  {boolean}
+     * @return {boolean}
      * @memberof SyncTSPathsFlag
      */
     public fixDifferences(): boolean {
