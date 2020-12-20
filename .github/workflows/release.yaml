@@ -19,8 +19,6 @@ jobs:
                   node-version: '12'
             - name: Install dependencies
               run: yarn install
-            - name: Make all dist files
-              run: make build
             - name: Release a new version
               run: make release
               env:
