@@ -1,15 +1,20 @@
 import { PackageType } from './PackageType';
 
 /**
- * Dependencies should not link to other dependencies
+ * Dependencies should not have an id or a package type
+ * @see isIDependency ts-auto-guard
  */
-export type IDependency = Omit<IPackage, 'dependencies' | 'devDependencies'>;
+export type IDependency = Omit<IPackage, 'id' | 'packageType'> &
+    Required<
+        Pick<IPackage, 'name' | 'version' | 'dependencies' | 'devDependencies'>
+    >;
 
 /**
  * Defines the basic structure of a managable package
  *
  * @export
  * @interface IPackage
+ * @see IPackage ts-auto-guard
  */
 export interface IPackage {
     /**
@@ -33,6 +38,7 @@ export interface IPackage {
     /**
      * The version of the package.
      * This can also be provided by the package configuration file.
+     * This must also be semver compatible.
      *
      * @type {string}
      * @memberof IPackage
