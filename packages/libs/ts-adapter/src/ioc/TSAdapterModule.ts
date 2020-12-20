@@ -1,3 +1,4 @@
+import { Adapter } from '@packagaya/adapter/dist/Adapter';
 import { Template } from '@packagaya/template/dist/Template';
 import { ContainerModule } from 'inversify';
 
@@ -22,6 +23,7 @@ export default class TSAdapterModule extends ContainerModule {
         super((bind) => {
             // Bind the typescript adapter
             bind(TSAdapter.name).to(TSAdapter);
+            bind(Adapter).to(TSAdapter);
 
             // Bind the "sync-ts-paths" feature flag to the container
             bind(TSServices.FeatureFlag).to(SyncTSPathsFlag);
