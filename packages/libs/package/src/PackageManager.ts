@@ -16,5 +16,5 @@ export abstract class PackageManager {
      * @returns {Promise<IPackage[]>} The found packages
      * @memberof PackageManager
      */
-    abstract async getPackagesForPath(path: string): Promise<IPackage[]>;
+    abstract getPackagesForPath(path: string): Promise<IPackage[]>;
 }
