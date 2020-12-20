@@ -2,6 +2,9 @@
     "name": "@packagaya/command",
     "version": "0.0.0",
     "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "build": "tsc",
         "build:watch": "tsc --watch",

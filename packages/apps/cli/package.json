@@ -5,6 +5,9 @@
     "bin": {
         "packagaya": "./bin/packagaya.js"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "clean": "rimraf dist",
         "prebuild": "npm run clean",
