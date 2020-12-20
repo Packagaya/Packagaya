@@ -11,36 +11,23 @@ export abstract class FeatureFlag {
      * @param {boolean} fixable Indicates if the feature flag is fixable
      * @protected
      */
-    /**
-     * constructor.
-     *
-     * @param {string} name
-     * @param {boolean} fixable
-     */
     protected constructor(
         @unmanaged() public readonly name: string,
         @unmanaged() public readonly fixable: boolean,
-    ) {
-    }
+    ) {}
 
     /**
      * Returns all differences (for example between the configuration files)
-     */
-    /**
-     * getDifferences.
      *
      * @returns {string[]}
      */
-    public abstract getDifferences(): string[];
+    public abstract getDifferences(): Promise<string[]>;
 
     /**
      * Fixes all differences. This method gets only executed when the "fixable"
      * property equals true
-     */
-    /**
-     * fixDifferences.
      *
-     * @returns {boolean}
+     * @returns {Promise<boolean>} Returns true when the fixed could be applied successfully
      */
-    public abstract fixDifferences(): boolean;
+    public abstract fixDifferences(): Promise<boolean>;
 }
