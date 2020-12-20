@@ -21,21 +21,11 @@ export class Subprocess {
         }
 
         return new Promise((resolve, reject) => {
-            let stdOut: string[] = [];
-            let stdErr: string[] = [];
-            const childProcess = this.spawnChildProcess(
+            const { stdOut, stdErr, childProcess } = this.getChildProcess(
                 resolvedPath,
                 commandArguments,
                 options,
             );
-
-            childProcess.stdout?.addListener('data', (e) => {
-                stdOut.push(new String(e).toString().replace('\n', '').trim());
-            });
-
-            childProcess.stderr?.addListener('data', (e) => {
-                stdErr.push(new String(e).toString().replace('\n', '').trim());
-            });
 
             childProcess.addListener('exit', (exitCode: number | undefined) => {
                 if (stdErr.length > 0) {
@@ -52,7 +42,7 @@ export class Subprocess {
         });
     }
 
-    public spawnChildProcess(
+    private spawnChildProcess(
         resolvedPath: string,
         commandArguments: string[],
         options?: SpawnSyncOptionsWithStringEncoding,
@@ -72,6 +62,34 @@ export class Subprocess {
             `${resolvedPath}${commandArguments.join(' ')}`,
             spawnOptions,
         );
+    }
+
+    private getChildProcess(
+        resolvedPath: string,
+        commandArguments: string[],
+        options?: SpawnSyncOptionsWithStringEncoding,
+    ) {
+        let stdOut: string[] = [];
+        let stdErr: string[] = [];
+        const childProcess = this.spawnChildProcess(
+            resolvedPath,
+            commandArguments,
+            options,
+        );
+
+        childProcess.stdout?.addListener('data', (e) => {
+            stdOut.push(new String(e).toString().replace('\n', '').trim());
+        });
+
+        childProcess.stderr?.addListener('data', (e) => {
+            stdErr.push(new String(e).toString().replace('\n', '').trim());
+        });
+
+        return {
+            stdOut,
+            stdErr,
+            childProcess,
+        };
     }
 
     public resolvePath(): string | undefined {
