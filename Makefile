@@ -3,7 +3,7 @@
 install:
 	yarn install
 
-build: install
+build:
 	yarn workspace @packagaya/cli run build
 
 release: build
