@@ -19,4 +19,7 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node-version }}
-            - run: make test
+            - name: Install all dependencies
+              run: make install
+            - name: Test the source code
+              run: make test
