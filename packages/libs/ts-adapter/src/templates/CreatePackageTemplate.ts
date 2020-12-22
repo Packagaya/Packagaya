@@ -6,6 +6,7 @@ import { FileGenerator } from '@packagaya/template/dist/FileGenerator';
 import { Template } from '@packagaya/template/dist/Template';
 import { paramCase } from 'change-case';
 import { mkdirSync } from 'fs';
+import { Question } from 'inquirer';
 import { inject, injectable } from 'inversify';
 import isScoped from 'is-scoped';
 import spdxLicenses from 'spdx-license-ids';
@@ -28,11 +29,18 @@ export class CreatePackageTemplate extends Template<Answers> {
         super('ts:create-package');
     }
 
-    public getQuestions(projectSpecification: IConfig): any[] {
+    /**
+     * Returns the inquirer.js questions
+     *
+     * @param {IConfig} projectSpecification The read project configuration
+     * @return {Question<Answers>[]}
+     * @memberof CreatePackageTemplate
+     */
+    public getQuestions(projectSpecification: IConfig): Question<Answers>[] {
         return [
             {
                 type: 'list',
-                name: 'packageType',
+                name: 'packageName',
                 message: 'What kind of package do you want to generate?',
                 choices: [
                     {
@@ -44,7 +52,7 @@ export class CreatePackageTemplate extends Template<Answers> {
                         value: PackageType.Library,
                     },
                 ],
-            },
+            } as Question,
             {
                 type: 'autocomplete',
                 name: 'license',
@@ -61,7 +69,7 @@ export class CreatePackageTemplate extends Template<Answers> {
 
                         return license.includes(searchTerm);
                     }),
-            },
+            } as Question,
             {
                 type: 'list',
                 name: 'packageDirectory',
@@ -78,7 +86,7 @@ export class CreatePackageTemplate extends Template<Answers> {
                             );
                     }
                 },
-            },
+            } as Question,
             {
                 type: 'input',
                 name: 'packageName',
@@ -93,18 +101,24 @@ export class CreatePackageTemplate extends Template<Answers> {
             'package.json',
         );
 
+        // Check if the package.json file exists in the current directory
         if (!this.localFileSystem.checkIfFileExists(rootPackageConfiguration)) {
+            // The file was not found so we throw an error
             throw new Error(
                 `Could not find root package configuration at: ${rootPackageConfiguration}`,
             );
         }
 
+        // Define the root package configuration file variable
         let rootPackageConfig: INPMConfig;
 
         try {
+            // The file contents of the root package.json file
             const fileContents = this.localFileSystem.readFile(
                 rootPackageConfiguration,
             );
+
+            // Set the parsed file contents to the root package config
             rootPackageConfig = JSON.parse(fileContents);
         } catch (error) {
             throw new Error(
@@ -112,25 +126,35 @@ export class CreatePackageTemplate extends Template<Answers> {
             );
         }
 
+        // Convert the entered package name to param case
         let packageName = paramCase(context.packageName);
+
+        // Defines the path of the package which should be created
         const packagePath = this.localFileSystem.resolve(
             context.packageDirectory,
             packageName,
         );
 
+        // Checks if the root package name is scoped
+        // Scoped packages matches the following example "@myscope/root", "@myscope/my-example-package"
         if (isScoped(rootPackageConfig.name)) {
+            // Apply the scope correctly to the new package
             packageName = [
                 rootPackageConfig.name.split('/')[0],
                 packageName,
             ].join('/');
         }
 
+        // Check if the new package directory exists
         if (!this.localFileSystem.checkIfDirectoryExists(packagePath)) {
+            // Create the directory because it does not exists
+            // Add the directories recursily to avoid any future errors
             mkdirSync(packagePath, {
                 recursive: true,
             });
         }
 
+        // Generate the package.json file from the template
         await this.fileGenerator.generateFileFromTemplate(
             this.localFileSystem.resolve(packagePath, 'package.json'),
             this.localFileSystem.resolve(

@@ -1,4 +1,5 @@
 import { IConfig } from '@packagaya/config/dist/IConfig';
+import { Question } from 'inquirer';
 import { injectable, unmanaged } from 'inversify';
 
 /**
@@ -23,10 +24,10 @@ export abstract class Template<T extends Record<string, unknown>> {
      *
      * @abstract
      * @param {IConfig} projectSpecification The project configuration
-     * @return {any[]} The inquirer.js questions
+     * @return {Question[]} The inquirer.js questions
      * @memberof Template
      */
-    public abstract getQuestions(projectSpecification: IConfig): any[];
+    public abstract getQuestions(projectSpecification: IConfig): Question<T>[];
 
     /**
      * Renders the template with the given context
