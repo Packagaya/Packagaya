@@ -26,6 +26,9 @@
         },
         {
             "path": "../../libs/config/tsconfig.json"
+        },
+        {
+            "path": "../../libs/ts-adapter/tsconfig.json"
         }
     ]
 }
