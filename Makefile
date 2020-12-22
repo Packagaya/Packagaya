@@ -4,16 +4,7 @@ install:
 	yarn install
 
 build: install
-	yarn workspace @packagaya/definitions run build
-	yarn workspace @packagaya/config run build
-	yarn workspace @packagaya/adapter run build
-	yarn workspace @packagaya/template run build
-	yarn workspace @packagaya/command run build
-	yarn workspace @packagaya/ioc run build
-	yarn workspace @packagaya/package run build
 	yarn workspace @packagaya/cli run build
-	yarn workspace @packagaya/ts-adapter run build
-	yarn workspace @packagaya/process run build
 
 release: build
 	yarn workspace @packagaya/definitions run semantic-release && echo "Executed release for the 'definitions' package!" || echo "Could not release the 'definitions' package!"

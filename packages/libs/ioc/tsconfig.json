@@ -3,6 +3,7 @@
         "sourceMap": true,
         "declaration": true,
         "declarationMap": true,
+        "composite": true,
         "target": "es5",
         "module": "commonjs",
         "outDir": "./dist",
@@ -20,5 +21,16 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "resolveJsonModule": true
-    }
+    },
+    "references": [
+        {
+            "path": "../config/tsconfig.json"
+        },
+        {
+            "path": "../command/tsconfig.json"
+        },
+        {
+            "path": "../adapter/tsconfig.json"
+        }
+    ]
 }

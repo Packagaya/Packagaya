@@ -4,6 +4,7 @@
         "module": "commonjs",
         "declaration": true,
         "sourceMap": true,
+        "composite": true,
         "outDir": "./dist",
         "rootDir": "./src",
         "strict": true,
@@ -16,5 +17,10 @@
         "emitDecoratorMetadata": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true
-    }
+    },
+    "references": [
+        {
+            "path": "../definitions/tsconfig.json"
+        }
+    ]
 }

@@ -13,5 +13,19 @@
         },
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
-    }
+    },
+    "references": [
+        {
+            "path": "../../libs/ioc/tsconfig.json"
+        },
+        {
+            "path": "../../libs/adapter/tsconfig.json"
+        },
+        {
+            "path": "../../libs/command/tsconfig.json"
+        },
+        {
+            "path": "../../libs/config/tsconfig.json"
+        }
+    ]
 }
