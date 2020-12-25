@@ -13,6 +13,7 @@
         "paths": {
             "@packagaya/config/*": ["../config/*"],
             "@packagaya/command/*": ["../command/*"],
+            "@packagaya/package/*": ["../package/*"],
             "@packagaya/adapter/*": ["../adapter/*"]
         },
         "esModuleInterop": true,
@@ -31,6 +32,9 @@
         },
         {
             "path": "../adapter/tsconfig.json"
+        },
+        {
+            "path": "../package/tsconfig.json"
         }
     ]
 }
