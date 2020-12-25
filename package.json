@@ -9,7 +9,7 @@
     ],
     "scripts": {
         "commit": "git-cz",
-        "cli:dev": "LOG_LEVEL=debug ts-node-dev --rs --dir ./packages/apps/cli --respawn --no-notify --clear --watch ./packages/**/src/**/*.* ./packages/apps/cli/src/main.ts"
+        "cli:dev": "LOG_LEVEL=debug ts-node-dev --rs --dir ./packages/apps/cli --respawn --no-notify --clear ./packages/apps/cli/src/main.ts"
     },
     "dependencies": {},
     "devDependencies": {

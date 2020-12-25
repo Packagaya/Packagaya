@@ -1,8 +1,10 @@
 import { Adapter } from '@packagaya/adapter/dist/Adapter';
+import { PackageResolver } from '@packagaya/package/dist/PackageResolver';
 import { Template } from '@packagaya/template/dist/Template';
 import { ContainerModule } from 'inversify';
 
 import { SyncTSPathsFlag } from '../featureFlags/SyncTSPathsFlag';
+import { NPMPackageResolver } from '../NPMPackageResolver';
 import { CreatePackageTemplate } from '../templates/CreatePackageTemplate';
 import { TSAdapter } from '../TSAdapter';
 import { TSServices } from './TSServices';
@@ -29,6 +31,8 @@ export default class TSAdapterModule extends ContainerModule {
             bind(TSServices.FeatureFlag).to(SyncTSPathsFlag);
 
             bind<Template<any>>(Template).to(CreatePackageTemplate);
+
+            bind(PackageResolver).to(NPMPackageResolver);
         });
     }
 }

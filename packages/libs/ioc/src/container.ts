@@ -6,6 +6,7 @@ import { CommandModule } from './modules/CommandModule';
 import { ConfigModule } from './modules/ConfigModule';
 import { LocalFileSystemModule } from './modules/LocalFileSystemModule';
 import { LoggerModule } from './modules/LoggerModule';
+import { PackageModule } from './modules/PackageModule';
 import { TemplateModule } from './modules/TemplateModule';
 
 /**
@@ -39,6 +40,9 @@ export const getContainer = (): Container => {
 
         // Bind all template engine related stuff
         new TemplateModule(),
+
+        // Bind all package related stuff
+        new PackageModule(),
     );
 
     // Return the prepared container
