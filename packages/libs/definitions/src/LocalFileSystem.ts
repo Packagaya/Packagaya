@@ -106,16 +106,10 @@ export class LocalFileSystem {
             throw new Error(`Path "${path}" is not a directory`);
         }
 
-        const result: string[] = [];
-
         const directoryEntries = readdirSync(path, {
             encoding: 'utf-8',
         });
 
-        for (const entry of directoryEntries) {
-            result.push(this.resolve(path, entry));
-        }
-
-        return result;
+        return directoryEntries.map((entry) => this.resolve(path, entry));
     }
 }
