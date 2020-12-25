@@ -29,9 +29,6 @@
         },
         {
             "path": "../../libs/ts-adapter/tsconfig.json"
-        },
-        {
-            "path": "../../libs/package/tsconfig.json"
         }
     ]
 }
