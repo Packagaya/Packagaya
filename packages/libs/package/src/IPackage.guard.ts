@@ -2,14 +2,8 @@
  * Generated type guards for "IPackage.ts".
  * WARNING: Do not manually change this file.
  */
-import { IDependency, IPackage } from './IPackage';
 import { PackageType } from './PackageType';
-
-export function isRecord(obj: any, _argumentName?: string): obj is IDependency {
-    return (
-        (obj !== null && typeof obj === 'object') || typeof obj === 'function'
-    );
-}
+import { IPackage } from './IPackage';
 
 export function isIPackage(obj: any, _argumentName?: string): obj is IPackage {
     return (
@@ -21,7 +15,10 @@ export function isIPackage(obj: any, _argumentName?: string): obj is IPackage {
         (obj.packageType === PackageType.Application ||
             obj.packageType === PackageType.Library) &&
         typeof obj.path === 'string' &&
-        (isRecord(obj.dependencies) as boolean) &&
-        (isRecord(obj.devDependencies) as boolean)
+        ((obj.dependencies !== null && typeof obj.dependencies === 'object') ||
+            typeof obj.dependencies === 'function') &&
+        ((obj.devDependencies !== null &&
+            typeof obj.devDependencies === 'object') ||
+            typeof obj.devDependencies === 'function')
     );
 }
