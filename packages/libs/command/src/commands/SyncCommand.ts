@@ -1,9 +1,9 @@
+import { FeatureFlagManager } from '@packagaya/adapter/dist/FeatureFlagManager';
 import { IConfig } from '@packagaya/config/dist/IConfig';
 import { inject, injectable } from 'inversify';
 import { Logger } from 'tslog';
 
 import { Command } from '../Command';
-import { FeatureFlagManager } from '@packagaya/adapter/dist/FeatureFlagManager';
 
 /**
  * Defines the "sync" command
@@ -41,6 +41,10 @@ export class SyncCommand extends Command {
     async execute(projectSpecification: IConfig, commandArguments: string[]) {
         this.logger.info('Running the sync command');
 
-        await this.featureFlagManager.runFeatureFlags(commandArguments, true);
+        await this.featureFlagManager.runFeatureFlags(
+            commandArguments,
+            projectSpecification,
+            true,
+        );
     }
 }

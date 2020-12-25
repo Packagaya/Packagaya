@@ -25,7 +25,9 @@ export class SyncTSPathsFlag extends FeatureFlag {
      * @return {string[]}
      * @memberof SyncTSPathsFlag
      */
-    public async getDifferences(): Promise<string[]> {
+    public async getDifferences(
+        projectSpecification: IConfig,
+    ): Promise<string[]> {
         this.logger.info('Checking for TS paths differences');
 
         return [];
@@ -36,7 +38,9 @@ export class SyncTSPathsFlag extends FeatureFlag {
      * @return {boolean}
      * @memberof SyncTSPathsFlag
      */
-    public async fixDifferences(): Promise<boolean> {
+    public async fixDifferences(
+        projectSpecification: IConfig,
+    ): Promise<boolean> {
         return true;
     }
 }
