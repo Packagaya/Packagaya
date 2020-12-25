@@ -4,10 +4,7 @@ import { PackageType } from './PackageType';
  * Dependencies should not have an id or a package type
  * @see isIDependency ts-auto-guard
  */
-export type IDependency = Omit<IPackage, 'id' | 'packageType'> &
-    Required<
-        Pick<IPackage, 'name' | 'version' | 'dependencies' | 'devDependencies'>
-    >;
+export type IDependency = Record<string, string>;
 
 /**
  * Defines the basic structure of a managable package
@@ -56,16 +53,16 @@ export interface IPackage {
     /**7
      * The dependencies of the package.
      *
-     * @type {IPackage[]}
+     * @type {IDependency}
      * @memberof IPackage
      */
-    dependencies: IDependency[];
+    dependencies: IDependency;
 
     /**
      * The development dependencies of the package.
      *
-     * @type {IPackage[]}
+     * @type {IDependency}
      * @memberof IPackage
      */
-    devDependencies: IDependency[];
+    devDependencies: IDependency;
 }
