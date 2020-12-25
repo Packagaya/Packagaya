@@ -1,4 +1,5 @@
 import { FeatureFlag } from '@packagaya/adapter/dist/FeatureFlag';
+import { IConfig } from '@packagaya/config/dist/IConfig';
 import { inject, injectable } from 'inversify';
 import { Logger } from 'tslog';
 
