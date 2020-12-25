@@ -1,6 +1,13 @@
+import {
+    existsSync,
+    readdirSync,
+    readFileSync,
+    Stats,
+    statSync,
+    writeFileSync,
+} from 'fs';
 import { injectable } from 'inversify';
-import { readFileSync, writeFileSync, existsSync, statSync, Stats } from 'fs';
-import { resolve, basename, extname } from 'path';
+import { basename, extname, resolve } from 'path';
 
 /**
  * The LocalFileSystem class offers the possibillity to perform
@@ -85,5 +92,30 @@ export class LocalFileSystem {
             path,
             withExtension ? undefined : extname(basename(path)),
         );
+    }
+
+    /**
+     * Returns the directory contents of the given path
+     *
+     * @param {string} path The path to the directory
+     * @throws When the path is not a directory
+     * @memberof LocalFileSystem
+     */
+    public getDirectoryContents(path: string) {
+        if (!this.checkIfDirectoryExists(path)) {
+            throw new Error(`Path "${path}" is not a directory`);
+        }
+
+        const result: string[] = [];
+
+        const directoryEntries = readdirSync(path, {
+            encoding: 'utf-8',
+        });
+
+        for (const entry of directoryEntries) {
+            result.push(this.resolve(path, entry));
+        }
+
+        return result;
     }
 }
