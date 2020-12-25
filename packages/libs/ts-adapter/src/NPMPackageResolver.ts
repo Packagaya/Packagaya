@@ -90,6 +90,7 @@ export class NPMPackageResolver extends PackageResolver {
             name: packageConfiguration.name,
             version: packageConfiguration.version,
             packageType,
+            path: packagePath,
             dependencies: packageConfiguration.dependencies ?? {},
             devDependencies: packageConfiguration.devDependencies ?? {},
         };

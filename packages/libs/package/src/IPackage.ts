@@ -2,7 +2,6 @@ import { PackageType } from './PackageType';
 
 /**
  * Dependencies should not have an id or a package type
- * @see isIDependency ts-auto-guard
  */
 export type IDependency = Record<string, string>;
 
@@ -11,7 +10,7 @@ export type IDependency = Record<string, string>;
  *
  * @export
  * @interface IPackage
- * @see IPackage ts-auto-guard
+ * @see {isIPackage} ts-auto-guard:type-guard
  */
 export interface IPackage {
     /**
@@ -49,6 +48,14 @@ export interface IPackage {
      * @memberof IPackage
      */
     packageType: PackageType;
+
+    /**
+     * The path to the package
+     *
+     * @type {string}
+     * @memberof IPackage
+     */
+    path: string;
 
     /**7
      * The dependencies of the package.
