@@ -20,7 +20,7 @@ export interface IPackage {
      * @type {string}
      * @memberof IPackage
      */
-    name?: string;
+    name: string;
 
     /**
      * The version of the package.
@@ -30,7 +30,7 @@ export interface IPackage {
      * @type {string}
      * @memberof IPackage
      */
-    version?: string;
+    version: string;
 
     /**
      * The type of the package
