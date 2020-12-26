@@ -14,15 +14,6 @@ export type IDependency = Record<string, string>;
  */
 export interface IPackage {
     /**
-     * The unique id of the package.
-     * This can also be provided by the package configuration file.
-     *
-     * @type {string}
-     * @memberof IPackage
-     */
-    id: string;
-
-    /**
      * The name of the package.
      * This can also be provided by the package configuration file.
      *
