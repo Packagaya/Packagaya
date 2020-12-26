@@ -48,6 +48,15 @@ export interface IPackage {
      */
     path: string;
 
+    /**
+     * Contains a list of strings which point to
+     * directories on the file system
+     *
+     * @type {string[]}
+     * @memberof IPackage
+     */
+    sourceDirectories: string[];
+
     /**7
      * The dependencies of the package.
      *
