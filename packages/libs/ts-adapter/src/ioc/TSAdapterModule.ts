@@ -28,7 +28,7 @@ export default class TSAdapterModule extends ContainerModule {
             bind(Adapter).to(TSAdapter);
 
             // Bind the "sync-ts-paths" feature flag to the container
-            bind(TSServices.FeatureFlag).to(SyncTSPathsFlag);
+            bind(TSServices.FeatureFlag).to(SyncTSPathsFlag).inSingletonScope();
 
             bind<Template<any>>(Template).to(CreatePackageTemplate);
 
