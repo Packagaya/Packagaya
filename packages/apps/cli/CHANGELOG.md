@@ -1,3 +1,15 @@
+# [@packagaya/cli-v1.1.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/cli-v1.0.0...@packagaya/cli-v1.1.0) (2021-01-02)
+
+
+### Bug Fixes
+
+* **ts-adapter-module:** bound the CreatePackageTemplate correctly. Also fixed the build dependencies ([a48a2bd](https://github.com/Packagaya/Packagaya/commit/a48a2bd957340a0393cf396324723e6c4e706e7a))
+
+
+### Features
+
+* **build:** added support for ts project references ([fc353e5](https://github.com/Packagaya/Packagaya/commit/fc353e5e9d0f297514d3d18d30e173d7fa0261e2))
+
 # @packagaya/cli-v1.0.0 (2020-12-20)
 
 ### Bug Fixes
