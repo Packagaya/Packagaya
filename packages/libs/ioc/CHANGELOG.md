@@ -1,3 +1,10 @@
+# [@packagaya/ioc-v1.1.2](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.1.1...@packagaya/ioc-v1.1.2) (2021-01-02)
+
+
+### Bug Fixes
+
+* **ioc:** fixed package.json file ([9ca7023](https://github.com/Packagaya/Packagaya/commit/9ca70235ea17e50bdee805428c2f9ec09ec9b751))
+
 # [@packagaya/ioc-v1.1.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.1.0...@packagaya/ioc-v1.1.1) (2021-01-02)
 
 
