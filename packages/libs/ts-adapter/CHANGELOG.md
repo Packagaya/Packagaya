@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.2.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.0...@packagaya/ts-adapter-v1.2.1) (2021-01-02)
+
+
+### Bug Fixes
+
+* **synctspaths:** return the correct differences ([52fc3ed](https://github.com/Packagaya/Packagaya/commit/52fc3ed241ed215a9b190f0ee08171466b956949))
+
 # [@packagaya/ts-adapter-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.1.0...@packagaya/ts-adapter-v1.2.0) (2021-01-02)
 
 
