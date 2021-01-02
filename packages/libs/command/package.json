@@ -12,6 +12,10 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@packagaya/adapter": "*",
+        "@packagaya/config": "*",
+        "@packagaya/definitions": "*",
+        "@packagaya/template": "*",
         "inversify": "^5.0.5",
         "tslog": "^3.0.1"
     },

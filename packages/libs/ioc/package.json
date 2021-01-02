@@ -6,6 +6,12 @@
         "access": "public"
     },
     "scripts": {
+        "@packagaya/adapter": "*",
+        "@packagaya/command": "*",
+        "@packagaya/config": "*",
+        "@packagaya/definitions": "*",
+        "@packagaya/package": "*",
+        "@packagaya/template": "*",
         "build": "tsc",
         "build:watch": "tsc --watch"
     },
