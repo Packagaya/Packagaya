@@ -134,13 +134,16 @@ export class SyncTSPathsFlag extends FeatureFlag {
                                 detectIndent(configFileContents).indent,
                             ),
                         });
+
+                        return {
+                            filePath: typeScriptConfigurationFile,
+                            changes: computedDifferences,
+                        };
                     }
 
-                    return {
-                        filePath: typeScriptConfigurationFile,
-                        changes: computedDifferences,
-                    };
+                    return undefined;
                 })
+                .filter((entry) => entry !== undefined)
         );
     }
 
