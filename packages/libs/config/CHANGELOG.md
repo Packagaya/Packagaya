@@ -1,3 +1,10 @@
+# [@packagaya/config-v1.1.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.1.0...@packagaya/config-v1.1.1) (2021-01-02)
+
+
+### Bug Fixes
+
+* **packages:** fixed the dependencies ([5d7830f](https://github.com/Packagaya/Packagaya/commit/5d7830fe50c4bd7183c724e121b8c6e5a127c755))
+
 # [@packagaya/config-v1.1.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.0.0...@packagaya/config-v1.1.0) (2021-01-02)
 
 
