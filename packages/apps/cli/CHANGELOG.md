@@ -1,3 +1,10 @@
+# [@packagaya/cli-v1.1.4](https://github.com/Packagaya/Packagaya/compare/@packagaya/cli-v1.1.3...@packagaya/cli-v1.1.4) (2021-01-02)
+
+
+### Bug Fixes
+
+* **ioc:** rebound the logger ([91e5cf7](https://github.com/Packagaya/Packagaya/commit/91e5cf7138f6ef22b0aaf7c1336242e389d9393e))
+
 # [@packagaya/cli-v1.1.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/cli-v1.1.2...@packagaya/cli-v1.1.3) (2021-01-02)
 
 
