@@ -2,6 +2,8 @@ import { Command } from '@packagaya/command/dist/Command';
 import { CommandManager } from '@packagaya/command/dist/CommandManager';
 import { GenerateCommand } from '@packagaya/command/dist/commands/GenerateCommand';
 import { SyncCommand } from '@packagaya/command/dist/commands/SyncCommand';
+import { ExecuteCommand } from '@packagaya/command/dist/commands/SyncCommand/ExecuteCommand';
+import { InfoCommand } from '@packagaya/command/dist/commands/SyncCommand/InfoCommand';
 import { ContainerModule } from 'inversify';
 
 /**
@@ -20,6 +22,9 @@ export class CommandModule extends ContainerModule {
             // Bind the "sync" command to the container
             bind(Command).to(SyncCommand);
             bind(Command).to(GenerateCommand);
+
+            bind(InfoCommand).toSelf();
+            bind(ExecuteCommand).toSelf();
         });
     }
 }
