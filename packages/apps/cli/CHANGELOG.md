@@ -1,3 +1,10 @@
+# [@packagaya/cli-v1.1.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/cli-v1.1.0...@packagaya/cli-v1.1.1) (2021-01-02)
+
+
+### Bug Fixes
+
+* **binary:** fixed the require statement of the "packagaya.js" file ([8b7f7ab](https://github.com/Packagaya/Packagaya/commit/8b7f7ab53ec546c2f283cfe7d6c99f5b210fa004))
+
 # [@packagaya/cli-v1.1.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/cli-v1.0.0...@packagaya/cli-v1.1.0) (2021-01-02)
 
 
