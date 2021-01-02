@@ -17,5 +17,6 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "lib": ["ES2015"]
-    }
+    },
+    "references": []
 }

@@ -10,11 +10,22 @@
         "rootDir": "./src",
         "strict": true,
         "baseUrl": "./",
-        "paths": {},
+        "paths": {
+            "@packagaya/config/*": ["../config/*"],
+            "@packagaya/definitions/*": ["../definitions/*"]
+        },
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true
-    }
+    },
+    "references": [
+        {
+            "path": "../config/tsconfig.json"
+        },
+        {
+            "path": "../definitions/tsconfig.json"
+        }
+    ]
 }

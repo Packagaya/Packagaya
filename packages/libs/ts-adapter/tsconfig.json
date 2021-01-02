@@ -11,10 +11,10 @@
         "baseUrl": "./",
         "paths": {
             "@packagaya/adapter/*": ["../adapter/*"],
-            "@packagaya/command/*": ["../command/*"],
-            "@packagaya/template/*": ["../template/*"],
+            "@packagaya/config/*": ["../config/*"],
             "@packagaya/definitions/*": ["../definitions/*"],
-            "@packagaya/package/*": ["../package/*"]
+            "@packagaya/package/*": ["../package/*"],
+            "@packagaya/template/*": ["../template/*"]
         },
         "esModuleInterop": true,
         "experimentalDecorators": true,
@@ -28,16 +28,16 @@
             "path": "../adapter/tsconfig.json"
         },
         {
-            "path": "../command/tsconfig.json"
-        },
-        {
-            "path": "../template/tsconfig.json"
+            "path": "../config/tsconfig.json"
         },
         {
             "path": "../definitions/tsconfig.json"
         },
         {
             "path": "../package/tsconfig.json"
+        },
+        {
+            "path": "../template/tsconfig.json"
         }
     ]
 }
