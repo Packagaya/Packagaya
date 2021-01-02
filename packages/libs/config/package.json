@@ -15,6 +15,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@packagaya/definitions": "*",
         "ajv": "^6.12.6",
         "tslog": "^3.0.1"
     },

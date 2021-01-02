@@ -18,6 +18,10 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@packagaya/adapter": "*",
+        "@packagaya/command": "*",
+        "@packagaya/config": "*",
+        "@packagaya/ioc": "*",
         "inversify": "^5.0.1",
         "reflect-metadata": "^0.1.13",
         "tslog": "^3.0.1"
