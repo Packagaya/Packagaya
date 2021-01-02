@@ -1,3 +1,10 @@
+# [@packagaya/template-v1.1.2](https://github.com/Packagaya/Packagaya/compare/@packagaya/template-v1.1.1...@packagaya/template-v1.1.2) (2021-01-02)
+
+
+### Bug Fixes
+
+* **ioc:** rebound the logger ([91e5cf7](https://github.com/Packagaya/Packagaya/commit/91e5cf7138f6ef22b0aaf7c1336242e389d9393e))
+
 # [@packagaya/template-v1.1.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/template-v1.1.0...@packagaya/template-v1.1.1) (2021-01-02)
 
 
