@@ -1,3 +1,12 @@
+# [@packagaya/ioc-v1.1.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.0.0...@packagaya/ioc-v1.1.0) (2021-01-02)
+
+
+### Features
+
+* **build:** added support for ts project references ([fc353e5](https://github.com/Packagaya/Packagaya/commit/fc353e5e9d0f297514d3d18d30e173d7fa0261e2))
+* **packageresolver:** added support for NodeJS packages ([6097da9](https://github.com/Packagaya/Packagaya/commit/6097da930b2f7e7c1b753e28b638666d8092b2b2))
+* **SyncCommand:** split into multiple commands + info + execute command ([631f822](https://github.com/Packagaya/Packagaya/commit/631f82276e42c7ab9b29d27d62a9c745e3d2557b))
+
 # @packagaya/ioc-v1.0.0 (2020-12-21)
 
 
