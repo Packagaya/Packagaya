@@ -1,3 +1,10 @@
+# [@packagaya/process-v1.2.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/process-v1.2.0...@packagaya/process-v1.2.1) (2021-01-02)
+
+
+### Bug Fixes
+
+* **packages:** fixed the dependencies ([5d7830f](https://github.com/Packagaya/Packagaya/commit/5d7830fe50c4bd7183c724e121b8c6e5a127c755))
+
 # [@packagaya/process-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/process-v1.1.0...@packagaya/process-v1.2.0) (2021-01-02)
 
 
