@@ -7,7 +7,7 @@ import {
     writeFileSync,
 } from 'fs';
 import { injectable } from 'inversify';
-import { basename, extname, resolve } from 'path';
+import { basename, dirname, extname, relative, resolve } from 'path';
 
 /**
  * The LocalFileSystem class offers the possibillity to perform
@@ -48,6 +48,10 @@ export class LocalFileSystem {
      */
     public resolve = (...pathSegments: string[]): string =>
         resolve(...pathSegments);
+
+    public getRelativeTo(from: string, to: string) {
+        return relative(from, to);
+    }
 
     /**
      * Checks if the given path is a directory
@@ -92,6 +96,10 @@ export class LocalFileSystem {
             path,
             withExtension ? undefined : extname(basename(path)),
         );
+    }
+
+    public getDirectoryName(filePath: string) {
+        return dirname(filePath);
     }
 
     /**
