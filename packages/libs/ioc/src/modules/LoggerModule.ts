@@ -27,7 +27,7 @@ export class LoggerModule extends ContainerModule {
         super((bind) => {
             // Bind the logger class from tslog to
             // the global defined logger
-            bind(Logger).toConstantValue(logger);
+            bind(Logger.name).toConstantValue(logger);
         });
     }
 }

@@ -9,7 +9,7 @@ import { Command } from '../Command';
 @injectable()
 export class GenerateCommand extends Command {
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @inject(LocalFileSystem) private fileSystem: LocalFileSystem,
         @inject(TemplateManager) private templateManager: TemplateManager,
     ) {

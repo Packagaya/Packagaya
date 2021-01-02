@@ -1,12 +1,13 @@
-import { Container, inject, injectable } from 'inversify';
-import { Logger } from 'tslog';
-import { Adapter } from './Adapter';
 import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
+import { Container, inject, injectable } from 'inversify';
 import { dirname } from 'path';
+import { Logger } from 'tslog';
+
+import { Adapter } from './Adapter';
 import { ContainerBindingsLoader } from './ContainerBindingsLoader';
 import { IAdapterInformation } from './IAdapterInformation';
-import { isNPMConfig } from './INPMConfig.guard';
 import { INPMConfig } from './INPMConfig';
+import { isNPMConfig } from './INPMConfig.guard';
 import { ModuleLoader } from './ModuleLoader';
 
 /**
@@ -31,14 +32,13 @@ export class AdapterLoader {
      * @memberof AdapterLoader
      */
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @inject(LocalFileSystem) private localFileSystem: LocalFileSystem,
         @inject(Container.name) private container: Container,
         @inject(ContainerBindingsLoader)
         private containerBindingsLoader: ContainerBindingsLoader,
         @inject(ModuleLoader) private moduleLoader: ModuleLoader,
-    ) {
-    }
+    ) {}
 
     /**
      * Load the adapters
@@ -151,9 +151,9 @@ export class AdapterLoader {
                 // resolved based on the adapter directory path.
                 .map<IAdapterInformation>(
                     ({
-                         filePath,
-                         fileContents: { name, version, main, config },
-                     }) => {
+                        filePath,
+                        fileContents: { name, version, main, config },
+                    }) => {
                         const adapterDirectoryPath = dirname(filePath);
                         const mainEntrypoint = this.localFileSystem.resolve(
                             adapterDirectoryPath,
