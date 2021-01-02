@@ -78,7 +78,7 @@ export class SyncTSPathsFlag extends FeatureFlag {
                 .filter((entry) =>
                     Object.keys(packageImports).includes(entry.name),
                 )
-                .map<IDifference>((foundPackage) => {
+                .map<IDifference | undefined>((foundPackage) => {
                     const imports = packageImports[foundPackage.name];
                     const typeScriptConfigurationFile = this.fileSystem.resolve(
                         foundPackage.path,
@@ -143,7 +143,7 @@ export class SyncTSPathsFlag extends FeatureFlag {
 
                     return undefined;
                 })
-                .filter((entry) => entry !== undefined)
+                .filter((entry) => entry !== undefined) as IDifference[]
         );
     }
 
