@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.1.0...@packagaya/ts-adapter-v1.2.0) (2021-01-02)
+
+
+### Features
+
+* **readme:** added a readme file ([a4f5df7](https://github.com/Packagaya/Packagaya/commit/a4f5df7637ed780d4eb011998466123772abf2b9))
+
 # [@packagaya/ts-adapter-v1.1.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.0.0...@packagaya/ts-adapter-v1.1.0) (2021-01-02)
 
 
