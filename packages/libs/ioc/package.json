@@ -6,16 +6,16 @@
         "access": "public"
     },
     "scripts": {
+        "build": "tsc",
+        "build:watch": "tsc --watch"
+    },
+    "dependencies": {
         "@packagaya/adapter": "*",
         "@packagaya/command": "*",
         "@packagaya/config": "*",
         "@packagaya/definitions": "*",
         "@packagaya/package": "*",
         "@packagaya/template": "*",
-        "build": "tsc",
-        "build:watch": "tsc --watch"
-    },
-    "dependencies": {
         "ajv": "^6.12.6",
         "inversify": "^5.0.1",
         "tslog": "^3.0.1"
