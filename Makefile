@@ -9,6 +9,8 @@ install:
 
 build:
 	yarn workspace @packagaya/cli run build
+	yarn workspace @packagaya/process run build
+	yarn workspace @packagaya/ts-adapter run build
 
 release: build
 	yarn workspace @packagaya/definitions run semantic-release && echo "Executed release for the 'definitions' package!" || echo "Could not release the 'definitions' package!"
