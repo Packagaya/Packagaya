@@ -1,3 +1,3 @@
 #!/bin/env node
 
-require('../dist/main');
+require('@packagaya/cli/dist/main');
