@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.2.2](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.1...@packagaya/ts-adapter-v1.2.2) (2021-01-02)
+
+
+### Bug Fixes
+
+* **packages:** fixed the dependencies ([5d7830f](https://github.com/Packagaya/Packagaya/commit/5d7830fe50c4bd7183c724e121b8c6e5a127c755))
+
 # [@packagaya/ts-adapter-v1.2.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.0...@packagaya/ts-adapter-v1.2.1) (2021-01-02)
 
 
