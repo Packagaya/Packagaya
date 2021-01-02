@@ -47,6 +47,11 @@ export abstract class Command {
         logger.info(`The command "${this.name}" has the following subcommands`);
         this.subCommands.forEach((subCommand) => {
             logger.info(`- ${subCommand.name}`);
+
+            if (subCommand.help.length === 0) {
+                return;
+            }
+
             logger.info(`  Help:`);
             logger.info(`    ${subCommand.help}`);
         });
