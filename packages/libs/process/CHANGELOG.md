@@ -1,3 +1,10 @@
+# [@packagaya/process-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/process-v1.1.0...@packagaya/process-v1.2.0) (2021-01-02)
+
+
+### Features
+
+* **readme:** added a readme file ([6d65c40](https://github.com/Packagaya/Packagaya/commit/6d65c405b21e27997d12cc4b83bc13924c946917))
+
 # [@packagaya/process-v1.1.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/process-v1.0.0...@packagaya/process-v1.1.0) (2021-01-02)
 
 
