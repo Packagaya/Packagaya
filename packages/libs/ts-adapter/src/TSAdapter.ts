@@ -21,7 +21,7 @@ export class TSAdapter extends Adapter {
      * @memberof TSAdapter
      */
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @named(TSAdapter.name)
         @multiInject(TSServices.FeatureFlag)
         featureFlags: FeatureFlag[],

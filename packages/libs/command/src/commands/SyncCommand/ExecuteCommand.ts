@@ -8,7 +8,7 @@ import { Command } from '../../Command';
 @injectable()
 export class ExecuteCommand extends Command {
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @inject(FeatureFlagManager)
         private featureFlagManager: FeatureFlagManager,
     ) {

@@ -22,7 +22,7 @@ interface Answers extends Record<string, unknown> {
 @injectable()
 export class CreatePackageTemplate extends Template<Answers> {
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @inject(LocalFileSystem) private localFileSystem: LocalFileSystem,
         @inject(FileGenerator) private fileGenerator: FileGenerator<Answers>,
     ) {

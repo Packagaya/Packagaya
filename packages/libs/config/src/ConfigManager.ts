@@ -1,9 +1,10 @@
+import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
+import { Services } from '@packagaya/definitions/dist/Services';
+import Ajv from 'ajv';
 import { inject, injectable } from 'inversify';
 import { Logger } from 'tslog';
+
 import { IConfig } from './IConfig';
-import Ajv from 'ajv';
-import { Services } from '@packagaya/definitions/dist/Services';
-import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
 
 /**
  * The configuration manager will be used to load the
@@ -37,7 +38,7 @@ export class ConfigManager {
      * @memberof ConfigManager
      */
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @inject(Ajv) private ajv: Ajv.Ajv,
         @inject(Services.Schema.Config) private configSchemaName: string,
         @inject(LocalFileSystem) private localFileSystem: LocalFileSystem,

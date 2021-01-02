@@ -25,7 +25,7 @@ export class SyncCommand extends Command {
      * @memberof SyncCommand
      */
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @inject(InfoCommand) infoCommand: InfoCommand,
         @inject(ExecuteCommand) executeCommand: ExecuteCommand,
     ) {

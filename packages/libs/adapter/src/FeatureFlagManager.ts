@@ -23,7 +23,7 @@ export class FeatureFlagManager {
      * @param {Adapter[]} adapters The loaded adapters which are specified in the configuration file
      */
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @inject(LocalFileSystem) private fileSystem: LocalFileSystem,
         @multiInject(Adapter) adapters: Adapter[],
     ) {

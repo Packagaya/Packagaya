@@ -25,7 +25,7 @@ export class ContainerBindingsLoader {
      * @memberof ContainerBindingsLoader
      */
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @inject(Container.name) private container: Container,
         @inject(ModuleLoader) private moduleLoader: ModuleLoader,
     ) {}

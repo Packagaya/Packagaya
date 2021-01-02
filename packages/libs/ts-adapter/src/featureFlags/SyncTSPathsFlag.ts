@@ -32,7 +32,7 @@ export class SyncTSPathsFlag extends FeatureFlag {
      * @memberof SyncTSPathsFlag
      */
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @inject(PackageManager) private packageManager: PackageManager,
         @inject(LocalFileSystem) private fileSystem: LocalFileSystem,
     ) {

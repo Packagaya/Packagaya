@@ -24,7 +24,7 @@ export class Application {
      * @memberof Application
      */
     constructor(
-        @inject(Logger) private logger: Logger,
+        @inject(Logger.name) private logger: Logger,
         @inject(ConfigManager) private configManager: ConfigManager,
         @inject(AdapterLoader) private adapterLoader: AdapterLoader,
         @inject(Container.name) private container: Container,
