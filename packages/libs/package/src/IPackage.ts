@@ -2,30 +2,17 @@ import { PackageType } from './PackageType';
 
 /**
  * Dependencies should not have an id or a package type
- * @see isIDependency ts-auto-guard
  */
-export type IDependency = Omit<IPackage, 'id' | 'packageType'> &
-    Required<
-        Pick<IPackage, 'name' | 'version' | 'dependencies' | 'devDependencies'>
-    >;
+export type IDependency = Record<string, string>;
 
 /**
  * Defines the basic structure of a managable package
  *
  * @export
  * @interface IPackage
- * @see IPackage ts-auto-guard
+ * @see {isIPackage} ts-auto-guard:type-guard
  */
 export interface IPackage {
-    /**
-     * The unique id of the package.
-     * This can also be provided by the package configuration file.
-     *
-     * @type {string}
-     * @memberof IPackage
-     */
-    id: string;
-
     /**
      * The name of the package.
      * This can also be provided by the package configuration file.
@@ -33,7 +20,7 @@ export interface IPackage {
      * @type {string}
      * @memberof IPackage
      */
-    name?: string;
+    name: string;
 
     /**
      * The version of the package.
@@ -43,7 +30,7 @@ export interface IPackage {
      * @type {string}
      * @memberof IPackage
      */
-    version?: string;
+    version: string;
 
     /**
      * The type of the package
@@ -53,19 +40,36 @@ export interface IPackage {
      */
     packageType: PackageType;
 
+    /**
+     * The path to the package
+     *
+     * @type {string}
+     * @memberof IPackage
+     */
+    path: string;
+
+    /**
+     * Contains a list of strings which point to
+     * directories on the file system
+     *
+     * @type {string[]}
+     * @memberof IPackage
+     */
+    sourceDirectories: string[];
+
     /**7
      * The dependencies of the package.
      *
-     * @type {IPackage[]}
+     * @type {IDependency}
      * @memberof IPackage
      */
-    dependencies: IDependency[];
+    dependencies: IDependency;
 
     /**
      * The development dependencies of the package.
      *
-     * @type {IPackage[]}
+     * @type {IDependency}
      * @memberof IPackage
      */
-    devDependencies: IDependency[];
+    devDependencies: IDependency;
 }

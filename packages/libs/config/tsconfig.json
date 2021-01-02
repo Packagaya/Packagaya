@@ -3,6 +3,7 @@
     "compilerOptions": {
         "declaration": true,
         "declarationMap": true,
+        "composite": true,
         "sourceMap": true,
         "outDir": "./dist",
         "rootDir": "./src",
@@ -13,5 +14,11 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "resolveJsonModule": true
-    }
+    },
+    "references": [
+        {
+            "path": "../definitions/tsconfig.json"
+        }
+    ],
+    "include": ["./src/**/*.ts", "./src/**/*.json"]
 }

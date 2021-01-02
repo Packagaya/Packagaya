@@ -1,5 +1,6 @@
 import { IConfig } from '@packagaya/config/dist/IConfig';
 import { injectable, unmanaged } from 'inversify';
+import { Logger } from 'tslog';
 
 /**
  * Defines a basic command
@@ -35,4 +36,19 @@ export abstract class Command {
         projectSpecification: IConfig,
         commandArguments: string[],
     ): Promise<void>;
+
+    /**
+     * Logs all available sub commands to the given logger
+     *
+     * @param {Logger} logger The logger which should be used for logging the messages
+     * @memberof Command
+     */
+    public logSubCommands(logger: Logger) {
+        logger.info(`The command "${this.name}" has the following subcommands`);
+        this.subCommands.forEach((subCommand) => {
+            logger.info(`- ${subCommand.name}`);
+            logger.info(`  Help:`);
+            logger.info(`    ${subCommand.help}`);
+        });
+    }
 }

@@ -2,28 +2,9 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "baseUrl": "./",
-        "paths": {
-            "@packagaya/cli/*": ["./packages/apps/cli/*"],
-            "@packagaya/package/*": ["./packages/libs/package/*"]
-        },
         "declaration": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true
-    },
-    "references": [
-        {
-            "path": "./packages/apps/cli/tsconfig.json"
-        },
-        {
-            "path": "./packages/libs/package/tsconfig.json"
-        },
-        {
-            "path": "./packages/libs/ioc/tsconfig.json"
-        },
-        {
-            "path": "./packages/libs/config/tsconfig.json"
-        }
-    ]
+    }
 }

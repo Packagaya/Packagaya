@@ -6,12 +6,26 @@
         "rootDir": "./src",
         "baseUrl": "./",
         "paths": {
-            "@packagaya/ioc/*": ["../../libs/ioc/*"],
             "@packagaya/adapter/*": ["../../libs/adapter/*"],
             "@packagaya/command/*": ["../../libs/command/*"],
-            "@packagaya/config/*": ["../../libs/config/*"]
+            "@packagaya/config/*": ["../../libs/config/*"],
+            "@packagaya/ioc/*": ["../../libs/ioc/*"]
         },
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
-    }
+    },
+    "references": [
+        {
+            "path": "../../libs/adapter/tsconfig.json"
+        },
+        {
+            "path": "../../libs/command/tsconfig.json"
+        },
+        {
+            "path": "../../libs/config/tsconfig.json"
+        },
+        {
+            "path": "../../libs/ioc/tsconfig.json"
+        }
+    ]
 }

@@ -4,11 +4,19 @@
         "declaration": true,
         "declarationMap": true,
         "sourceMap": true,
+        "composite": true,
         "outDir": "./dist",
         "rootDir": "./src",
         "baseUrl": "./",
-        "paths": {},
+        "paths": {
+            "@packagaya/config/*": ["../config/*"]
+        },
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
-    }
+    },
+    "references": [
+        {
+            "path": "../config/tsconfig.json"
+        }
+    ]
 }

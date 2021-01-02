@@ -6,6 +6,7 @@ jobs:
     test:
         name: Testing project
         runs-on: ubuntu-latest
+        if: "!contains(github.event.head_commit.message, 'skip ci')"
         strategy:
             matrix:
                 node-version: [13.x, 14.x, 15.x]
@@ -18,4 +19,7 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node-version }}
-            - run: make test
+            - name: Install all dependencies
+              run: make install
+            - name: Test the source code
+              run: make test

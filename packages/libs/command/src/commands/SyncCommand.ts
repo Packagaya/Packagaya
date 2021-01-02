@@ -3,7 +3,8 @@ import { inject, injectable } from 'inversify';
 import { Logger } from 'tslog';
 
 import { Command } from '../Command';
-import { FeatureFlagManager } from '@packagaya/adapter/dist/FeatureFlagManager';
+import { ExecuteCommand } from './SyncCommand/ExecuteCommand';
+import { InfoCommand } from './SyncCommand/InfoCommand';
 
 /**
  * Defines the "sync" command
@@ -25,10 +26,10 @@ export class SyncCommand extends Command {
      */
     constructor(
         @inject(Logger) private logger: Logger,
-        @inject(FeatureFlagManager)
-        private featureFlagManager: FeatureFlagManager,
+        @inject(InfoCommand) infoCommand: InfoCommand,
+        @inject(ExecuteCommand) executeCommand: ExecuteCommand,
     ) {
-        super('sync', ['s'], [], '');
+        super('sync', ['s'], [infoCommand, executeCommand], '');
     }
 
     /**
@@ -39,8 +40,6 @@ export class SyncCommand extends Command {
      * @memberof SyncCommand
      */
     async execute(projectSpecification: IConfig, commandArguments: string[]) {
-        this.logger.info('Running the sync command');
-
-        await this.featureFlagManager.runFeatureFlags(commandArguments, true);
+        this.logSubCommands(this.logger);
     }
 }

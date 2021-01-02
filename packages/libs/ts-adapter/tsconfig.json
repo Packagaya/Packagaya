@@ -3,15 +3,18 @@
         "target": "es5",
         "module": "commonjs",
         "sourceMap": true,
+        "declaration": true,
+        "composite": true,
         "outDir": "./dist",
         "rootDir": "./src",
         "strict": true,
         "baseUrl": "./",
         "paths": {
             "@packagaya/adapter/*": ["../adapter/*"],
-            "@packagaya/command/*": ["../command/*"],
-            "@packagaya/template/*": ["../template/*"],
-            "@packagaya/definitions/*": ["../definitions/*"]
+            "@packagaya/config/*": ["../config/*"],
+            "@packagaya/definitions/*": ["../definitions/*"],
+            "@packagaya/package/*": ["../package/*"],
+            "@packagaya/template/*": ["../template/*"]
         },
         "esModuleInterop": true,
         "experimentalDecorators": true,
@@ -19,5 +22,22 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "typeRoots": ["./types/"]
-    }
+    },
+    "references": [
+        {
+            "path": "../adapter/tsconfig.json"
+        },
+        {
+            "path": "../config/tsconfig.json"
+        },
+        {
+            "path": "../definitions/tsconfig.json"
+        },
+        {
+            "path": "../package/tsconfig.json"
+        },
+        {
+            "path": "../template/tsconfig.json"
+        }
+    ]
 }

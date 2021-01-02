@@ -6,6 +6,7 @@ import { Logger } from 'tslog';
 // want a single instance across the process
 const logger = new Logger({
     minLevel: (process.env.LOG_LEVEL as 'info') ?? 'info',
+    displayFunctionName: false,
 });
 
 /**
