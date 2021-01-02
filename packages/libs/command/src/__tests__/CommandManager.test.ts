@@ -13,6 +13,7 @@ describe('CommandManager', () => {
         subCommands: [],
         help: '',
         execute: jest.fn(),
+        logSubCommands: jest.fn(),
     };
     const removeCommand = {
         name: 'remove',
@@ -20,6 +21,7 @@ describe('CommandManager', () => {
         subCommands: [],
         help: '',
         execute: jest.fn(),
+        logSubCommands: jest.fn(),
     };
     const adminCommand: Command = {
         name: 'admin',
@@ -27,6 +29,7 @@ describe('CommandManager', () => {
         subCommands: [setCommand, removeCommand],
         help: '',
         execute: jest.fn(),
+        logSubCommands: jest.fn(),
     };
 
     beforeEach(() => {
