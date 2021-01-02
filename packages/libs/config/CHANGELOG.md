@@ -1,3 +1,10 @@
+# [@packagaya/config-v1.1.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.0.0...@packagaya/config-v1.1.0) (2021-01-02)
+
+
+### Features
+
+* **build:** added support for ts project references ([fc353e5](https://github.com/Packagaya/Packagaya/commit/fc353e5e9d0f297514d3d18d30e173d7fa0261e2))
+
 # @packagaya/config-v1.0.0 (2020-12-20)
 
 ### Bug Fixes
