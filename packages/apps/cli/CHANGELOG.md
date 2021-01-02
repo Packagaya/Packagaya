@@ -1,3 +1,10 @@
+# [@packagaya/cli-v1.1.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/cli-v1.1.2...@packagaya/cli-v1.1.3) (2021-01-02)
+
+
+### Bug Fixes
+
+* **entrypoint:** use the correct path to the "env" executable ([4457e2b](https://github.com/Packagaya/Packagaya/commit/4457e2b75923adc2c2f3cf35c79975c4632054af))
+
 # [@packagaya/cli-v1.1.2](https://github.com/Packagaya/Packagaya/compare/@packagaya/cli-v1.1.1...@packagaya/cli-v1.1.2) (2021-01-02)
 
 
