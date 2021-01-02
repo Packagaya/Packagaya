@@ -1,5 +1,11 @@
 import { IConfig } from '@packagaya/config/dist/IConfig';
+import { Change } from 'diff';
 import { injectable, unmanaged } from 'inversify';
+
+export interface IDifference {
+    filePath: string;
+    changes: Change[];
+}
 
 /**
  * FeatureFlag.
@@ -25,7 +31,7 @@ export abstract class FeatureFlag {
      */
     public abstract getDifferences(
         projectSpecification: IConfig,
-    ): Promise<string[]>;
+    ): Promise<IDifference[]>;
 
     /**
      * Fixes all differences. This method gets only executed when the "fixable"
