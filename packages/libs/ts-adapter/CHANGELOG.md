@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.2.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.2...@packagaya/ts-adapter-v1.2.3) (2021-01-02)
+
+
+### Bug Fixes
+
+* **ioc:** rebound the logger ([91e5cf7](https://github.com/Packagaya/Packagaya/commit/91e5cf7138f6ef22b0aaf7c1336242e389d9393e))
+
 # [@packagaya/ts-adapter-v1.2.2](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.1...@packagaya/ts-adapter-v1.2.2) (2021-01-02)
 
 
