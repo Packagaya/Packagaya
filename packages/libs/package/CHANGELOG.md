@@ -1,3 +1,10 @@
+# [@packagaya/package-v1.1.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/package-v1.1.2...@packagaya/package-v1.1.3) (2021-01-07)
+
+
+### Bug Fixes
+
+* **ioc:** fixed the binding of the PackageManager ([b991962](https://github.com/Packagaya/Packagaya/commit/b99196202c28dfa549138ff241b2d0fa72255721))
+
 # [@packagaya/package-v1.1.2](https://github.com/Packagaya/Packagaya/compare/@packagaya/package-v1.1.1...@packagaya/package-v1.1.2) (2021-01-07)
 
 
