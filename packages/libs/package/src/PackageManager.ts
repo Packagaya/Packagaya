@@ -20,7 +20,7 @@ export class PackageManager {
      * @memberof PackageManager
      */
     constructor(
-        @multiInject(PackageResolver)
+        @multiInject(PackageResolver.name)
         private packageResolvers: PackageResolver[],
     ) {}
 

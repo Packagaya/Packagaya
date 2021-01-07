@@ -32,7 +32,7 @@ export default class TSAdapterModule extends ContainerModule {
 
             bind<Template<any>>(Template).to(CreatePackageTemplate);
 
-            bind(PackageResolver).to(NPMPackageResolver);
+            bind(PackageResolver.name).to(NPMPackageResolver);
         });
     }
 }
