@@ -66,7 +66,7 @@ export class ConfigManager {
 
         if (!this.localFileSystem.checkIfFileExists(configurationFilePath)) {
             throw new Error(
-                `Configuration file at path ${configurationFilePath}`,
+                `Configuration file at path ${configurationFilePath} does not exists`,
             );
         }
 
