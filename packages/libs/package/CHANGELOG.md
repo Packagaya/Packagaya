@@ -1,3 +1,10 @@
+# [@packagaya/package-v1.1.2](https://github.com/Packagaya/Packagaya/compare/@packagaya/package-v1.1.1...@packagaya/package-v1.1.2) (2021-01-07)
+
+
+### Bug Fixes
+
+* fixed build for the "package" package ([7074c05](https://github.com/Packagaya/Packagaya/commit/7074c059e4cee6918d1a74b6979f59f3b911f2be))
+
 # [@packagaya/package-v1.1.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/package-v1.1.0...@packagaya/package-v1.1.1) (2021-01-02)
 
 
