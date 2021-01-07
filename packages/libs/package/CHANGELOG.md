@@ -1,3 +1,10 @@
+# [@packagaya/package-v1.1.4](https://github.com/Packagaya/Packagaya/compare/@packagaya/package-v1.1.3...@packagaya/package-v1.1.4) (2021-01-07)
+
+
+### Bug Fixes
+
+* **packagemanager:** fixed the container bindings for the PackageResolver ([172ba23](https://github.com/Packagaya/Packagaya/commit/172ba2348ba3fbe8a99ac2469911a423c0d26e0d))
+
 # [@packagaya/package-v1.1.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/package-v1.1.2...@packagaya/package-v1.1.3) (2021-01-07)
 
 
