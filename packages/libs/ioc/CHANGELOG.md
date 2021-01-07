@@ -1,3 +1,10 @@
+# [@packagaya/ioc-v1.1.5](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.1.4...@packagaya/ioc-v1.1.5) (2021-01-07)
+
+
+### Bug Fixes
+
+* **ioc:** fixed the binding of the PackageManager ([b991962](https://github.com/Packagaya/Packagaya/commit/b99196202c28dfa549138ff241b2d0fa72255721))
+
 # [@packagaya/ioc-v1.1.4](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.1.3...@packagaya/ioc-v1.1.4) (2021-01-07)
 
 
