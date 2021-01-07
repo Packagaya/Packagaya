@@ -1,3 +1,10 @@
+# [@packagaya/ioc-v1.1.4](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.1.3...@packagaya/ioc-v1.1.4) (2021-01-07)
+
+
+### Bug Fixes
+
+* **ioc:** rebound the PackageManager ([2ab365b](https://github.com/Packagaya/Packagaya/commit/2ab365ba0e70b7e508d0858f1e3fe1ee82f0dbd2))
+
 # [@packagaya/ioc-v1.1.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.1.2...@packagaya/ioc-v1.1.3) (2021-01-02)
 
 
