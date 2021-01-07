@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.2.4](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.3...@packagaya/ts-adapter-v1.2.4) (2021-01-07)
+
+
+### Bug Fixes
+
+* **ioc:** rebound the PackageManager ([2ab365b](https://github.com/Packagaya/Packagaya/commit/2ab365ba0e70b7e508d0858f1e3fe1ee82f0dbd2))
+
 # [@packagaya/ts-adapter-v1.2.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.2...@packagaya/ts-adapter-v1.2.3) (2021-01-02)
 
 
