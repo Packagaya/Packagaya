@@ -13,7 +13,7 @@ import { PackageType } from './PackageType';
  * @class PackageManager
  */
 @injectable()
-export abstract class PackageManager {
+export class PackageManager {
     /**
      * Creates an instance of PackageManager.
      * @param {PackageResolver[]} packageResolvers The package resolvers that resolve manageable packages
