@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.2.6](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.5...@packagaya/ts-adapter-v1.2.6) (2021-01-07)
+
+
+### Bug Fixes
+
+* **packagemanager:** fixed the container bindings for the PackageResolver ([172ba23](https://github.com/Packagaya/Packagaya/commit/172ba2348ba3fbe8a99ac2469911a423c0d26e0d))
+
 # [@packagaya/ts-adapter-v1.2.5](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.4...@packagaya/ts-adapter-v1.2.5) (2021-01-07)
 
 
