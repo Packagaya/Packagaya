@@ -1,3 +1,10 @@
+# [@packagaya/cli-v1.1.5](https://github.com/Packagaya/Packagaya/compare/@packagaya/cli-v1.1.4...@packagaya/cli-v1.1.5) (2021-01-08)
+
+
+### Bug Fixes
+
+* **ioc:** refactored ALL container bindings ([14d503c](https://github.com/Packagaya/Packagaya/commit/14d503cd2f43b023d01919f8145cfc2021905d6e))
+
 # [@packagaya/cli-v1.1.4](https://github.com/Packagaya/Packagaya/compare/@packagaya/cli-v1.1.3...@packagaya/cli-v1.1.4) (2021-01-02)
 
 
