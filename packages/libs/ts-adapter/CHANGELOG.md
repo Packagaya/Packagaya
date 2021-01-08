@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.2.8](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.7...@packagaya/ts-adapter-v1.2.8) (2021-01-08)
+
+
+### Bug Fixes
+
+* **createpackagetemplate:** fixed the name of the package type question ([c9c48a1](https://github.com/Packagaya/Packagaya/commit/c9c48a138d5e52880aac6e5608308be46b800867))
+
 # [@packagaya/ts-adapter-v1.2.7](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.6...@packagaya/ts-adapter-v1.2.7) (2021-01-08)
 
 
