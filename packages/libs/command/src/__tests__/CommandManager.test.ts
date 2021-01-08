@@ -1,4 +1,5 @@
 import { IConfig } from '@packagaya/config/dist/IConfig';
+import { HelpCommand } from 'src/commands/HelpCommand';
 
 import { Command } from '../Command';
 import { CommandManager } from '../CommandManager';
@@ -32,12 +33,20 @@ describe('CommandManager', () => {
         logSubCommands: jest.fn(),
     };
 
+    const helpCommand: Command = {
+        name: 'admin',
+        aliases: ['ad'],
+        subCommands: [setCommand, removeCommand],
+        help: '',
+        execute: jest.fn(),
+        logSubCommands: jest.fn(),
+    };
+
     beforeEach(() => {
-        commandManager = new CommandManager([
-            setCommand,
-            removeCommand,
-            adminCommand,
-        ]);
+        commandManager = new CommandManager(
+            [setCommand, removeCommand, adminCommand],
+            helpCommand as HelpCommand,
+        );
     });
 
     it('should be instantiable', () => {

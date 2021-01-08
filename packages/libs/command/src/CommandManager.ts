@@ -1,7 +1,8 @@
 import { IConfig } from '@packagaya/config/dist/IConfig';
-import { injectable, multiInject } from 'inversify';
+import { inject, injectable, multiInject } from 'inversify';
 
 import { Command } from './Command';
+import { HelpCommand } from './commands/HelpCommand';
 
 @injectable()
 export class CommandManager {
@@ -12,7 +13,10 @@ export class CommandManager {
      */
     constructor(
         @multiInject(Command.name) private readonly commands: Command[],
-    ) {}
+        @inject(HelpCommand.name) helpCommand: HelpCommand,
+    ) {
+        this.registerCommand(helpCommand);
+    }
 
     /**
      * Returns all registered commands

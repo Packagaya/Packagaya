@@ -25,7 +25,12 @@ export class SyncCommand extends Command {
         @inject(InfoCommand.name) infoCommand: InfoCommand,
         @inject(ExecuteCommand.name) executeCommand: ExecuteCommand,
     ) {
-        super('sync', ['s'], [infoCommand, executeCommand], '');
+        super(
+            'sync',
+            ['s'],
+            [infoCommand, executeCommand],
+            'Synchronize all differences between the code and configuration files based on feature flags',
+        );
     }
 
     /**

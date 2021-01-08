@@ -1,5 +1,4 @@
 import { IConfig } from '@packagaya/config/dist/IConfig';
-import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
 import { TemplateManager } from '@packagaya/template/dist/TemplateManager';
 import { inject, injectable } from 'inversify';
 import { Logger } from 'tslog';
@@ -10,10 +9,14 @@ import { Command } from '../Command';
 export class GenerateCommand extends Command {
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(LocalFileSystem.name) private fileSystem: LocalFileSystem,
         @inject(TemplateManager.name) private templateManager: TemplateManager,
     ) {
-        super('generate', ['g'], [], '');
+        super(
+            'generate',
+            ['g'],
+            [],
+            'Quickly scaffold new files / directories based on templates',
+        );
     }
 
     public async execute(
@@ -22,6 +25,10 @@ export class GenerateCommand extends Command {
     ) {
         if (commandArguments.length === 0) {
             this.logger.error('No template name was given');
+            this.logger.info(`The following templates are available:`);
+            for (const templateName of this.templateManager.getTemplateNames()) {
+                this.logger.info(`- ${templateName}`);
+            }
             return;
         }
 
