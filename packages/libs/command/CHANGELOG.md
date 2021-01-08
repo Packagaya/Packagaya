@@ -1,3 +1,10 @@
+# [@packagaya/command-v1.1.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/command-v1.1.2...@packagaya/command-v1.1.3) (2021-01-08)
+
+
+### Bug Fixes
+
+* **ioc:** refactored ALL container bindings ([14d503c](https://github.com/Packagaya/Packagaya/commit/14d503cd2f43b023d01919f8145cfc2021905d6e))
+
 # [@packagaya/command-v1.1.2](https://github.com/Packagaya/Packagaya/compare/@packagaya/command-v1.1.1...@packagaya/command-v1.1.2) (2021-01-02)
 
 
