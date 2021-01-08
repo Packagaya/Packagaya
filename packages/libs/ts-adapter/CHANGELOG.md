@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.2.7](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.6...@packagaya/ts-adapter-v1.2.7) (2021-01-08)
+
+
+### Bug Fixes
+
+* **ioc:** refactored ALL container bindings ([14d503c](https://github.com/Packagaya/Packagaya/commit/14d503cd2f43b023d01919f8145cfc2021905d6e))
+
 # [@packagaya/ts-adapter-v1.2.6](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.5...@packagaya/ts-adapter-v1.2.6) (2021-01-07)
 
 
