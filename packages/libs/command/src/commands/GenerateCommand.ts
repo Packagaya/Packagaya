@@ -22,6 +22,10 @@ export class GenerateCommand extends Command {
     ) {
         if (commandArguments.length === 0) {
             this.logger.error('No template name was given');
+            this.logger.info(`The following templates are available:`);
+            for (const templateName of this.templateManager.getTemplateNames()) {
+                this.logger.info(`- ${templateName}`);
+            }
             return;
         }
 
