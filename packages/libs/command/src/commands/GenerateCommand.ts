@@ -11,7 +11,12 @@ export class GenerateCommand extends Command {
         @inject(Logger.name) private logger: Logger,
         @inject(TemplateManager.name) private templateManager: TemplateManager,
     ) {
-        super('generate', ['g'], [], '');
+        super(
+            'generate',
+            ['g'],
+            [],
+            'Quickly scaffold new files / directories based on templates',
+        );
     }
 
     public async execute(
