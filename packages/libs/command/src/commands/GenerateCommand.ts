@@ -1,5 +1,4 @@
 import { IConfig } from '@packagaya/config/dist/IConfig';
-import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
 import { TemplateManager } from '@packagaya/template/dist/TemplateManager';
 import { inject, injectable } from 'inversify';
 import { Logger } from 'tslog';
@@ -10,7 +9,6 @@ import { Command } from '../Command';
 export class GenerateCommand extends Command {
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(LocalFileSystem.name) private fileSystem: LocalFileSystem,
         @inject(TemplateManager.name) private templateManager: TemplateManager,
     ) {
         super('generate', ['g'], [], '');
