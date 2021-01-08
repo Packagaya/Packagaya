@@ -23,8 +23,9 @@ interface Answers extends Record<string, unknown> {
 export class CreatePackageTemplate extends Template<Answers> {
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(LocalFileSystem) private localFileSystem: LocalFileSystem,
-        @inject(FileGenerator) private fileGenerator: FileGenerator<Answers>,
+        @inject(LocalFileSystem.name) private localFileSystem: LocalFileSystem,
+        @inject(FileGenerator.name)
+        private fileGenerator: FileGenerator<Answers>,
     ) {
         super('ts:create-package');
     }

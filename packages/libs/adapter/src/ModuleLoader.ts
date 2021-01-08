@@ -18,7 +18,7 @@ export class ModuleLoader {
      */
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(LocalFileSystem) private localFileSystem: LocalFileSystem,
+        @inject(LocalFileSystem.name) private localFileSystem: LocalFileSystem,
     ) {}
 
     /**

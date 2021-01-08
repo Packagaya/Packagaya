@@ -10,7 +10,9 @@ export class CommandManager {
      * @param {Command[]} commands The commands which are managed by the command manager
      * @memberof CommandManager
      */
-    constructor(@multiInject(Command) private readonly commands: Command[]) {}
+    constructor(
+        @multiInject(Command.name) private readonly commands: Command[],
+    ) {}
 
     /**
      * Returns all registered commands

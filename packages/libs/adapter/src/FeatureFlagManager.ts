@@ -24,8 +24,8 @@ export class FeatureFlagManager {
      */
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(LocalFileSystem) private fileSystem: LocalFileSystem,
-        @multiInject(Adapter) adapters: Adapter[],
+        @inject(LocalFileSystem.name) private fileSystem: LocalFileSystem,
+        @multiInject(Adapter.name) adapters: Adapter[],
     ) {
         this.featureFlags = adapters.reduce<FeatureFlag[]>(
             (acc, entry) => [...acc, ...entry.featureFlags],

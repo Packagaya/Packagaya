@@ -34,7 +34,7 @@ export class SyncTSPathsFlag extends FeatureFlag {
     constructor(
         @inject(Logger.name) private logger: Logger,
         @inject(PackageManager.name) private packageManager: PackageManager,
-        @inject(LocalFileSystem) private fileSystem: LocalFileSystem,
+        @inject(LocalFileSystem.name) private fileSystem: LocalFileSystem,
     ) {
         super('sync-ts-paths', true);
     }

@@ -23,7 +23,7 @@ export class NPMPackageResolver extends PackageResolver {
      */
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(LocalFileSystem) private fileSystem: LocalFileSystem,
+        @inject(LocalFileSystem.name) private fileSystem: LocalFileSystem,
     ) {
         super();
     }

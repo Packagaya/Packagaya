@@ -9,7 +9,7 @@ import { Command } from '../../Command';
 export class ExecuteCommand extends Command {
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(FeatureFlagManager)
+        @inject(FeatureFlagManager.name)
         private featureFlagManager: FeatureFlagManager,
     ) {
         super('execute', ['e'], [], 'Fixes the differences');

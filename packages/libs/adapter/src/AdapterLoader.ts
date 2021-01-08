@@ -33,11 +33,11 @@ export class AdapterLoader {
      */
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(LocalFileSystem) private localFileSystem: LocalFileSystem,
+        @inject(LocalFileSystem.name) private localFileSystem: LocalFileSystem,
         @inject(Container.name) private container: Container,
-        @inject(ContainerBindingsLoader)
+        @inject(ContainerBindingsLoader.name)
         private containerBindingsLoader: ContainerBindingsLoader,
-        @inject(ModuleLoader) private moduleLoader: ModuleLoader,
+        @inject(ModuleLoader.name) private moduleLoader: ModuleLoader,
     ) {}
 
     /**

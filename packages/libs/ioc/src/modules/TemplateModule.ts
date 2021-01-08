@@ -19,13 +19,13 @@ export class TemplateModule extends ContainerModule {
     constructor() {
         super((bind) => {
             // Bind the default template engine to the handlebars engine
-            bind(TemplateEngine).to(HandlebarsEngine);
+            bind(TemplateEngine.name).to(HandlebarsEngine);
 
             // Bind the template manager which manages all the templates from the adapters
-            bind(TemplateManager).toSelf();
+            bind(TemplateManager.name).to(TemplateManager);
 
             // Bind the template file based generator
-            bind(FileGenerator).toSelf();
+            bind(FileGenerator.name).to(FileGenerator);
         });
     }
 }

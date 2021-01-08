@@ -22,8 +22,8 @@ export class FileGenerator<ContextType> {
      */
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(LocalFileSystem) private fileSystem: LocalFileSystem,
-        @inject(TemplateEngine) private templateEngine: TemplateEngine,
+        @inject(LocalFileSystem.name) private fileSystem: LocalFileSystem,
+        @inject(TemplateEngine.name) private templateEngine: TemplateEngine,
     ) {}
 
     /**

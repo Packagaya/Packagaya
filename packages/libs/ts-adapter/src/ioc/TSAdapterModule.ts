@@ -25,12 +25,12 @@ export default class TSAdapterModule extends ContainerModule {
         super((bind) => {
             // Bind the typescript adapter
             bind(TSAdapter.name).to(TSAdapter);
-            bind(Adapter).to(TSAdapter);
+            bind(Adapter.name).to(TSAdapter);
 
             // Bind the "sync-ts-paths" feature flag to the container
             bind(TSServices.FeatureFlag).to(SyncTSPathsFlag).inSingletonScope();
 
-            bind<Template<any>>(Template).to(CreatePackageTemplate);
+            bind<Template<any>>(Template.name).to(CreatePackageTemplate);
 
             bind(PackageResolver.name).to(NPMPackageResolver);
         });

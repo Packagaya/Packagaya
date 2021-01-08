@@ -17,14 +17,14 @@ export class CommandModule extends ContainerModule {
     constructor() {
         super((bind) => {
             // Bind the command manager to the container
-            bind(CommandManager).toSelf().inSingletonScope();
+            bind(CommandManager.name).to(CommandManager).inSingletonScope();
 
             // Bind the "sync" command to the container
-            bind(Command).to(SyncCommand);
-            bind(Command).to(GenerateCommand);
+            bind(Command.name).to(SyncCommand);
+            bind(Command.name).to(GenerateCommand);
 
-            bind(InfoCommand).toSelf();
-            bind(ExecuteCommand).toSelf();
+            bind(InfoCommand.name).to(InfoCommand);
+            bind(ExecuteCommand.name).to(ExecuteCommand);
         });
     }
 }

@@ -1,14 +1,15 @@
-import { ContainerModule } from 'inversify';
-import Ajv from 'ajv';
-import ConfigSchema from '../ConfigSchema.json';
 import { Services } from '@packagaya/definitions/dist/Services';
+import Ajv from 'ajv';
+import { ContainerModule } from 'inversify';
+
+import ConfigSchema from '../ConfigSchema.json';
 
 export class ValidatorModule extends ContainerModule {
     constructor() {
         super((bind) => {
             bind(Services.Schema.Config).toConstantValue('config');
 
-            bind(Ajv).toDynamicValue(({ container }) => {
+            bind(Ajv.name).toDynamicValue(({ container }) => {
                 const ajv = new Ajv();
 
                 ajv.addSchema(
