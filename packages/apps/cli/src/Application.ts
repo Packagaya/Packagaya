@@ -25,8 +25,8 @@ export class Application {
      */
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(ConfigManager) private configManager: ConfigManager,
-        @inject(AdapterLoader) private adapterLoader: AdapterLoader,
+        @inject(ConfigManager.name) private configManager: ConfigManager,
+        @inject(AdapterLoader.name) private adapterLoader: AdapterLoader,
         @inject(Container.name) private container: Container,
     ) {}
 
@@ -84,7 +84,9 @@ export class Application {
             adapter.init();
         }
 
-        const commandManager = this.container.get(CommandManager);
+        const commandManager = this.container.get<CommandManager>(
+            CommandManager.name,
+        );
 
         try {
             // Execute the command with the

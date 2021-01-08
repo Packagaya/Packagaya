@@ -9,7 +9,7 @@ import { Command } from '../../Command';
 export class InfoCommand extends Command {
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(FeatureFlagManager)
+        @inject(FeatureFlagManager.name)
         private featureFlagManager: FeatureFlagManager,
     ) {
         super(

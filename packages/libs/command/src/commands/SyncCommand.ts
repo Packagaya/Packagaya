@@ -18,16 +18,12 @@ export class SyncCommand extends Command {
     /**
      * Creates an instance of SyncCommand.
      * @param {Logger} logger The logger which should be used to log messages
-     * @param {FeatureFlagManager} featureFlagManager The feature flag manager
-     *                                                which will be used to
-     *                                                execute the specified
-     *                                                feature flags
      * @memberof SyncCommand
      */
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(InfoCommand) infoCommand: InfoCommand,
-        @inject(ExecuteCommand) executeCommand: ExecuteCommand,
+        @inject(InfoCommand.name) infoCommand: InfoCommand,
+        @inject(ExecuteCommand.name) executeCommand: ExecuteCommand,
     ) {
         super('sync', ['s'], [infoCommand, executeCommand], '');
     }

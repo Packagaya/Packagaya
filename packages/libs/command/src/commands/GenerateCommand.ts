@@ -10,8 +10,8 @@ import { Command } from '../Command';
 export class GenerateCommand extends Command {
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(LocalFileSystem) private fileSystem: LocalFileSystem,
-        @inject(TemplateManager) private templateManager: TemplateManager,
+        @inject(LocalFileSystem.name) private fileSystem: LocalFileSystem,
+        @inject(TemplateManager.name) private templateManager: TemplateManager,
     ) {
         super('generate', ['g'], [], '');
     }

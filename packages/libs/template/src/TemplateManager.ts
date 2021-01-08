@@ -11,7 +11,9 @@ export class TemplateManager {
      * @param {Template<any>[]} templates The templates from all adapters
      * @memberof TemplateManager
      */
-    constructor(@multiInject(Template) private templates: Template<any>[]) {}
+    constructor(
+        @multiInject(Template.name) private templates: Template<any>[],
+    ) {}
 
     /**
      * Finds and executes the template with the given template name. An error will be thrown when no template was found.
