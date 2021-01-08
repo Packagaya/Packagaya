@@ -1,3 +1,10 @@
+# [@packagaya/ioc-v1.1.6](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.1.5...@packagaya/ioc-v1.1.6) (2021-01-08)
+
+
+### Bug Fixes
+
+* **ioc:** refactored ALL container bindings ([14d503c](https://github.com/Packagaya/Packagaya/commit/14d503cd2f43b023d01919f8145cfc2021905d6e))
+
 # [@packagaya/ioc-v1.1.5](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.1.4...@packagaya/ioc-v1.1.5) (2021-01-07)
 
 
