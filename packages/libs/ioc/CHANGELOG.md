@@ -1,3 +1,10 @@
+# [@packagaya/ioc-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.1.6...@packagaya/ioc-v1.2.0) (2021-01-08)
+
+
+### Features
+
+* **helpcommand:** added the "help" command ([8be202a](https://github.com/Packagaya/Packagaya/commit/8be202aa53b474665c890253a462079ba731f97f))
+
 # [@packagaya/ioc-v1.1.6](https://github.com/Packagaya/Packagaya/compare/@packagaya/ioc-v1.1.5...@packagaya/ioc-v1.1.6) (2021-01-08)
 
 
