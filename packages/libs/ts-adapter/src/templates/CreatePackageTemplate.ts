@@ -41,7 +41,7 @@ export class CreatePackageTemplate extends Template<Answers> {
         return [
             {
                 type: 'list',
-                name: 'packageName',
+                name: 'packageType',
                 message: 'What kind of package do you want to generate?',
                 choices: [
                     {
