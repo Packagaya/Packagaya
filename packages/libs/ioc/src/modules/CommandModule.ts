@@ -1,6 +1,7 @@
 import { Command } from '@packagaya/command/dist/Command';
 import { CommandManager } from '@packagaya/command/dist/CommandManager';
 import { GenerateCommand } from '@packagaya/command/dist/commands/GenerateCommand';
+import { HelpCommand } from '@packagaya/command/dist/commands/HelpCommand';
 import { SyncCommand } from '@packagaya/command/dist/commands/SyncCommand';
 import { ExecuteCommand } from '@packagaya/command/dist/commands/SyncCommand/ExecuteCommand';
 import { InfoCommand } from '@packagaya/command/dist/commands/SyncCommand/InfoCommand';
@@ -18,6 +19,8 @@ export class CommandModule extends ContainerModule {
         super((bind) => {
             // Bind the command manager to the container
             bind(CommandManager.name).to(CommandManager).inSingletonScope();
+
+            bind(HelpCommand.name).to(HelpCommand);
 
             // Bind the "sync" command to the container
             bind(Command.name).to(SyncCommand);
