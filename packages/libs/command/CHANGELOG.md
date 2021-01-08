@@ -1,3 +1,10 @@
+# [@packagaya/command-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/command-v1.1.3...@packagaya/command-v1.2.0) (2021-01-08)
+
+
+### Features
+
+* **helpcommand:** added the "help" command ([8be202a](https://github.com/Packagaya/Packagaya/commit/8be202aa53b474665c890253a462079ba731f97f))
+
 # [@packagaya/command-v1.1.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/command-v1.1.2...@packagaya/command-v1.1.3) (2021-01-08)
 
 
