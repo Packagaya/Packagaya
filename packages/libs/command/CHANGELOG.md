@@ -1,3 +1,10 @@
+# [@packagaya/command-v1.2.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/command-v1.2.0...@packagaya/command-v1.2.1) (2021-01-15)
+
+
+### Bug Fixes
+
+* **helpcommand:** fixed the import of the "IConfig" interface ([1288d61](https://github.com/Packagaya/Packagaya/commit/1288d618d7c97ade690463532dfb5f65d938d703))
+
 # [@packagaya/command-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/command-v1.1.3...@packagaya/command-v1.2.0) (2021-01-08)
 
 
