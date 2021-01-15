@@ -1,3 +1,10 @@
+# [@packagaya/command-v1.2.2](https://github.com/Packagaya/Packagaya/compare/@packagaya/command-v1.2.1...@packagaya/command-v1.2.2) (2021-01-15)
+
+
+### Bug Fixes
+
+* **commands:** run the correct feature flags ([a8cd135](https://github.com/Packagaya/Packagaya/commit/a8cd135b738a1a8af9c2d5d0a549d2e3b0dbfbd8))
+
 # [@packagaya/command-v1.2.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/command-v1.2.0...@packagaya/command-v1.2.1) (2021-01-15)
 
 
