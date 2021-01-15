@@ -1,4 +1,4 @@
-import { IConfig } from '@packagaya/config/src/IConfig';
+import { IConfig } from '@packagaya/config/dist/IConfig';
 import { inject, multiInject } from 'inversify';
 import { Logger } from 'tslog';
 
