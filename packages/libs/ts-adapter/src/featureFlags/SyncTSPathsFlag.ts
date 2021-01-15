@@ -3,9 +3,8 @@ import { IConfig } from '@packagaya/config/dist/IConfig';
 import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
 import { IPackage } from '@packagaya/package/dist/IPackage';
 import { PackageManager } from '@packagaya/package/dist/PackageManager';
-import { detailedDiff } from 'deep-object-diff';
 import detectIndent from 'detect-indent';
-import { diffJson } from 'diff';
+import { Change, diffJson } from 'diff';
 import { sync } from 'glob';
 import produce from 'immer';
 import { inject, injectable } from 'inversify';
@@ -121,12 +120,14 @@ export class SyncTSPathsFlag extends FeatureFlag {
                         },
                     );
 
-                    const computedDifferences = detailedDiff(
+                    const computedDifferences = diffJson(
                         parsedConfig,
                         expectedContents,
                     );
 
-                    if (this.hasChanges(computedDifferences)) {
+                    const hasChanges = this.hasChanges(computedDifferences);
+
+                    if (hasChanges) {
                         this.differences.push({
                             filePath: typeScriptConfigurationFile,
                             contents: JSON.stringify(
@@ -138,7 +139,7 @@ export class SyncTSPathsFlag extends FeatureFlag {
 
                         return {
                             filePath: typeScriptConfigurationFile,
-                            changes: diffJson(parsedConfig, expectedContents),
+                            changes: computedDifferences,
                         } as IDifference;
                     }
 
@@ -148,12 +149,22 @@ export class SyncTSPathsFlag extends FeatureFlag {
         );
     }
 
-    private hasChanges(differences: any) {
-        return (
-            Object.keys(differences.added).length > 0 ||
-            Object.keys(differences.deleted).length > 0 ||
-            Object.keys(differences.updated).length > 0
-        );
+    private hasChanges(changes: Change[]) {
+        return changes.reduce((acc, entry) => {
+            if (acc === true) {
+                return acc;
+            }
+
+            if (entry.added === true) {
+                return true;
+            }
+
+            if (entry.removed === true) {
+                return true;
+            }
+
+            return false;
+        }, false);
     }
 
     /**

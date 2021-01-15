@@ -62,20 +62,10 @@ export class FeatureFlagManager {
                 projectSpecification,
             );
 
-            if (differences.length === 1) {
-                continue;
-            }
-
             foundDifferences.push(...differences);
         }
 
         foundDifferences.forEach((diff) => {
-            // Check if the changes contain more than one element
-            if (diff.changes.length === 1) {
-                // Do not show files which have no changes
-                return;
-            }
-
             this.logger.info(
                 `Differences for ${this.fileSystem.getRelativeTo(
                     process.cwd(),
