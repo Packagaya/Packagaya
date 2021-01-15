@@ -11,8 +11,11 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: '15.x'
+            - run: yarn install
+            - run: cd packages/apps/cli && yarn run build
+            - run: ls node_modules/@packagaya/adapter/dist
             - run: yarn global add @packagaya/cli
-            - run: packagaya sync info
+            - run: $(yarn global bin)/packagaya sync info
 
     tests:
         name: Testing project
