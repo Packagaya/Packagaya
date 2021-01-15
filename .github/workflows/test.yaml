@@ -3,23 +3,35 @@ name: Project is testable
 on: [push]
 
 jobs:
-    test:
-        name: Testing project
+    packagaya:
         runs-on: ubuntu-latest
-        if: "!contains(github.event.head_commit.message, 'skip ci')"
-        strategy:
-            matrix:
-                node-version: [13.x, 14.x, 15.x]
         steps:
-            - run: |
-                  sudo apt-get update
-                  sudo apt-get install -y make
             - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
+            - name: Use Node.js
               uses: actions/setup-node@v1
               with:
-                  node-version: ${{ matrix.node-version }}
-            - name: Install all dependencies
-              run: make install
-            - name: Test the source code
-              run: make test
+                  node-version: '15.x'
+            - run: yarn run global add @packagaya/cli
+            - run: packagaya sync info
+
+        test:
+            name: Testing project
+            runs-on: ubuntu-latest
+            needs: [packagaya]
+            if: "!contains(github.event.head_commit.message, 'skip ci')"
+            strategy:
+                matrix:
+                    node-version: [13.x, 14.x, 15.x]
+            steps:
+                - run: |
+                      sudo apt-get update
+                      sudo apt-get install -y make
+                - uses: actions/checkout@v2
+                - name: Use Node.js ${{ matrix.node-version }}
+                  uses: actions/setup-node@v1
+                  with:
+                      node-version: ${{ matrix.node-version }}
+                - name: Install all dependencies
+                  run: make install
+                - name: Test the source code
+                  run: make test

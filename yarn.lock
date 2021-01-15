@@ -827,6 +827,27 @@
     "@octokit/openapi-types" "^2.0.0"
     "@types/node" ">= 8"
 
+"@packagaya/ts-adapter@^1.2.10":
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/@packagaya/ts-adapter/-/ts-adapter-1.2.10.tgz#845e139f24284244c70f2c6b70cc37b6af626f05"
+  integrity sha512-lziMTWfs8aGw/5ijufOpGOg9XXzw8eZ2Dg61Q5RYrhy7FAbrZ21TO0mk1GOCUcFA/sA7bqneUXUBKWcdPOj7UA==
+  dependencies:
+    "@packagaya/adapter" "*"
+    "@packagaya/config" "*"
+    "@packagaya/definitions" "*"
+    "@packagaya/package" "*"
+    "@packagaya/template" "*"
+    babylon "^7.0.0-beta.47"
+    change-case "^4.1.2"
+    detect-indent "^6.0.0"
+    diff "^5.0.0"
+    glob "^7.1.6"
+    immer "^8.0.0"
+    inversify "^5.0.5"
+    is-scoped "^2.1.0"
+    recast "^0.20.4"
+    tslog "^3.0.1"
+
 "@semantic-release/changelog@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/changelog/-/changelog-5.0.1.tgz#50a84b63e5d391b7debfe021421589fa2bcdafe4"
@@ -1012,19 +1033,6 @@
   resolved "https://registry.yarnpkg.com/@types/command-line-usage/-/command-line-usage-5.0.1.tgz#99424950da567ba67b6b65caee57ff03c4e751ec"
   integrity sha512-/xUgezxxYePeXhg5S04hUjxG9JZi+rJTs1+4NwpYPfSaS7BeDa6tVJkH6lN9Cb6rl8d24Fi2uX0s0Ngg2JT6gg==
 
-"@types/diff@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@types/diff/-/diff-5.0.0.tgz#eb71e94feae62548282c4889308a3dfb57e36020"
-  integrity sha512-jrm2K65CokCCX4NmowtA+MfXyuprZC13jbRuwprs6/04z/EcFg/MCwYdsHn+zgV4CQBiATiI7AEq7y1sZCtWKA==
-
-"@types/glob@^7.1.3":
-  version "7.1.3"
-  resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.1.3.tgz#e6ba80f36b7daad2c685acd9266382e68985c183"
-  integrity sha512-SEYeGAIQIQX8NN6LDKprLjbrd5dARM5EXsd8GI/A5l0apYI1fGMWgPHSe4ZKL4eozlAyI+doUE9XbYS4xCkQ1w==
-  dependencies:
-    "@types/minimatch" "*"
-    "@types/node" "*"
-
 "@types/graceful-fs@^4.1.2":
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.3.tgz#039af35fe26bec35003e8d86d2ee9c586354348f"
@@ -1080,7 +1088,7 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.165.tgz#74d55d947452e2de0742bad65270433b63a8c30f"
   integrity sha512-tjSSOTHhI5mCHTy/OOXYIhi2Wt1qcbHmuXD1Ha7q70CgI/I71afO4XtLb/cVexki1oVYchpul/TOuu3Arcdxrg==
 
-"@types/minimatch@*", "@types/minimatch@^3.0.3":
+"@types/minimatch@^3.0.3":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
