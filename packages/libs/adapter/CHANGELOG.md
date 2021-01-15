@@ -1,3 +1,10 @@
+# [@packagaya/adapter-v1.1.4](https://github.com/Packagaya/Packagaya/compare/@packagaya/adapter-v1.1.3...@packagaya/adapter-v1.1.4) (2021-01-15)
+
+
+### Bug Fixes
+
+* **synctspathsflag:** the "SyncTSPaths" feature flag should return the correct data ([49a10f7](https://github.com/Packagaya/Packagaya/commit/49a10f775a5707c6138c4cbf1629617ccd1b1e0a))
+
 # [@packagaya/adapter-v1.1.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/adapter-v1.1.2...@packagaya/adapter-v1.1.3) (2021-01-08)
 
 
