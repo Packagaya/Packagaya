@@ -24,7 +24,7 @@ export class InfoCommand extends Command {
         this.logger.info('Running the info command');
 
         await this.featureFlagManager.runFeatureFlags(
-            commandArguments,
+            projectSpecification.features,
             projectSpecification,
             false,
         );
