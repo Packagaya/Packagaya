@@ -147,8 +147,16 @@ export class SyncTSPathsFlag extends FeatureFlag {
         );
     }
 
-    private hasChanges(changes: Change[]) {
-        return changes.reduce((acc, entry) => {
+    /**
+     * Checks if the changes array has any changes which were computed
+     *
+     * @private
+     * @param {Change[]} changes The changes which should be checked
+     * @return {boolean} Returns true if there are any changes which should be written to the local file. Otherwise false is returned.
+     * @memberof SyncTSPathsFlag
+     */
+    private hasChanges(changes: Change[]): boolean {
+        return changes.reduce<boolean>((acc, entry) => {
             if (acc === true) {
                 return acc;
             }
