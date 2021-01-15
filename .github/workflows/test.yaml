@@ -11,7 +11,7 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: '15.x'
-            - run: yarn run global add @packagaya/cli
+            - run: yarn global add @packagaya/cli
             - run: packagaya sync info
 
     tests:
