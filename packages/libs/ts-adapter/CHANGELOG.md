@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.2.10](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.9...@packagaya/ts-adapter-v1.2.10) (2021-01-15)
+
+
+### Bug Fixes
+
+* **synctspathsflag:** the "SyncTSPaths" feature flag should return the correct data ([49a10f7](https://github.com/Packagaya/Packagaya/commit/49a10f775a5707c6138c4cbf1629617ccd1b1e0a))
+
 # [@packagaya/ts-adapter-v1.2.9](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.8...@packagaya/ts-adapter-v1.2.9) (2021-01-15)
 
 
