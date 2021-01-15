@@ -1,10 +1,9 @@
 import { IConfig } from '@packagaya/config/dist/IConfig';
-import { Change } from 'diff';
 import { injectable, unmanaged } from 'inversify';
 
 export interface IDifference {
     filePath: string;
-    changes: Change[];
+    changes: object[];
 }
 
 /**
