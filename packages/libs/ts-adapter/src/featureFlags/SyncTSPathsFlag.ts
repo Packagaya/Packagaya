@@ -5,6 +5,7 @@ import { IPackage } from '@packagaya/package/dist/IPackage';
 import { PackageManager } from '@packagaya/package/dist/PackageManager';
 import { detailedDiff } from 'deep-object-diff';
 import detectIndent from 'detect-indent';
+import { diffJson } from 'diff';
 import { sync } from 'glob';
 import produce from 'immer';
 import { inject, injectable } from 'inversify';
@@ -137,7 +138,7 @@ export class SyncTSPathsFlag extends FeatureFlag {
 
                         return {
                             filePath: typeScriptConfigurationFile,
-                            changes: computedDifferences,
+                            changes: diffJson(parsedConfig, expectedContents),
                         } as IDifference;
                     }
 
