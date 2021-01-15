@@ -3,8 +3,8 @@ import { IConfig } from '@packagaya/config/dist/IConfig';
 import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
 import { IPackage } from '@packagaya/package/dist/IPackage';
 import { PackageManager } from '@packagaya/package/dist/PackageManager';
+import { detailedDiff } from 'deep-object-diff';
 import detectIndent from 'detect-indent';
-import { diffJson } from 'diff';
 import { sync } from 'glob';
 import produce from 'immer';
 import { inject, injectable } from 'inversify';
@@ -120,12 +120,12 @@ export class SyncTSPathsFlag extends FeatureFlag {
                         },
                     );
 
-                    const computedDifferences = diffJson(
+                    const computedDifferences = detailedDiff(
                         parsedConfig,
                         expectedContents,
                     );
 
-                    if (computedDifferences.length > 1) {
+                    if (this.hasChanges(computedDifferences)) {
                         this.differences.push({
                             filePath: typeScriptConfigurationFile,
                             contents: JSON.stringify(
@@ -138,12 +138,20 @@ export class SyncTSPathsFlag extends FeatureFlag {
                         return {
                             filePath: typeScriptConfigurationFile,
                             changes: computedDifferences,
-                        };
+                        } as IDifference;
                     }
 
                     return undefined;
                 })
                 .filter((entry) => entry !== undefined) as IDifference[]
+        );
+    }
+
+    private hasChanges(differences: any) {
+        return (
+            Object.keys(differences.added).length > 0 ||
+            Object.keys(differences.deleted).length > 0 ||
+            Object.keys(differences.updated).length > 0
         );
     }
 
