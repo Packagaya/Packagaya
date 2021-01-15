@@ -46,8 +46,6 @@ export class FeatureFlagManager {
         fix: boolean = false,
     ) {
         const availableFlags = flagNames
-            // Extract the names of the feature flags
-            .map((flag) => (flag.startsWith('--') ? flag.substr(2) : flag))
             // Find the existing flag from the given feature flags
             .map((flag) =>
                 this.featureFlags.find((entry) => entry.name === flag),
@@ -58,6 +56,8 @@ export class FeatureFlagManager {
         const foundDifferences: IDifference[] = [];
 
         for (const availableFlag of availableFlags) {
+            this.logger.silly(`Running feature flag: ${availableFlag.name}`);
+
             const differences = await availableFlag.getDifferences(
                 projectSpecification,
             );

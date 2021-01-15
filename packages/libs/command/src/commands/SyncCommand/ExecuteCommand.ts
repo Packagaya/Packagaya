@@ -19,7 +19,7 @@ export class ExecuteCommand extends Command {
         this.logger.info('Running the execute command');
 
         await this.featureFlagManager.runFeatureFlags(
-            commandArguments,
+            projectSpecification.features,
             projectSpecification,
             true,
         );
