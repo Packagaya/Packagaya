@@ -1,3 +1,10 @@
+# [@packagaya/adapter-v1.1.5](https://github.com/Packagaya/Packagaya/compare/@packagaya/adapter-v1.1.4...@packagaya/adapter-v1.1.5) (2021-01-15)
+
+
+### Bug Fixes
+
+* **commands:** run the correct feature flags ([a8cd135](https://github.com/Packagaya/Packagaya/commit/a8cd135b738a1a8af9c2d5d0a549d2e3b0dbfbd8))
+
 # [@packagaya/adapter-v1.1.4](https://github.com/Packagaya/Packagaya/compare/@packagaya/adapter-v1.1.3...@packagaya/adapter-v1.1.4) (2021-01-15)
 
 
