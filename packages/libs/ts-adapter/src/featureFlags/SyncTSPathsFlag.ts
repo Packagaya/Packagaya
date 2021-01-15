@@ -125,9 +125,7 @@ export class SyncTSPathsFlag extends FeatureFlag {
                         expectedContents,
                     );
 
-                    const hasChanges = this.hasChanges(computedDifferences);
-
-                    if (hasChanges) {
+                    if (this.hasChanges(computedDifferences)) {
                         this.differences.push({
                             filePath: typeScriptConfigurationFile,
                             contents: JSON.stringify(
