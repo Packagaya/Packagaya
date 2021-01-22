@@ -1,7 +1,7 @@
 import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
 import { IPackage } from '@packagaya/package/dist/IPackage';
 import { PackageResolver } from '@packagaya/package/dist/PackageResolver';
-import { PackageType } from '@packagaya/package/src/PackageType';
+import { PackageType } from '@packagaya/package/dist/PackageType';
 import { hasMagic, sync } from 'glob';
 import { inject, injectable } from 'inversify';
 import { Logger } from 'tslog';
