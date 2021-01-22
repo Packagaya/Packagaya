@@ -73,6 +73,8 @@ export class FeatureFlagManager {
                 )}`,
             );
 
+            const result = [];
+
             for (const change of diff.changes) {
                 let color = chalk.white;
 
@@ -82,8 +84,10 @@ export class FeatureFlagManager {
                     color = chalk.red;
                 }
 
-                console.log(color(change.value));
+                result.push(color(change.value));
             }
+
+            console.log(...result);
         });
 
         this.logger.info('Executed all feature flags');
