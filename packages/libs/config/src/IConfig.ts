@@ -35,5 +35,5 @@ export interface IConfig {
      * @type {string[]}
      * @memberof IConfig
      */
-    features: string[];
+    features: (string | [string, Record<string, unknown>])[];
 }

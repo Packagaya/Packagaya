@@ -7,6 +7,17 @@ import { Logger } from 'tslog';
 import { Adapter } from './Adapter';
 import { FeatureFlag, IDifference } from './FeatureFlag';
 
+/**
+ * Defines the structure for holding the name of a
+ * feature flag and the defined options
+ *
+ * @interface IFeatureFlagEntry
+ */
+interface IFeatureFlagEntry {
+    flagName: string;
+    options?: Record<string, unknown>;
+}
+
 @injectable()
 export class FeatureFlagManager {
     /**
@@ -41,25 +52,50 @@ export class FeatureFlagManager {
      * @param {boolean} fix Indicates if the feature flags should be fixed
      */
     public async runFeatureFlags(
-        flagNames: string[],
+        flagNames: (string | [string, Record<string, unknown>])[],
         projectSpecification: IConfig,
         fix: boolean = false,
     ) {
         const availableFlags = flagNames
-            // Find the existing flag from the given feature flags
-            .map((flag) =>
-                this.featureFlags.find((entry) => entry.name === flag),
-            )
-            // Filter out all maps which were not found
-            .filter((flag) => typeof flag !== 'undefined') as FeatureFlag[];
+            .reduce<IFeatureFlagEntry[]>((acc, entry) => {
+                if (typeof entry === 'string') {
+                    return acc.concat({
+                        flagName: entry,
+                        options: undefined,
+                    });
+                } else if (Array.isArray(entry)) {
+                    return acc.concat({
+                        flagName: entry[0],
+                        options: entry[1],
+                    });
+                }
+
+                return acc;
+            }, [])
+            .map<{
+                flag: FeatureFlag;
+                flagOptions?: Record<string, unknown>;
+            }>((entry) => ({
+                flag: this.findFeatureFlag(entry.flagName, this.featureFlags)!,
+                flagOptions: entry.options,
+            }))
+            .filter((entry) => entry.flag !== undefined);
 
         const foundDifferences: IDifference[] = [];
 
         for (const availableFlag of availableFlags) {
-            this.logger.silly(`Running feature flag: ${availableFlag.name}`);
+            this.logger.silly(
+                `Running feature flag: ${availableFlag.flag.name}`,
+            );
 
-            const differences = await availableFlag.getDifferences(
+            const featureFlag: FeatureFlag = this.findFeatureFlag(
+                availableFlag.flag.name,
+                this.featureFlags,
+            )!;
+
+            const differences = await featureFlag.getDifferences(
                 projectSpecification,
+                availableFlag.flagOptions,
             );
 
             foundDifferences.push(...differences);
@@ -103,15 +139,24 @@ export class FeatureFlagManager {
 
         this.logger.info('Fixing all possible feature flags');
 
-        const fixableFlags = availableFlags.filter((flag) => flag.fixable);
+        const fixableFlags = availableFlags.filter(
+            (flag) => flag.flag?.fixable === true,
+        );
 
         for (const fixableFlag of fixableFlags) {
-            const fixResult = await fixableFlag.fixDifferences(
+            const fixResult = await fixableFlag.flag!.fixDifferences(
                 projectSpecification,
+                fixableFlag.flagOptions,
             );
             if (!fixResult) {
-                this.logger.warn(`Could not fix flag: ${fixableFlag.name}`);
+                this.logger.warn(
+                    `Could not fix flag: ${fixableFlag.flag!.name}`,
+                );
             }
         }
+    }
+
+    private findFeatureFlag(flagName: string, availableFlags: FeatureFlag[]) {
+        return availableFlags.find((entry) => entry.name === flagName);
     }
 }

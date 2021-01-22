@@ -27,10 +27,12 @@ export abstract class FeatureFlag {
      * Returns all differences (for example between the configuration files)
      *
      * @param {IConfig} projectSpecification The project configuration
+     * @param {Record<string, unknown> | undefined} configuration The configuration for the feature flag
      * @returns {string[]}
      */
     public abstract getDifferences(
         projectSpecification: IConfig,
+        configuration?: Record<string, unknown>,
     ): Promise<IDifference[]>;
 
     /**
@@ -38,9 +40,11 @@ export abstract class FeatureFlag {
      * property equals true
      *
      * @param {IConfig} projectSpecification The project configuration
+     * @param {Record<string, unknown> | undefined} configuration The configuration for the feature flag
      * @returns {Promise<boolean>} Returns true when the fixed could be applied successfully
      */
     public abstract fixDifferences(
         projectSpecification: IConfig,
+        configuration?: Record<string, unknown>,
     ): Promise<boolean>;
 }
