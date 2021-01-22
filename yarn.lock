@@ -827,27 +827,6 @@
     "@octokit/openapi-types" "^2.0.0"
     "@types/node" ">= 8"
 
-"@packagaya/ts-adapter@^1.2.10":
-  version "1.2.10"
-  resolved "https://registry.yarnpkg.com/@packagaya/ts-adapter/-/ts-adapter-1.2.10.tgz#845e139f24284244c70f2c6b70cc37b6af626f05"
-  integrity sha512-lziMTWfs8aGw/5ijufOpGOg9XXzw8eZ2Dg61Q5RYrhy7FAbrZ21TO0mk1GOCUcFA/sA7bqneUXUBKWcdPOj7UA==
-  dependencies:
-    "@packagaya/adapter" "*"
-    "@packagaya/config" "*"
-    "@packagaya/definitions" "*"
-    "@packagaya/package" "*"
-    "@packagaya/template" "*"
-    babylon "^7.0.0-beta.47"
-    change-case "^4.1.2"
-    detect-indent "^6.0.0"
-    diff "^5.0.0"
-    glob "^7.1.6"
-    immer "^8.0.0"
-    inversify "^5.0.5"
-    is-scoped "^2.1.0"
-    recast "^0.20.4"
-    tslog "^3.0.1"
-
 "@semantic-release/changelog@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/changelog/-/changelog-5.0.1.tgz#50a84b63e5d391b7debfe021421589fa2bcdafe4"
