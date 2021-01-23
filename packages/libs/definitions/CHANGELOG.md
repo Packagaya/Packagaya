@@ -1,3 +1,10 @@
+# [@packagaya/definitions-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/definitions-v1.1.0...@packagaya/definitions-v1.2.0) (2021-01-23)
+
+
+### Features
+
+* **stringhelper:** added the "uniqueStrings" function ([b99b188](https://github.com/Packagaya/Packagaya/commit/b99b18814ed3990ac448a59127efbcaa9fe073ce))
+
 # [@packagaya/definitions-v1.1.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/definitions-v1.0.0...@packagaya/definitions-v1.1.0) (2021-01-02)
 
 
