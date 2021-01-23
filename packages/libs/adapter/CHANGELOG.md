@@ -1,3 +1,10 @@
+# [@packagaya/adapter-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/adapter-v1.1.5...@packagaya/adapter-v1.2.0) (2021-01-23)
+
+
+### Features
+
+* **featureflag:** added additional configuration options for feature flags ([63736e0](https://github.com/Packagaya/Packagaya/commit/63736e079d73a09483ea90af07175edb52eddf00))
+
 # [@packagaya/adapter-v1.1.5](https://github.com/Packagaya/Packagaya/compare/@packagaya/adapter-v1.1.4...@packagaya/adapter-v1.1.5) (2021-01-15)
 
 
