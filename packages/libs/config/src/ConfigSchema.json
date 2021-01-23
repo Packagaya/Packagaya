@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema#",
-    "$id": "https://github.com/Packagaya/Packagaya/configschema.json",
+    "$id": "https://raw.githubusercontent.com/Packagaya/Packagaya/master/packages/libs/config/src/ConfigSchema.json",
     "type": "object",
     "properties": {
         "apps": {
@@ -25,12 +25,34 @@
             }
         },
         "features": {
-            "type": "array",
             "description": "Defines all feature flags as an string array which should be used",
-            "items": {
-                "type": "string"
-            }
+            "$ref": "#/definitions/FeatureEntrySchema"
         }
     },
-    "required": ["apps", "libs", "adapters", "features"]
+    "required": ["apps", "libs", "adapters", "features"],
+    "definitions": {
+        "FeatureEntrySchema": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "array",
+                        "items": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object"
+                            }
+                        ],
+                        "additionalItems": false
+                    }
+                ]
+            },
+            "additionalItems": false
+        }
+    }
 }

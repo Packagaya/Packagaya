@@ -1,15 +1,14 @@
 import { FeatureFlag, IDifference } from '@packagaya/adapter/dist/FeatureFlag';
 import { IConfig } from '@packagaya/config/dist/IConfig';
 import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
-import { IPackage } from '@packagaya/package/dist/IPackage';
 import { PackageManager } from '@packagaya/package/dist/PackageManager';
 import detectIndent from 'detect-indent';
 import { Change, diffJson } from 'diff';
-import { sync } from 'glob';
 import produce from 'immer';
 import { inject, injectable } from 'inversify';
-import { parse } from 'recast/parsers/typescript';
 import { Logger } from 'tslog';
+
+import { ImportFinder } from '../code/ImportFinder';
 
 /**
  * Defines the "sync-ts-paths" feature flag
@@ -35,6 +34,7 @@ export class SyncTSPathsFlag extends FeatureFlag {
         @inject(Logger.name) private logger: Logger,
         @inject(PackageManager.name) private packageManager: PackageManager,
         @inject(LocalFileSystem.name) private fileSystem: LocalFileSystem,
+        @inject(ImportFinder.name) private importFinder: ImportFinder,
     ) {
         super('sync-ts-paths', true);
     }
@@ -59,10 +59,13 @@ export class SyncTSPathsFlag extends FeatureFlag {
         const packageImports = allPackages.reduce<Record<string, string[]>>(
             (acc, foundPackage, _, packages) => ({
                 ...acc,
-                [foundPackage.name]: this.getImportedPackages(
-                    foundPackage,
-                    packages,
-                ),
+                [foundPackage.name]: this.importFinder
+                    .getImportedPackages(foundPackage)
+                    .filter(
+                        (entry) =>
+                            packages.find((pkg) => pkg.name === entry) !==
+                            undefined,
+                    ),
             }),
             {},
         );
@@ -189,73 +192,5 @@ export class SyncTSPathsFlag extends FeatureFlag {
         }
 
         return true;
-    }
-
-    private getImportedPackages(
-        foundPackage: IPackage,
-        packages: IPackage[],
-    ): string[] {
-        return foundPackage.sourceDirectories
-            .reduce<string[]>(
-                (acc, entry) => acc.concat(...sync(`${entry}/**/*.{ts,tsx}`)),
-                [],
-            )
-            .reduce<string[]>(
-                (acc, filePath) =>
-                    acc.concat(this.getFileImports(filePath, foundPackage)),
-                [],
-            )
-            .reduce<string[]>(
-                (acc, entry) => (acc.includes(entry) ? acc : acc.concat(entry)),
-                [],
-            )
-            .filter(
-                (entry) =>
-                    packages.find((pkg) => pkg.name === entry) !== undefined,
-            )
-            .sort();
-    }
-
-    private getFileImports(filePath: string, foundPackage: IPackage): string[] {
-        if (!this.fileSystem.checkIfFileExists(filePath)) {
-            throw new Error(`The file "${filePath} does not exists"`);
-        }
-
-        const fileContents = this.fileSystem.readFile(filePath);
-        const parsedSourceCode = parse(fileContents).program;
-
-        const importDeclarations = parsedSourceCode.body.filter(
-            (node) => node.type === 'ImportDeclaration',
-        );
-        const mappedImports = importDeclarations
-            .map<string>(({ source: { value } }: any) => value)
-            .filter((entry) => {
-                if (!entry.startsWith('.')) {
-                    return true;
-                }
-
-                const resolvedPath = this.fileSystem.resolve(
-                    this.fileSystem.getDirectoryName(filePath),
-                    entry,
-                );
-
-                return !resolvedPath.startsWith(foundPackage.path);
-            })
-            .map((entry) => {
-                const parts = entry.split('/');
-
-                if (parts.length === 0) {
-                    return '';
-                }
-
-                if (!parts[0].startsWith('@')) {
-                    return parts.slice(0, 1)[0];
-                }
-
-                return parts.slice(0, 2).join('/');
-            })
-            .filter((entry) => entry !== '');
-
-        return mappedImports;
     }
 }

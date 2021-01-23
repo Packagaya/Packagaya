@@ -1,8 +1,8 @@
 import { IConfig } from '@packagaya/config/dist/IConfig';
-import { HelpCommand } from 'src/commands/HelpCommand';
 
 import { Command } from '../Command';
 import { CommandManager } from '../CommandManager';
+import { HelpCommand } from '../commands/HelpCommand';
 
 describe('CommandManager', () => {
     let commandManager: CommandManager;
