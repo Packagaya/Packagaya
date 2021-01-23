@@ -1,3 +1,15 @@
+# [@packagaya/ts-adapter-v1.3.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.10...@packagaya/ts-adapter-v1.3.0) (2021-01-23)
+
+
+### Bug Fixes
+
+* **npmpackageresolver:** fixed the import statements ([7442ce6](https://github.com/Packagaya/Packagaya/commit/7442ce687961594639b4bda07ca0b9d1215064a8))
+
+
+### Features
+
+* **importfinder:** added the "ImportFinder" class ([8b3bf54](https://github.com/Packagaya/Packagaya/commit/8b3bf540aac79c5b8973a3a36975ebdbce423145))
+
 # [@packagaya/ts-adapter-v1.2.10](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.2.9...@packagaya/ts-adapter-v1.2.10) (2021-01-15)
 
 
