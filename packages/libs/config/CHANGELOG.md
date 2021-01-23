@@ -1,3 +1,10 @@
+# [@packagaya/config-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.1.3...@packagaya/config-v1.2.0) (2021-01-23)
+
+
+### Features
+
+* **featureflag:** added additional configuration options for feature flags ([63736e0](https://github.com/Packagaya/Packagaya/commit/63736e079d73a09483ea90af07175edb52eddf00))
+
 # [@packagaya/config-v1.1.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.1.2...@packagaya/config-v1.1.3) (2021-01-08)
 
 
