@@ -27,7 +27,7 @@
         "inversify": "^5.0.5",
         "is-scoped": "^2.1.0",
         "recast": "^0.20.4",
-        "tslog": "^3.0.1"
+        "tslog": "^3.1.0"
     },
     "devDependencies": {
         "@types/diff": "^5.0.0",
