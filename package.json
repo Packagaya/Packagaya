@@ -22,7 +22,7 @@
         "cz-conventional-changelog": "^3.3.0",
         "husky": ">=4",
         "lint-staged": ">=10",
-        "prettier": "^2.1.2",
+        "prettier": "^2.2.1",
         "semantic-release": "^17.3.7",
         "semantic-release-monorepo": "^7.0.4",
         "ts-auto-guard": "^1.0.0-alpha.14",
