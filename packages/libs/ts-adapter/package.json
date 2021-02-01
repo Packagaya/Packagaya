@@ -23,7 +23,7 @@
         "detect-indent": "^6.0.0",
         "diff": "^5.0.0",
         "glob": "^7.1.6",
-        "immer": "^8.0.0",
+        "immer": "^8.0.1",
         "inversify": "^5.0.5",
         "is-scoped": "^2.1.0",
         "recast": "^0.20.4",
