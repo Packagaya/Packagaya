@@ -17,7 +17,7 @@
         "@packagaya/definitions": "*",
         "@packagaya/template": "*",
         "inversify": "^5.0.5",
-        "tslog": "^3.0.1"
+        "tslog": "^3.1.0"
     },
     "devDependencies": {
         "jest": "^26.6.3",
