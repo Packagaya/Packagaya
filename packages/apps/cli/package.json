@@ -22,7 +22,7 @@
         "@packagaya/command": "*",
         "@packagaya/config": "*",
         "@packagaya/ioc": "*",
-        "inversify": "^5.0.1",
+        "inversify": "^5.0.5",
         "reflect-metadata": "^0.1.13",
         "tslog": "^3.1.0"
     },
