@@ -17,7 +17,7 @@
     "dependencies": {
         "@packagaya/definitions": "*",
         "ajv": "^6.12.6",
-        "tslog": "^3.1.0"
+        "tslog": "^3.1.1"
     },
     "devDependencies": {
         "@types/node": "^14.11.2",
