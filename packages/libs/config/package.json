@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "@packagaya/definitions": "*",
-        "ajv": "^6.12.6",
+        "ajv": "^7.0.4",
         "tslog": "^3.1.0"
     },
     "devDependencies": {

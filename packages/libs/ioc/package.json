@@ -16,7 +16,7 @@
         "@packagaya/definitions": "*",
         "@packagaya/package": "*",
         "@packagaya/template": "*",
-        "ajv": "^6.12.6",
+        "ajv": "^7.0.4",
         "inversify": "^5.0.5",
         "tslog": "^3.1.0"
     },
