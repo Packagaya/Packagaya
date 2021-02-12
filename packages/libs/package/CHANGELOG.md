@@ -1,3 +1,10 @@
+# [@packagaya/package-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/package-v1.1.4...@packagaya/package-v1.2.0) (2021-02-12)
+
+
+### Features
+
+* **sync-ts-deps:** added the "SyncTSDeps" feature flag ([61dda22](https://github.com/Packagaya/Packagaya/commit/61dda2246271ae225d3b5adc7db17973a7be2450))
+
 # [@packagaya/package-v1.1.4](https://github.com/Packagaya/Packagaya/compare/@packagaya/package-v1.1.3...@packagaya/package-v1.1.4) (2021-01-07)
 
 
