@@ -49,11 +49,13 @@ export class ImportFinder {
                         acc.concat(...sync(`${entry}/**/*.{ts,tsx}`)),
                     [],
                 )
-                .reduce<string[]>(
-                    (acc, filePath) =>
-                        acc.concat(this.getFileImports(filePath, foundPackage)),
-                    [],
-                )
+                .reduce<string[]>((acc, filePath) => {
+                    this.logger.silly(`Processing file: ${filePath}`);
+
+                    return acc.concat(
+                        this.getFileImports(filePath, foundPackage),
+                    );
+                }, [])
                 .reduce<string[]>((acc, entry) => uniqueStrings(acc, entry), [])
                 .sort();
         }
@@ -73,15 +75,9 @@ export class ImportFinder {
 
         this.logger.silly(`Trying to parse file: ${filePath}`);
 
-        const parsedSourceCode = parse(fileContents, {
-            parser: require('recast/parsers/typescript'),
-        }).program;
-
-        this.logger.silly(`Parsed file: ${filePath}`);
-
-        const importDeclarations = parsedSourceCode.body.filter((node: any) => {
-            return node.type === 'ImportDeclaration';
-        });
+        const importDeclarations = this.getImportsFromFileContents(
+            fileContents,
+        );
 
         const mappedImports = importDeclarations
             .map(({ source: { value } }: any) => value)
@@ -98,6 +94,7 @@ export class ImportFinder {
                 return !resolvedPath.startsWith(currentPackage.path);
             })
             .map((entry: string) => {
+                // Split the entry to check if the package is scoped
                 const parts = entry.split('/');
 
                 if (parts.length === 0) {
@@ -113,5 +110,16 @@ export class ImportFinder {
             .filter((entry: string) => entry !== '');
 
         return mappedImports;
+    }
+
+    private getImportsFromFileContents(fileContents: string) {
+        const parsedSourceCode = parse(fileContents, {
+            parser: require('recast/parsers/typescript'),
+        }).program;
+
+        const importDeclarations = parsedSourceCode.body.filter((node: any) => {
+            return node.type === 'ImportDeclaration';
+        });
+        return importDeclarations;
     }
 }
