@@ -157,8 +157,6 @@ export class ConfigManager {
                 )}`,
             );
         }
-
-        // TODO: Check if feature flags exists
     }
 
     private filterInvalidPaths(paths: string[]): string[] {
