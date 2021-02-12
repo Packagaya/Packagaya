@@ -123,7 +123,7 @@ export class FeatureFlagManager {
                 result.push(color(change.value));
             }
 
-            console.log(...result);
+            console.log(result.join(''));
         });
 
         this.logger.info('Executed all feature flags');
