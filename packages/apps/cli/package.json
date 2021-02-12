@@ -1,19 +1,16 @@
 {
     "name": "@packagaya/cli",
-    "version": "1.0.0",
     "license": "MIT",
+    "version": "1.0.0",
     "bin": {
         "packagaya": "./bin/packagaya.js"
     },
-    "publishConfig": {
-        "access": "public"
-    },
     "scripts": {
-        "clean": "rimraf dist",
         "prebuild": "npm run clean",
         "build": "tsc --build",
         "prebuild:watch": "npm run clean",
         "build:watch": "tsc --build --watch",
+        "clean": "rimraf dist",
         "test": "jest",
         "test:watch": "jest --watch"
     },
@@ -33,5 +30,8 @@
         "ts-jest": "^26.4.1",
         "ts-node-dev": "^1.1.1",
         "typescript": "^4.1.5"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
