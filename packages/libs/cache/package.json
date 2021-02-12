@@ -1,0 +1,13 @@
+{
+    "name": "@packagaya/cache",
+    "license": "MIT",
+    "version": "0.0.0",
+    "scripts": {
+        "build": "tsc",
+        "build:watch": "tsc --watch"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "typescript": "^4.1.3"
+    }
+}
