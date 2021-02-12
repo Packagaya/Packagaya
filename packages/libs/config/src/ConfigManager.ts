@@ -39,7 +39,7 @@ export class ConfigManager {
      */
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @inject(Ajv.name) private ajv: Ajv.Ajv,
+        @inject(Ajv.name) private ajv: Ajv,
         @inject(Services.Schema.Config) private configSchemaName: string,
         @inject(LocalFileSystem.name) private localFileSystem: LocalFileSystem,
     ) {}
