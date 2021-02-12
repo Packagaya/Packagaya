@@ -1,15 +1,25 @@
 {
     "$schema": "./packages/libs/config/src/ConfigSchema.json",
-    "apps": [
-        "./packages/apps"
-    ],
-    "libs": [
-        "./packages/libs"
-    ],
-    "adapters": [
-        "@packagaya/ts-adapter"
-    ],
+    "apps": ["./packages/apps"],
+    "libs": ["./packages/libs"],
+    "adapters": ["@packagaya/ts-adapter"],
     "features": [
+        [
+            "sync-ts-deps",
+            {
+                "installAlwaysLatestVersion": false,
+                "blacklist": [
+                    "jest",
+                    "ts-jest",
+                    "rimraf",
+                    "@types/inquirer",
+                    "@types/diff",
+                    "@types/glob",
+                    "babylon",
+                    "inquirer-autocomplete-prompt"
+                ]
+            }
+        ],
         "sync-ts-paths"
     ]
 }
