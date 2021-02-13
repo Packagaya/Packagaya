@@ -8,6 +8,7 @@ install:
 	yarn install
 
 build:
+	yarn workspace @packagaya/cache run build
 	yarn workspace @packagaya/cli run build
 	yarn workspace @packagaya/process run build
 	yarn workspace @packagaya/ts-adapter run build
