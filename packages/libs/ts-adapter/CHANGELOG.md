@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.5.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.4.0...@packagaya/ts-adapter-v1.5.0) (2021-02-13)
+
+
+### Features
+
+* **sync-ts-deps:** added the "SyncTSDeps" feature flag ([272b619](https://github.com/Packagaya/Packagaya/commit/272b6194367dd92ddd8e08471484191f70195bde))
+
 # [@packagaya/ts-adapter-v1.4.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.3.0...@packagaya/ts-adapter-v1.4.0) (2021-02-12)
 
 
