@@ -1,3 +1,19 @@
+# [@packagaya/definitions-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/definitions-v1.1.0...@packagaya/definitions-v1.2.0) (2021-01-23)
+
+
+### Features
+
+* **stringhelper:** added the "uniqueStrings" function ([b99b188](https://github.com/Packagaya/Packagaya/commit/b99b18814ed3990ac448a59127efbcaa9fe073ce))
+
+# [@packagaya/definitions-v1.1.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/definitions-v1.0.0...@packagaya/definitions-v1.1.0) (2021-01-02)
+
+
+### Features
+
+* **build:** added support for ts project references ([fc353e5](https://github.com/Packagaya/Packagaya/commit/fc353e5e9d0f297514d3d18d30e173d7fa0261e2))
+* **filesystem:** added the getDirectoryContents function ([ecb4ca8](https://github.com/Packagaya/Packagaya/commit/ecb4ca8943abc652c9824da4e79aab6848fe650e))
+* **LocalFileSystem:** added the getRelativeTo and getDirectoryName functions ([777ae25](https://github.com/Packagaya/Packagaya/commit/777ae25168be173239e2bc43cce5b993059d34a9))
+
 # @packagaya/definitions-v1.0.0 (2020-12-20)
 
 ### Bug Fixes

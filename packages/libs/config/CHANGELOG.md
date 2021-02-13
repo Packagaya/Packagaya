@@ -1,3 +1,38 @@
+# [@packagaya/config-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.1.3...@packagaya/config-v1.2.0) (2021-01-23)
+
+
+### Features
+
+* **featureflag:** added additional configuration options for feature flags ([63736e0](https://github.com/Packagaya/Packagaya/commit/63736e079d73a09483ea90af07175edb52eddf00))
+
+# [@packagaya/config-v1.1.3](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.1.2...@packagaya/config-v1.1.3) (2021-01-08)
+
+
+### Bug Fixes
+
+* **ioc:** refactored ALL container bindings ([14d503c](https://github.com/Packagaya/Packagaya/commit/14d503cd2f43b023d01919f8145cfc2021905d6e))
+
+# [@packagaya/config-v1.1.2](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.1.1...@packagaya/config-v1.1.2) (2021-01-02)
+
+
+### Bug Fixes
+
+* **ioc:** rebound the logger ([91e5cf7](https://github.com/Packagaya/Packagaya/commit/91e5cf7138f6ef22b0aaf7c1336242e389d9393e))
+
+# [@packagaya/config-v1.1.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.1.0...@packagaya/config-v1.1.1) (2021-01-02)
+
+
+### Bug Fixes
+
+* **packages:** fixed the dependencies ([5d7830f](https://github.com/Packagaya/Packagaya/commit/5d7830fe50c4bd7183c724e121b8c6e5a127c755))
+
+# [@packagaya/config-v1.1.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.0.0...@packagaya/config-v1.1.0) (2021-01-02)
+
+
+### Features
+
+* **build:** added support for ts project references ([fc353e5](https://github.com/Packagaya/Packagaya/commit/fc353e5e9d0f297514d3d18d30e173d7fa0261e2))
+
 # @packagaya/config-v1.0.0 (2020-12-20)
 
 ### Bug Fixes
