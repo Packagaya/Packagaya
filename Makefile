@@ -13,6 +13,7 @@ build:
 	yarn workspace @packagaya/ts-adapter run build
 
 release: build
+	yarn workspace @packagaya/cache run semantic-release && echo "Executed release for the 'cache' package!" || echo "Could not release the 'cache' package!"
 	yarn workspace @packagaya/definitions run semantic-release && echo "Executed release for the 'definitions' package!" || echo "Could not release the 'definitions' package!"
 	yarn workspace @packagaya/config run semantic-release && echo "Executed release for the 'config' package!" || echo "Could not release the 'config' package!"
 	yarn workspace @packagaya/adapter run semantic-release && echo "Executed release for the 'adapter' package!" || echo "Could not release the 'adapter' package!"
