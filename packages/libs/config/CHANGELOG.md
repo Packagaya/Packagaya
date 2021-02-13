@@ -1,3 +1,10 @@
+# [@packagaya/config-v1.2.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.2.0...@packagaya/config-v1.2.1) (2021-02-13)
+
+
+### Bug Fixes
+
+* **configschema:** fixed the json schema for the configuration file ([aa1b379](https://github.com/Packagaya/Packagaya/commit/aa1b379bc962e6dfe80bb38045ef35ec44d723de))
+
 # [@packagaya/config-v1.2.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/config-v1.1.3...@packagaya/config-v1.2.0) (2021-01-23)
 
 
