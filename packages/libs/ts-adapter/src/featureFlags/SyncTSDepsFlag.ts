@@ -283,10 +283,6 @@ export class SyncTSDepsFlag extends FeatureFlag {
             configuration?.npmRegistryUrl ?? 'https://registry.npmjs.org/',
         );
 
-        const managedPackages = await this.packageManager.getManageablePackages(
-            projectSpecification,
-        );
-
         for (const difference of this.differences) {
             const {
                 removedPackages,
