@@ -1,0 +1,66 @@
+{
+    "folders": [
+        {
+            "name": "Root",
+            "path": "."
+        },
+        {
+            "name": "CLI",
+            "path": "./packages/apps/cli"
+        },
+        {
+            "name": "Adapter",
+            "path": "./packages/libs/adapter"
+        },
+        {
+            "name": "Cache",
+            "path": "./packages/libs/cache"
+        },
+        {
+            "name": "Command",
+            "path": "./packages/libs/command"
+        },
+        {
+            "name": "Config",
+            "path": "./packages/libs/config"
+        },
+        {
+            "name": "Definitions",
+            "path": "./packages/libs/definitions"
+        },
+        {
+            "name": "IoC",
+            "path": "./packages/libs/ioc"
+        },
+        {
+            "name": "Package",
+            "path": "./packages/libs/package"
+        },
+        {
+            "name": "Process",
+            "path": "./packages/libs/process"
+        },
+        {
+            "name": "Template",
+            "path": "./packages/libs/template"
+        },
+        {
+            "name": "TypeScript Adapter",
+            "path": "./packages/libs/ts-adapter"
+        }
+    ],
+    "extensions": {
+        "recommendations": [
+            "oouo-diogo-perdigao.docthis",
+            "orta.vscode-jest",
+            "firsttris.vscode-jest-runner",
+            "andys8.jest-snippets",
+            "dominicvonk.parameter-hints",
+            "esbenp.prettier-vscode",
+            "rbbit.typescript-hero"
+        ]
+    },
+    "settings": {
+        "jestrunner.jestPath": "./node_modules/jest/bin/jest.js"
+    }
+}
