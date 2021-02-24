@@ -48,7 +48,9 @@
                                 "type": "object"
                             }
                         ],
-                        "additionalItems": false
+                        "additionalItems": false,
+                        "minItems": 2,
+                        "maxItems": 2
                     }
                 ]
             }
