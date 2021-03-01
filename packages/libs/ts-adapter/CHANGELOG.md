@@ -1,3 +1,10 @@
+# [@packagaya/ts-adapter-v1.5.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.5.0...@packagaya/ts-adapter-v1.5.1) (2021-03-01)
+
+
+### Bug Fixes
+
+* **importfinder:** fixed the tsx file parsing ([2ec68cd](https://github.com/Packagaya/Packagaya/commit/2ec68cd941616dc177aeb5c049145f461ad32cb6))
+
 # [@packagaya/ts-adapter-v1.5.0](https://github.com/Packagaya/Packagaya/compare/@packagaya/ts-adapter-v1.4.0...@packagaya/ts-adapter-v1.5.0) (2021-02-13)
 
 
