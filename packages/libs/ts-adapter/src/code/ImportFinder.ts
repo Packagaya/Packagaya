@@ -3,8 +3,8 @@ import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
 import { IPackage } from '@packagaya/package/dist/IPackage';
 import { sync } from 'glob';
 import { inject, injectable } from 'inversify';
-import { parse } from 'recast';
 import { Logger } from 'tslog';
+import * as ts from 'typescript';
 
 @injectable()
 export class ImportFinder {
@@ -80,7 +80,6 @@ export class ImportFinder {
         );
 
         const mappedImports = importDeclarations
-            .map(({ source: { value } }: any) => value)
             .filter((entry: string) => {
                 if (!entry.startsWith('.')) {
                     return true;
@@ -113,13 +112,59 @@ export class ImportFinder {
     }
 
     private getImportsFromFileContents(fileContents: string) {
-        const parsedSourceCode = parse(fileContents, {
-            parser: require('recast/parsers/typescript'),
-        }).program;
+        const sourceFile = ts.createSourceFile(
+            'test.tsx',
+            fileContents,
+            ts.ScriptTarget.Latest,
+            true,
+            ts.ScriptKind.TSX,
+        );
 
-        const importDeclarations = parsedSourceCode.body.filter((node: any) => {
-            return node.type === 'ImportDeclaration';
+        const importedDependencies: string[] = [];
+
+        sourceFile.forEachChild((node) => {
+            if (ts.isImportDeclaration(node)) {
+                let importNode = node.getChildCount() - 1;
+
+                if (node.getChildAt(importNode).getText() === ';') {
+                    importNode -= 1;
+                }
+
+                const nodeText = this.cleanString(
+                    node.getChildAt(importNode).getText(),
+                );
+
+                const textParts = nodeText.split('/');
+
+                let realImport: string;
+
+                if (nodeText.startsWith('@')) {
+                    realImport = textParts.slice(0, 2).join('/');
+                } else {
+                    realImport = textParts[0];
+                }
+
+                if (importedDependencies.includes(realImport)) {
+                    return;
+                }
+
+                importedDependencies.push(realImport);
+            }
         });
-        return importDeclarations;
+
+        return importedDependencies;
+    }
+
+    private cleanString(input: string): string {
+        let result = input;
+        const charactersToRemove = ["'", '"', '`'];
+
+        for (const character of charactersToRemove) {
+            while (result.includes(character)) {
+                result = result.replace(character, '');
+            }
+        }
+
+        return result;
     }
 }
