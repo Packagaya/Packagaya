@@ -2,7 +2,7 @@
     "$schema": "./packages/libs/config/src/ConfigSchema.json",
     "apps": ["./packages/apps"],
     "libs": ["./packages/libs"],
-    "adapters": ["@packagaya/ts-adapter"],
+    "adapters": ["@packagaya/ts-adapter", "@packagaya/vscode-adapter"],
     "features": [
         [
             "sync-ts-deps",
@@ -20,6 +20,12 @@
                 ]
             }
         ],
-        "sync-ts-paths"
+        "sync-ts-paths",
+        [
+            "sync-vscode-workspaces",
+            {
+                "workspaceFile": "./packagaya.code-workspace"
+            }
+        ]
     ]
 }
