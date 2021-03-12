@@ -40,4 +40,4 @@ jobs:
             - name: Install all dependencies
               run: make install
             - name: Test the source code
-              run: make test
+              run: yarn run test
