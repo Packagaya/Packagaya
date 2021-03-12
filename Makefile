@@ -24,6 +24,3 @@ release: build
 
 run:
 	yarn run cli:dev
-
-test: build
-	yarn workspace @packagaya/config run test
