@@ -2,6 +2,7 @@
     "name": "@packagaya/config",
     "license": "MIT",
     "version": "1.2.1",
+    "main": "./dist/index.js",
     "scripts": {
         "build": "tsc --build",
         "build:watch": "tsc --build --watch"
