@@ -12,15 +12,6 @@
         "forceConsistentCasingInFileNames": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "types": ["jest", "node"],
         "resolveJsonModule": true
-    },
-    "references": [
-        {
-            "path": "./packages/apps/cli/tsconfig.json"
-        },
-        {
-            "path": "./packages/libs/adapter/tsconfig.json"
-        }
-    ]
+    }
 }
