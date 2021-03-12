@@ -1,6 +1,6 @@
 import { Adapter } from '@packagaya/adapter/dist/Adapter';
 import { FeatureFlag } from '@packagaya/adapter/dist/FeatureFlag';
-import { inject, injectable, multiInject, named } from 'inversify';
+import { inject, injectable, multiInject } from 'inversify';
 import { Logger } from 'tslog';
 
 import { TSServices } from './ioc/TSServices';
@@ -22,7 +22,6 @@ export class TSAdapter extends Adapter {
      */
     constructor(
         @inject(Logger.name) private logger: Logger,
-        @named(TSAdapter.name)
         @multiInject(TSServices.FeatureFlag)
         featureFlags: FeatureFlag[],
     ) {
