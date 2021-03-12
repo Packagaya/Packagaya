@@ -3,7 +3,10 @@
     "name": "@packagaya/root",
     "license": "MIT",
     "version": "0.0.0",
-    "workspaces": ["packages/apps/*", "packages/libs/*"],
+    "workspaces": [
+        "packages/apps/*",
+        "packages/libs/*"
+    ],
     "scripts": {
         "cli:dev": "LOG_LEVEL=debug ts-node-dev --rs --dir ./packages/apps/cli --respawn --no-notify --clear ./packages/apps/cli/src/main.ts",
         "clean": "rimraf ./packages/**/tsconfig.tsbuildinfo ./packages/**/dist/",
@@ -22,6 +25,7 @@
         "@semantic-release/changelog": "^5.0.1",
         "@semantic-release/git": "^9.0.0",
         "@semantic-release/npm": "^7.0.10",
+        "@types/jest": "^26.0.20",
         "all-contributors-cli": "^6.20.0",
         "commitizen": "^4.2.3",
         "cz-conventional-changelog": "^3.3.0",
