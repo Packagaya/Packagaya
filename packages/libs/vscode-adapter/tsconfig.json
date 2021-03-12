@@ -1,0 +1,36 @@
+{
+    "extends": "../../../tsconfig.base.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "baseUrl": "./",
+        "paths": {
+            "@packagaya/adapter/*": [
+                "../adapter/*"
+            ],
+            "@packagaya/config/*": [
+                "../config/*"
+            ],
+            "@packagaya/definitions/*": [
+                "../definitions/*"
+            ],
+            "@packagaya/package/*": [
+                "../package/*"
+            ]
+        }
+    },
+    "references": [
+        {
+            "path": "../adapter/tsconfig.json"
+        },
+        {
+            "path": "../config/tsconfig.json"
+        },
+        {
+            "path": "../definitions/tsconfig.json"
+        },
+        {
+            "path": "../package/tsconfig.json"
+        }
+    ]
+}

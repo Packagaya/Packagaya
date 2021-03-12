@@ -8,6 +8,7 @@ build:
 	yarn workspace @packagaya/cli run build
 	yarn workspace @packagaya/process run build
 	yarn workspace @packagaya/ts-adapter run build
+	yarn workspace @packagaya/vscode-adapter run build
 
 release: build
 	yarn workspace @packagaya/cache run semantic-release && echo "Executed release for the 'cache' package!" || echo "Could not release the 'cache' package!"
@@ -20,6 +21,7 @@ release: build
 	yarn workspace @packagaya/package run semantic-release && echo "Executed release for the 'package' package!" || echo "Could not release the 'package' package!"
 	yarn workspace @packagaya/cli run semantic-release && echo "Executed release for the 'cli' package!" || echo "Could not release the 'cli' package!"
 	yarn workspace @packagaya/ts-adapter run semantic-release && echo "Executed release for the 'ts-adapter' package!" || echo "Could not release the 'ts-adapter' package!"
+	yarn workspace @packagaya/vscode-adapter run semantic-release && echo "Executed release for the 'ts-adapter' package!" || echo "Could not release the 'vscode-adapter' package!"
 	yarn workspace @packagaya/process run semantic-release && echo "Executed release for the 'process' package!" || echo "Could not release the 'process' package!"
 
 run:
