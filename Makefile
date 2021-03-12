@@ -1,8 +1,4 @@
-.PHONY: clean install build release run test
-
-clean:
-	rm -rf packages/**/tsconfig.tsbuildinfo
-	rm -rf packages/**/dist/
+.PHONY: install build release run test
 
 install:
 	yarn install
