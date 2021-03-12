@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "composite": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "types": ["jest", "node"],
+        "resolveJsonModule": true
+    },
+    "references": [
+        {
+            "path": "./packages/apps/cli/tsconfig.json"
+        },
+        {
+            "path": "./packages/libs/adapter/tsconfig.json"
+        }
+    ]
+}
