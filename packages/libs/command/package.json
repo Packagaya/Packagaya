@@ -12,7 +12,7 @@
         "@packagaya/definitions": "*",
         "@packagaya/template": "*",
         "inversify": "^5.0.5",
-        "tslog": "^3.1.1"
+        "tslog": "^3.1.2"
     },
     "devDependencies": {
         "typescript": "^4.2.3"
