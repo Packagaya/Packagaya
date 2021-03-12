@@ -8,45 +8,46 @@ describe('CommandManager', () => {
     let commandManager: CommandManager;
     let projectSpecification = {} as IConfig;
 
-    const setCommand = {
-        name: 'set',
-        aliases: ['s'],
-        subCommands: [],
-        help: '',
-        execute: jest.fn(),
-        logSubCommands: jest.fn(),
-    };
-    const removeCommand = {
-        name: 'remove',
-        aliases: [],
-        subCommands: [],
-        help: '',
-        execute: jest.fn(),
-        logSubCommands: jest.fn(),
-    };
-    const adminCommand: Command = {
-        name: 'admin',
-        aliases: ['ad'],
-        subCommands: [setCommand, removeCommand],
-        help: '',
-        execute: jest.fn(),
-        logSubCommands: jest.fn(),
-    };
-
-    const helpCommand: Command = {
-        name: 'admin',
-        aliases: ['ad'],
-        subCommands: [setCommand, removeCommand],
-        help: '',
-        execute: jest.fn(),
-        logSubCommands: jest.fn(),
-    };
+    let setCommand: Command;
+    let removeCommand: Command;
+    let adminCommand: Command;
+    let helpCommand: Command;
 
     beforeEach(() => {
-        commandManager = new CommandManager(
-            [setCommand, removeCommand, adminCommand],
-            helpCommand as HelpCommand,
-        );
+        setCommand = {
+            name: 'set',
+            aliases: ['s'],
+            subCommands: [],
+            help: '',
+            execute: jest.fn(),
+            logSubCommands: jest.fn(),
+        };
+        removeCommand = {
+            name: 'remove',
+            aliases: [],
+            subCommands: [],
+            help: '',
+            execute: jest.fn(),
+            logSubCommands: jest.fn(),
+        };
+        adminCommand = {
+            name: 'admin',
+            aliases: ['ad'],
+            subCommands: [setCommand, removeCommand],
+            help: '',
+            execute: jest.fn(),
+            logSubCommands: jest.fn(),
+        };
+        helpCommand = {
+            name: 'help',
+            aliases: [],
+            subCommands: [setCommand, removeCommand],
+            help: '',
+            execute: jest.fn(),
+            logSubCommands: jest.fn(),
+        };
+
+        commandManager = new CommandManager([], helpCommand as HelpCommand);
     });
 
     it('should be instantiable', () => {
@@ -54,9 +55,9 @@ describe('CommandManager', () => {
     });
 
     it('should register a command', () => {
-        expect(commandManager.getCommands()).toHaveLength(0);
-        commandManager.registerCommand(adminCommand);
         expect(commandManager.getCommands()).toHaveLength(1);
+        commandManager.registerCommand(adminCommand);
+        expect(commandManager.getCommands()).toHaveLength(2);
     });
 
     describe('Command', () => {
@@ -90,7 +91,7 @@ describe('CommandManager', () => {
             );
 
             expect(adminCommand.execute).toBeCalled();
-            expect(adminCommand.execute).toBeCalledWith([]);
+            expect(adminCommand.execute).toBeCalledWith({}, []);
         });
 
         it('should execute a command with the correct arguments', async () => {
@@ -101,7 +102,7 @@ describe('CommandManager', () => {
             ]);
 
             expect(adminCommand.execute).toBeCalled();
-            expect(adminCommand.execute).toBeCalledWith(['lol']);
+            expect(adminCommand.execute).toBeCalledWith({}, ['lol']);
         });
     });
 
@@ -115,7 +116,7 @@ describe('CommandManager', () => {
             ]);
 
             expect(setCommand.execute).toBeCalled();
-            expect(setCommand.execute).toBeCalledWith(['123']);
+            expect(setCommand.execute).toBeCalledWith({}, ['123']);
             expect(removeCommand.execute).not.toBeCalled();
         });
 
@@ -128,7 +129,7 @@ describe('CommandManager', () => {
             ]);
 
             expect(setCommand.execute).toBeCalled();
-            expect(setCommand.execute).toBeCalledWith(['123']);
+            expect(setCommand.execute).toBeCalledWith({}, ['123']);
             expect(removeCommand.execute).not.toBeCalled();
         });
 
@@ -140,7 +141,7 @@ describe('CommandManager', () => {
             ]);
 
             expect(setCommand.execute).toBeCalled();
-            expect(setCommand.execute).toBeCalledWith([]);
+            expect(setCommand.execute).toBeCalledWith({}, []);
         });
 
         it('should execute a command with the correct arguments', async () => {
@@ -152,7 +153,7 @@ describe('CommandManager', () => {
             ]);
 
             expect(setCommand.execute).toBeCalled();
-            expect(setCommand.execute).toBeCalledWith(['lol']);
+            expect(setCommand.execute).toBeCalledWith({}, ['lol']);
         });
     });
 });
