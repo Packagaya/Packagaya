@@ -5,11 +5,18 @@
         "rootDir": "./src",
         "baseUrl": "./",
         "paths": {
-            "@packagaya/adapter/*": ["../adapter/*"],
-            "@packagaya/config/*": ["../config/*"],
-            "@packagaya/definitions/*": ["../definitions/*"],
-            "@packagaya/package/*": ["../package/*"],
-            "@packagaya/template/*": ["../template/*"]
+            "@packagaya/adapter/*": [
+                "../adapter/*"
+            ],
+            "@packagaya/config/*": [
+                "../config/*"
+            ],
+            "@packagaya/definitions/*": [
+                "../definitions/*"
+            ],
+            "@packagaya/package/*": [
+                "../package/*"
+            ]
         }
     },
     "references": [
@@ -24,9 +31,6 @@
         },
         {
             "path": "../package/tsconfig.json"
-        },
-        {
-            "path": "../template/tsconfig.json"
         }
     ]
 }

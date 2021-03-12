@@ -1,22 +1,12 @@
 {
+    "extends": "../../../tsconfig.base.json",
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "declaration": true,
-        "sourceMap": true,
-        "composite": true,
         "outDir": "./dist",
         "rootDir": "./src",
-        "strict": true,
         "baseUrl": "./",
         "paths": {
             "@packagaya/definitions/*": ["../definitions/*"]
-        },
-        "esModuleInterop": true,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true
+        }
     },
     "references": [
         {

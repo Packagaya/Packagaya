@@ -3,12 +3,15 @@
         "target": "es5",
         "module": "commonjs",
         "declaration": true,
-        "esModuleInterop": true,
+        "declarationMap": true,
+        "sourceMap": true,
         "composite": true,
-        "strictPropertyInitialization": false,
+        "strict": true,
+        "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+        "resolveJsonModule": true
     }
 }

@@ -1,18 +1,12 @@
 {
-    "extends": "../../../tsconfig.json",
+    "extends": "../../../tsconfig.base.json",
     "compilerOptions": {
-        "declaration": true,
-        "declarationMap": true,
-        "composite": true,
-        "sourceMap": true,
         "outDir": "./dist",
         "rootDir": "./src",
         "baseUrl": "./",
         "paths": {
             "@packagaya/definitions/*": ["../definitions/*"]
         },
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
         "resolveJsonModule": true
     },
     "references": [

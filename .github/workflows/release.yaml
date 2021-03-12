@@ -19,6 +19,8 @@ jobs:
             - uses: actions/setup-node@v2
               with:
                   node-version: '12'
+            - name: Install yarn
+              run: npm i -g yarn
             - name: Install all dependencies
               run: yarn install
             - name: Release a new version

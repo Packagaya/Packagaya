@@ -47,6 +47,10 @@
         {
             "name": "TypeScript Adapter",
             "path": "./packages/libs/ts-adapter"
+        },
+        {
+            "name": "VSCode Adapter",
+            "path": "./packages/libs/vscode-adapter"
         }
     ],
     "extensions": {

@@ -1,21 +1,28 @@
 {
-    "name": "@packagaya/ioc",
+    "name": "@packagaya/vscode-adapter",
+    "version": "0.0.0",
     "license": "MIT",
-    "version": "1.2.0",
-    "main": "./dist/index.js",
+    "main": "dist/VSCodeAdapter.js",
+    "config": {
+        "packagaya": {
+            "containerBindings": [
+                "./dist/ioc/VSCodeAdapterModule.js"
+            ]
+        }
+    },
     "scripts": {
         "build": "tsc",
         "build:watch": "tsc --watch"
     },
     "dependencies": {
         "@packagaya/adapter": "*",
-        "@packagaya/command": "*",
         "@packagaya/config": "*",
         "@packagaya/definitions": "*",
         "@packagaya/package": "*",
-        "@packagaya/template": "*",
-        "ajv": "^7.2.1",
+        "detect-indent": "^6.0.0",
+        "diff": "^5.0.0",
         "inversify": "^5.0.5",
+        "is-scoped": "^2.1.0",
         "tslog": "^3.1.2"
     },
     "devDependencies": {

@@ -97,7 +97,9 @@ export class ConfigManager {
 
         this.logger.debug('Validated configuration file');
 
+        // @ts-ignore
         if (typeof config['$schema'] === 'string') {
+            // @ts-ignore
             delete config['$schema'];
         }
 
