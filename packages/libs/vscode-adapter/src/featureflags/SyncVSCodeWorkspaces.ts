@@ -1,12 +1,12 @@
-import { FeatureFlag, IDifference } from '@packagaya/adapter/dist/FeatureFlag';
+import { FeatureFlag } from '@packagaya/adapter/dist/FeatureFlag';
 import { IConfig } from '@packagaya/config/dist/IConfig';
 import { LocalFileSystem } from '@packagaya/definitions/dist/LocalFileSystem';
 import { PackageManager } from '@packagaya/package/dist/PackageManager';
+import detectIndent from 'detect-indent';
+import { Change, diffJson } from 'diff';
 import { inject } from 'inversify';
 import isScoped from 'is-scoped';
 import { Logger } from 'tslog';
-import { diffJson } from 'diff';
-import detectIndent from 'detect-indent';
 
 type WorkspaceEntry = {
     name: string;
@@ -126,15 +126,47 @@ export class SyncVSCodeWorkspacesFeatureFlag extends FeatureFlag {
                 );
             });
 
+        const computedDifferences = diffJson(currentEntries, [
+            ...currentEntries,
+            ...this.differences,
+        ]);
+
+        if (!this.hasChanges(computedDifferences)) {
+            return [];
+        }
+
         return [
             {
                 filePath: this.resolvedWorkspaceFile,
-                changes: diffJson(currentEntries, [
-                    ...currentEntries,
-                    ...this.differences,
-                ]),
+                changes: computedDifferences,
             },
         ];
+    }
+
+    /**
+     * Checks if the changes array has any changes which were computed
+     *
+     * @private
+     * @param {Change[]} changes The changes which should be checked
+     * @return {boolean} Returns true if there are any changes which should be written to the local file. Otherwise false is returned.
+     * @memberof SyncTSPathsFlag
+     */
+    private hasChanges(changes: Change[]): boolean {
+        return changes.reduce<boolean>((acc, entry) => {
+            if (acc === true) {
+                return acc;
+            }
+
+            if (entry.added === true) {
+                return true;
+            }
+
+            if (entry.removed === true) {
+                return true;
+            }
+
+            return false;
+        }, false);
     }
 
     /**
