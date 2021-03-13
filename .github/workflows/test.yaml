@@ -13,7 +13,7 @@ jobs:
                   node-version: '15.x'
             - name: Install yarn
               run: npm i -g yarn
-            - run: yarn add -W -D @packagaya/ts-adapter
+            - run: yarn add -W -D @packagaya/ts-adapter @packagaya/vscode-adapter
             - run: cd packages/apps/cli && yarn run build
             - run: yarn global add @packagaya/cli
             - run: $(yarn global bin)/packagaya sync info

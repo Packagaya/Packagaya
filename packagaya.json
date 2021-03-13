@@ -20,6 +20,12 @@
                 ]
             }
         ],
-        "sync-ts-paths"
+        "sync-ts-paths",
+        [
+            "sync-vscode-workspaces",
+            {
+                "workspaceFile": "./packagaya.code-workspace"
+            }
+        ]
     ]
 }
