@@ -1,6 +1,9 @@
 name: Project is testable
 
-on: [push]
+on:
+    push:
+        branches-ignore:
+            - master
 
 jobs:
     packagaya:
