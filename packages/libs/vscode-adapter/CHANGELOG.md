@@ -1,3 +1,10 @@
+# [@packagaya/vscode-adapter-v1.0.1](https://github.com/Packagaya/Packagaya/compare/@packagaya/vscode-adapter-v1.0.0...@packagaya/vscode-adapter-v1.0.1) (2021-03-13)
+
+
+### Bug Fixes
+
+* **syncvscodeworkspacesfeatureflag:** fixed the differences detection ([b198675](https://github.com/Packagaya/Packagaya/commit/b198675abd1c785ea755f5e3c266c713705c2c61))
+
 # @packagaya/vscode-adapter-v1.0.0 (2021-03-13)
 
 
