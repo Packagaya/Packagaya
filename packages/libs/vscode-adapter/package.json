@@ -22,7 +22,7 @@
         "detect-indent": "^6.0.0",
         "diff": "^5.0.0",
         "inversify": "^5.0.5",
-        "is-scoped": "^2.1.0",
+        "is-scoped": "^3.0.0",
         "tslog": "^3.2.0"
     },
     "devDependencies": {
