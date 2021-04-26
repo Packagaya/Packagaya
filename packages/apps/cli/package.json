@@ -14,7 +14,7 @@
         "@packagaya/command": "*",
         "@packagaya/config": "*",
         "@packagaya/ioc": "*",
-        "inversify": "^5.0.5",
+        "inversify": "^5.1.1",
         "reflect-metadata": "^0.1.13",
         "tslog": "^3.2.0"
     },
