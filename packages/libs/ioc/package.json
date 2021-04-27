@@ -15,7 +15,7 @@
         "@packagaya/package": "*",
         "@packagaya/template": "*",
         "ajv": "^8.1.0",
-        "inversify": "^5.0.5",
+        "inversify": "^5.1.1",
         "tslog": "^3.2.0"
     },
     "devDependencies": {
