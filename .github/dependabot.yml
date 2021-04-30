@@ -1,0 +1,38 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  reviewers:
+  - YannickFricke
+  ignore:
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.22
+    - 14.14.24
+    - 14.14.26
+    - 15.0.0
+  - dependency-name: immer
+    versions:
+    - 9.0.2
+  - dependency-name: ts-auto-guard
+    versions:
+    - 1.0.0-alpha.18
+  - dependency-name: ts-node-dev
+    versions:
+    - 1.1.2
+  - dependency-name: typescript
+    versions:
+    - 4.1.4
+  - dependency-name: ts-jest
+    versions:
+    - 26.5.0
+  - dependency-name: ajv
+    versions:
+    - 7.0.3
+    - 7.0.4
+  - dependency-name: semantic-release
+    versions:
+    - 17.3.7
