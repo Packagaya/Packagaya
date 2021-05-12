@@ -7200,10 +7200,10 @@ trim-off-newlines@^1.0.0:
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
 
-ts-auto-guard@^1.0.0-alpha.21:
-  version "1.0.0-alpha.21"
-  resolved "https://registry.yarnpkg.com/ts-auto-guard/-/ts-auto-guard-1.0.0-alpha.21.tgz#23c5b8bda0cac39d25dea29dcddb3488555671e4"
-  integrity sha512-oymNml3UZpuu+pofCxBX8jg27noqi0sW//EIPe+/KpO+38MOLLG9lYrruPWjzFD9BYTcPMWmCUvUbntYO2fJQg==
+ts-auto-guard@^1.0.0-alpha.22:
+  version "1.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/ts-auto-guard/-/ts-auto-guard-1.0.0-alpha.22.tgz#d0349807877d8cb7f4e0de6649d3965db1362a15"
+  integrity sha512-haowmeq8mvNztyE53YwwIiGiCRQRQJzfWRGI6c8slRBfET/dF4SIY+72zK4d/Bl3UyVgNZqCvydxSJpd26P15A==
   dependencies:
     "@ts-morph/common" "^0.7.3"
     "@types/command-line-args" "^5.0.0"
