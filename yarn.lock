@@ -889,7 +889,7 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@ts-morph/common@^0.7.3", "@ts-morph/common@~0.7.0":
+"@ts-morph/common@~0.7.0":
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/@ts-morph/common/-/common-0.7.5.tgz#d81603abd4b86d0099d69239cbbcdf990a5dfb25"
   integrity sha512-nlFunSKAsFWI0Ol/uPxJcpVqXxTGNuaWXTmoQDhcnwj1UM4QmBSUVWzqoQ0OzUlqo4sV1gobfFBkMHuZVemMAQ==
@@ -1005,11 +1005,6 @@
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
-
-"@types/lodash@^4.14.160":
-  version "4.14.165"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.165.tgz#74d55d947452e2de0742bad65270433b63a8c30f"
-  integrity sha512-tjSSOTHhI5mCHTy/OOXYIhi2Wt1qcbHmuXD1Ha7q70CgI/I71afO4XtLb/cVexki1oVYchpul/TOuu3Arcdxrg==
 
 "@types/minimatch@*", "@types/minimatch@^3.0.3":
   version "3.0.3"
@@ -7055,18 +7050,15 @@ trim-off-newlines@^1.0.0:
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
 
-ts-auto-guard@^1.0.0-alpha.24:
-  version "1.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/ts-auto-guard/-/ts-auto-guard-1.0.0-alpha.24.tgz#53b95b67a5143161c1315a5433efe731e2b6769c"
-  integrity sha512-hjX/e5Ubs/UZx1rQY6DDPo+dmXphTSghBJt/j4yfjFsdtLv8l/gCTvErds5uktPkQFIXKbUYlSKS2V6MwP3SxQ==
+ts-auto-guard@^1.0.0-alpha.25:
+  version "1.0.0-alpha.25"
+  resolved "https://registry.yarnpkg.com/ts-auto-guard/-/ts-auto-guard-1.0.0-alpha.25.tgz#2d06936b639272ba14387177912379ed012c07fd"
+  integrity sha512-+yBFQPpByeQtDzP+bv/nEQrKzXJ1oht4fNxJ4SfTmClEuG3nFedsR6+SasnrFxYZbKRWk27x4lISzcqbqBSKxg==
   dependencies:
-    "@ts-morph/common" "^0.7.3"
     "@types/command-line-args" "^5.0.0"
     "@types/command-line-usage" "^5.0.1"
-    "@types/lodash" "^4.14.160"
     command-line-args "^5.1.1"
     command-line-usage "^6.1.0"
-    lodash "^4.17.20"
     ts-morph "^9.1.0"
     tsconfig "^7.0.0"
 
