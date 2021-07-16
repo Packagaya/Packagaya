@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@packagaya/definitions": "*",
-        "ajv": "^8.6.1",
+        "ajv": "^8.6.2",
         "reflect-metadata": "^0.1.13",
         "tslog": "^3.2.0"
     },
