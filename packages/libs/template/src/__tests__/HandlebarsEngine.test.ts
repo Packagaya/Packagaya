@@ -11,20 +11,20 @@ describe('Handlebars Engine', () => {
         expect(handlebarsEngine).toBeInstanceOf(HandlebarsEngine);
     });
 
-    it('should render a template', async (done) => {
+    it('should render a template', () => new Promise<void>((done) => {
         expect.assertions(1);
 
         const context = {
             name: 'world',
         };
 
-        const renderedTemplate = await handlebarsEngine.render(
+        const renderedTemplate = handlebarsEngine.render(
             'hello {{name}}',
             context,
-        );
+        ).then((result) => {
+            expect(result).toBe('hello world');
 
-        expect(renderedTemplate).toBe('hello world');
-
-        done();
-    });
+            done();
+        });
+    }));
 });
