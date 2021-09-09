@@ -40,7 +40,6 @@
     "devDependencies": {
         "@types/diff": "^5.0.1",
         "@types/glob": "^7.1.4",
-        "@types/react": "^17.0.14",
         "@types/semver": "^7.3.8"
     },
     "publishConfig": {
