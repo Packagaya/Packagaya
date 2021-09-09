@@ -9,10 +9,10 @@
     },
     "dependencies": {
         "@packagaya/config": "*",
-        "inversify": "^5.0.5"
+        "inversify": "^5.1.1"
     },
     "devDependencies": {
-        "typescript": "^4.2.3"
+        "typescript": "^4.3.5"
     },
     "publishConfig": {
         "access": "public"

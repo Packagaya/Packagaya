@@ -9,13 +9,13 @@
     },
     "dependencies": {
         "@packagaya/definitions": "*",
-        "ajv": "^7.2.1",
+        "ajv": "^8.6.2",
         "reflect-metadata": "^0.1.13",
-        "tslog": "^3.1.2"
+        "tslog": "^3.2.0"
     },
     "devDependencies": {
-        "inversify": "^5.0.5",
-        "typescript": "^4.2.3"
+        "inversify": "^5.1.1",
+        "typescript": "^4.3.5"
     },
     "publishConfig": {
         "access": "public"

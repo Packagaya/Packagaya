@@ -12,11 +12,11 @@
         "@packagaya/config": "*",
         "@packagaya/definitions": "*",
         "@packagaya/template": "*",
-        "inversify": "^5.0.5",
-        "tslog": "^3.1.2"
+        "inversify": "^5.1.1",
+        "tslog": "^3.2.0"
     },
     "devDependencies": {
-        "typescript": "^4.2.3"
+        "typescript": "^4.3.5"
     },
     "publishConfig": {
         "access": "public"

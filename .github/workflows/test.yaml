@@ -1,6 +1,9 @@
 name: Project is testable
 
-on: [push]
+on:
+    push:
+        branches-ignore:
+            - master
 
 jobs:
     packagaya:
@@ -25,7 +28,7 @@ jobs:
         if: "!contains(github.event.head_commit.message, 'skip ci')"
         strategy:
             matrix:
-                node-version: [13.x, 14.x, 15.x]
+                node-version: [14.x, 15.x]
         steps:
             - run: |
                   sudo apt-get update
