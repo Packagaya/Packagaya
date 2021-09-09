@@ -19,7 +19,7 @@
         "@packagaya/config": "*",
         "@packagaya/definitions": "*",
         "@packagaya/package": "*",
-        "detect-indent": "^6.1.0",
+        "detect-indent": "^7.0.0",
         "diff": "^5.0.0",
         "inversify": "^5.1.1",
         "is-scoped": "^3.0.0",
