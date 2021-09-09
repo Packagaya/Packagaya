@@ -16,7 +16,7 @@
         "inversify": "^5.1.1",
         "reflect-metadata": "^0.1.13",
         "spdx-license-ids": "^3.0.10",
-        "tslog": "^3.2.0"
+        "tslog": "^3.2.2"
     },
     "devDependencies": {
         "@types/inquirer": "^7.3.3",
