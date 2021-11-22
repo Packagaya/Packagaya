@@ -7085,10 +7085,10 @@ trim-off-newlines@^1.0.0:
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
 
-ts-auto-guard@^1.0.0-alpha.26:
-  version "1.0.0-alpha.26"
-  resolved "https://registry.yarnpkg.com/ts-auto-guard/-/ts-auto-guard-1.0.0-alpha.26.tgz#83ad60969d2701f229b8efaa132bd71e51dcffcb"
-  integrity sha512-paiOv3avQSwVnzbq1rKEQdKFY9QTd32jz+8KrTumPTprWbT1FHO7PBJTgJv+geb0tCdWXg+WkJP7yCzKL/mOww==
+ts-auto-guard@^1.0.0-alpha.29:
+  version "1.0.0-alpha.29"
+  resolved "https://registry.yarnpkg.com/ts-auto-guard/-/ts-auto-guard-1.0.0-alpha.29.tgz#d1fb92b86add1d9410653ed7a616c2f22ae44f27"
+  integrity sha512-suKqbydO7LciU6evGtg78JKeahkLaA8vM64hBhT08mlAQZrqH0E3MupHFCUhXegFg7f7APDGtPjoXo2v2WDApQ==
   dependencies:
     "@types/command-line-args" "^5.0.0"
     "@types/command-line-usage" "^5.0.1"
