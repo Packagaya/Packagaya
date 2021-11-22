@@ -40,7 +40,7 @@
     "devDependencies": {
         "@types/diff": "^5.0.1",
         "@types/glob": "^7.1.4",
-        "@types/semver": "^7.3.8"
+        "@types/semver": "^7.3.9"
     },
     "publishConfig": {
         "access": "public"
