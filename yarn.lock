@@ -3417,10 +3417,10 @@ ignore@^5.1.4:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
   integrity sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
 
-immer@^9.0.6:
-  version "9.0.6"
-  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.6.tgz#7a96bf2674d06c8143e327cbf73539388ddf1a73"
-  integrity sha512-G95ivKpy+EvVAnAab4fVa4YGYn24J1SpEktnJX7JJ45Bd7xqME/SCplFzYFmTbrkwZbQ4xJK1xMTUYBkN6pWsQ==
+immer@^9.0.12:
+  version "9.0.12"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.12.tgz#2d33ddf3ee1d247deab9d707ca472c8c942a0f20"
+  integrity sha512-lk7UNmSbAukB5B6dh9fnh5D0bJTOFKxVg2cyJWTYrWRfhLrLMBquONcUs3aFq507hNoIZEDDh8lb8UtOizSMhA==
 
 import-fresh@^3.0.0, import-fresh@^3.2.1:
   version "3.2.1"
@@ -7101,10 +7101,10 @@ trim-off-newlines@^1.0.0:
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
 
-ts-auto-guard@^1.0.0-alpha.29:
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/ts-auto-guard/-/ts-auto-guard-1.0.0-alpha.29.tgz#d1fb92b86add1d9410653ed7a616c2f22ae44f27"
-  integrity sha512-suKqbydO7LciU6evGtg78JKeahkLaA8vM64hBhT08mlAQZrqH0E3MupHFCUhXegFg7f7APDGtPjoXo2v2WDApQ==
+ts-auto-guard@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ts-auto-guard/-/ts-auto-guard-1.0.0.tgz#3a5b60039ea45dd471324b22d714b3e295669fc5"
+  integrity sha512-LDjuDegeYj8DQywSmLVJ/yrLjOH+rpWjG+aj+yRRplDfcsLw0R+lEHyyTLV/tu+MchUAx0mhQB3AQpmyLPZMEg==
   dependencies:
     "@types/command-line-args" "^5.0.0"
     "@types/command-line-usage" "^5.0.1"
