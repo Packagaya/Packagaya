@@ -27,7 +27,7 @@
         "detect-indent": "^7.0.0",
         "diff": "^5.0.0",
         "glob": "^7.2.0",
-        "immer": "^9.0.6",
+        "immer": "^9.0.12",
         "inquirer": "^8.2.0",
         "inquirer-autocomplete-prompt": "^1.4.0",
         "inversify": "^5.1.1",
