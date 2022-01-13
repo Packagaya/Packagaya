@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@packagaya/config": "*",
-        "inversify": "^5.1.1"
+        "inversify": "^6.0.1"
     },
     "devDependencies": {
         "typescript": "^4.3.5"
